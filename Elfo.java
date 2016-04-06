@@ -6,6 +6,7 @@ public class Elfo
     private int experiencia;
     private int flechas;
     private boolean acertar = true;
+    private Dwarf dwarf;
     
     public Elfo(String nome)
     {
@@ -19,9 +20,10 @@ public class Elfo
         this.flechas = flechas;
     }
     
-    public void atirarFlecha(){
+    public void atirarFlecha(Dwarf dwarf){
         this.experiencia++;
         this.flechas--;
+        dwarf.perdeVida();
     }
     
     public void atirarFlechaRefactory(int flechas, int experiencia){
