@@ -20,6 +20,12 @@ public class Elfo
         this.flechas = 42;
         this.experiencia = experiencia;
     }
+    
+    public Elfo(String nome, int experiencia, int flechas){
+        this.nome = nome;
+        this.flechas = flechas;
+        this.experiencia = experiencia;
+    }
       
     public void atirarFlecha(Dwarf dwarf){
         this.experiencia++;
