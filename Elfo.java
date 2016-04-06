@@ -13,24 +13,26 @@ public class Elfo
         this.nome = nome;
         this.flechas = 42;
     }
-  
-    public Elfo(String nome, int flechas)
+    
+    public Elfo(String nome, int experiencia)
     {
         this.nome = nome;
-        this.flechas = flechas;
+        this.flechas = 42;
+        this.experiencia = experiencia;
     }
-    
+      
     public void atirarFlecha(Dwarf dwarf){
         this.experiencia++;
         this.flechas--;
         dwarf.perdeVida();
     }
-    
-    public void atirarFlechaRefactory(int flechas, int experiencia){
-    if(acertar){
-       experiencia++;
+  
+    public int getFlechas(){
+    return this.flechas;
     }
-    flechas--;
-}
-
+    
+    public int getExperiencia(){
+    return this.experiencia;
+    }
+    
 }
