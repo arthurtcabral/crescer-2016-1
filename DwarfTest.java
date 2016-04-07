@@ -27,6 +27,8 @@ public class DwarfTest
     dwarf2.perdeVida();
     dwarf2.perdeVida();
     assertEquals(Status.MORTO, dwarf2.getStatus());
+    dwarf2.perdeVida();
+    assertEquals(0, dwarf2.getVida());
     }
     
 }
