@@ -6,6 +6,7 @@ public class Dwarf
    private String nome;
    private Status status;
    private Inventario inventario = null;
+   private Item item;
    private DataTerceiraEra dataNascimento;
    
    public Dwarf(String nome){
@@ -70,6 +71,14 @@ public class Dwarf
     
     public DataTerceiraEra getDataNascimento(){
     return this.dataNascimento;
+    }
+    
+    public void tentarSorte(){
+        if(this.getNumeroSorte() == -3333.0){
+            for(int i = 0; i < this.inventario.getListaItens().size(); i++){
+            this.inventario.getListaItens().get(i).soma1000();        
+        }
+        }
     }
     
     public double getNumeroSorte(){

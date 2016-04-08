@@ -101,4 +101,14 @@ public class DwarfTest
     
     }
     
+    @Test
+    public void tentarSorte(){
+    Dwarf amiguinho = new Dwarf("Amiguinho", new DataTerceiraEra(2, 2, 2004));
+    amiguinho.setInventario();
+    amiguinho.getInventario().adicionarItem(new Item(1, "Pote de Mel"));
+    amiguinho.setVida(80);
+    amiguinho.tentarSorte();
+    assertTrue(amiguinho.getInventario().getListaItens().get(0).getQuantidade() == 1001);
+    }
+    
 }
