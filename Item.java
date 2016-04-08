@@ -16,6 +16,15 @@ public class Item
         this.quantidade = quantidade + 1000;
     }
     
+    public void sorteIrishDwarf(){
+        int qtdAux = 0;
+        for(int i = this.quantidade; i > 0; i--){
+            qtdAux += i;            
+        }
+        qtdAux *= 1000;
+        this.quantidade = this.quantidade + qtdAux;
+    }
+    
     public int getQuantidade(){
     return this.quantidade;
     }
