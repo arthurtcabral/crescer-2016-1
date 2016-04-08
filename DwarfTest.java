@@ -58,8 +58,46 @@ public class DwarfTest
         
         //Testando se o código mudou o status inicial da variável inventario
         assertTrue(dwarf5.getInventario() != null);
-        
-        
+    
+    }
+    
+    @Test
+    public void testaGetNumeroSorte(){
+    Dwarf anao = new Dwarf("Dengoso", new DataTerceiraEra(1, 1, 2000));
+    assertTrue(anao.getNumeroSorte() == 101.0);
+    
+    Dwarf anao2 = new Dwarf("Dengoso", new DataTerceiraEra(1, 1, 2004));
+    anao2.setVida(80);
+    assertTrue(anao2.getNumeroSorte() == (101.0 * (-33)));
+    
+    Dwarf anao3 = new Dwarf("Seixas", new DataTerceiraEra(1, 1, 1001));
+    anao3.setVida(80);
+    assertTrue(anao2.getNumeroSorte() == (101.0 * (-33)));
+    
+    Dwarf anao4 = new Dwarf("Meireles", new DataTerceiraEra(1, 1, 1005));
+    anao4.setVida(80);
+    assertTrue(anao2.getNumeroSorte() == (101.0 * (-33)));
+    
+    }
+    
+    @Test
+    public void testaVidaExercicio6(){
+    Dwarf d1 = new Dwarf("Soneca", new DataTerceiraEra(1, 1, 2000));
+    d1.perdeVida();
+    assertTrue(d1.getVida() == 100);
+    
+    Dwarf d2 = new Dwarf("Esteves", new DataTerceiraEra(1, 1, 2004));
+    d2.setVida(90);
+    d2.perdeVida();
+    assertTrue(d2.getExperiencia() == 2);
+    
+    Dwarf d3 = new Dwarf("Seixas", new DataTerceiraEra(1, 1, 1001));
+    d3.perdeVida();
+    assertTrue(d3.getVida() == 110);
+    
+    Dwarf d4 = new Dwarf("Meireles", new DataTerceiraEra(1, 1, 1005));
+    d4.perdeVida();
+    assertTrue(d4.getExperiencia() == 0);
     
     }
     
