@@ -5,7 +5,7 @@ public class Inventario
     private ArrayList<Item> listaItens = new ArrayList<Item>();
     // private Item item;
     
-    public Inventario(){ 
+    public Inventario(){
     }
     
     public ArrayList getListaItens(){
@@ -19,6 +19,15 @@ public class Inventario
     
     public void removerItem(Item item){
         this.listaItens.remove(item);
+    }
+    
+    public String getDescricoesItens(){
+    String itens = "";
+    for(int i = 0; i < this.listaItens.size(); i++){
+        itens =  itens + this.listaItens.get(i).getDescricao() + ", ";
+    }
+    String itensRetorno = itens.substring(0, itens.length() - 2);
+    return itensRetorno;
     }
   
 }
