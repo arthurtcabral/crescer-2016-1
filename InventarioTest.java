@@ -17,4 +17,14 @@ public class InventarioTest
     i1.adicionarItem(item3);
     assertTrue(i1.getDescricoesItens().equals("Adaga, Escudo, Bracelete"));
     }
+    
+    @Test
+    public void itemPopular(){
+    Item i1 = new Item(1, "Maçã");
+    Item i2 = new Item(5, "Caqui");
+    Inventario inventario = new Inventario();
+    inventario.adicionarItem(i1);
+    inventario.adicionarItem(i2);
+    assertTrue(inventario.itemMaiorQuantidade() == i2);
+     }
 }

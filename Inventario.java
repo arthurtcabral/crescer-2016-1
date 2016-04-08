@@ -3,12 +3,13 @@ import java.util.ArrayList;
 public class Inventario
 {
     private ArrayList<Item> listaItens = new ArrayList<Item>();
+    private Item item;
     // private Item item;
     
     public Inventario(){
     }
     
-    public ArrayList getListaItens(){
+    public ArrayList<Item> getListaItens(){
     return this.listaItens;
     }
     
@@ -20,6 +21,7 @@ public class Inventario
     public void removerItem(Item item){
         this.listaItens.remove(item);
     }
+  
     
     public String getDescricoesItens(){
     String itens = "";
@@ -30,4 +32,19 @@ public class Inventario
     return itensRetorno;
     }
   
+    public Item itemMaiorQuantidade(){
+    Item itemPop = null;
+    int i = 0;
+    if(this.listaItens != null){
+    itemPop = this.listaItens.get(0);
+    do{
+        if(this.listaItens.get(i).getQuantidade() > itemPop.getQuantidade()){
+            itemPop = this.listaItens.get(i);
+        }
+        i++;
+    }while(this.listaItens.size() != i);
+    }
+    return itemPop;
+    }
+    
 }
