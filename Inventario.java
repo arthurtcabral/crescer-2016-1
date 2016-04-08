@@ -5,7 +5,7 @@ public class Inventario
     private ArrayList<Item> listaItens = new ArrayList<Item>();
     // private Item item;
     
-    public Inventario(){
+    public Inventario(){ 
     }
     
     public ArrayList getListaItens(){
