@@ -24,4 +24,10 @@ public class HobbitContadorTest
    HobbitContador bolseiro = new HobbitContador();
    assertTrue(bolseiro.obterMaiorMultiploDeTresAte(32) == 30);
    }
+   
+   @Test
+   public void obtencaoDosMultiplosDeTresAte(){
+   HobbitContador frodo = new HobbitContador();
+   assertTrue(frodo.obterMultiplosDeTresAte(12).size() == 4);
+   }
 }

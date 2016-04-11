@@ -62,4 +62,15 @@ public class HobbitContador
     return maiorMultiplo;
 }
 
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero) {
+        ArrayList<Integer> multiplos = new ArrayList<Integer>(); // Não declarou <Integer> depois do sinal de atribuição
+       for (int i = 1; i <= numero; i++) { // A variável limite até então era inexistente, já que o nome do parâmetro é numero
+            if(i % 3 == 0){ 
+               // Não tinha porque ter um break no código, afinal, não há porque interromper o andamento dele.
+          multiplos.add(i);
+       }
+  }
+  return multiplos;
+}
+
 }
