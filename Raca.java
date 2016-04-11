@@ -1,12 +1,14 @@
 
-public class Raca {
+public class Raca extends Inventario{
     
     protected String nome;
-    protected int experiencia;
+    protected int experiencia = 0;
     protected Inventario inventario = null;
+    protected Status status;
     
     public Raca(String nome){
         this.nome = nome;
+        this.status = Status.VIVO;
     
     }
     

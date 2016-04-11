@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class Inventario
 {
@@ -21,7 +21,6 @@ public class Inventario
     public void removerItem(Item item){
         this.listaItens.remove(item);
     }
-  
     
     public String getDescricoesItens(){
     String itens = "";
@@ -45,6 +44,34 @@ public class Inventario
     }while(this.listaItens.size() != i);
     }
     return itemPop;
+    }
+    
+    public void ordenarItens(){
+    int i = 0;
+    int j = 0;
+    Item itemAux;
+        
+    for(i = 0; i < this.listaItens.size(); i++){
+        for(j = 0; j < this.listaItens.size() - 1; j++){
+            if(this.listaItens.get(j).getQuantidade() >= this.listaItens.get(j + 1).getQuantidade()){
+               itemAux = this.listaItens.get(j);
+               this.listaItens.set(j, this.listaItens.get(j + 1));
+               this.listaItens.set(j + 1, itemAux); 
+            }
+        }
+    }
+    
+    /* Alternativa implementada pelo JAVA 
+     * 
+     * Collections.sort(this.listaItens, new Comparator<Item>(){
+     * public int compare(Item item1, Item item2){
+     *     return Integer.compare(item1.getQuantidade(), item2.getQuantidade());   
+     *    }
+     *  
+    });
+     * 
+     */
+    
     }
     
 }
