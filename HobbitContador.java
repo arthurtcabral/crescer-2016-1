@@ -38,4 +38,15 @@ public class HobbitContador
        
        return soma;
     }
+    
+    public int obterMaiorMultiploDeTresAte(int numero){
+        int maiorMultiplo = 1;
+        for(int i = 1; i <= numero; i++){
+            if(i % 3 == 0){
+                maiorMultiplo = i;
+        }
+    }
+    return maiorMultiplo;
+}
+
 }

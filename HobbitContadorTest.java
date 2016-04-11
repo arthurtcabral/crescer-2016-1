@@ -18,4 +18,10 @@ public class HobbitContadorTest
     
     assertTrue(diferenca == 840);
    }
+   
+   @Test
+   public void obtencaoDoMaiorMultiploDeTresAte(){
+   HobbitContador bolseiro = new HobbitContador();
+   assertTrue(bolseiro.obterMaiorMultiploDeTresAte(32) == 30);
+   }
 }
