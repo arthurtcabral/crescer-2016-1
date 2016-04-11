@@ -5,7 +5,7 @@ public class Dwarf
    private int experiencia;
    private String nome;
    private Status status;
-   private Inventario inventario = null;
+   protected Inventario inventario = null;
    private Item item;
    private DataTerceiraEra dataNascimento;
    
