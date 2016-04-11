@@ -54,11 +54,16 @@ public class HobbitContador
     
     public int obterMaiorMultiploDeTresAte(int numero){
         int maiorMultiplo = 1;
-        for(int i = 1; i <= numero; i++){
+        if(numero == 0){
+            maiorMultiplo = 0;
+        }else{
+        for(int i = numero; i >= 1; i--){
             if(i % 3 == 0){
                 maiorMultiplo = i;
+                break;
         }
     }
+}
     return maiorMultiplo;
 }
 
