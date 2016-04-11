@@ -39,6 +39,19 @@ public class HobbitContador
        return soma;
     }
     
+  /*  public int obterMaiorMultiploDeTresAte(int numero) {
+  ArrayList<Integer> multiplos = new ArrayList<>(Arrays.asList(0)); // Não tem porque fazer um ArrayList se o objetivo é retornar apenas um valor
+
+  for (int i = 1; i <= limite; i++) {
+      if (i % 3 == 0) {
+          multiplos.add(i);
+          continue; 
+        }
+    }
+
+    return multiplos;
+} */
+    
     public int obterMaiorMultiploDeTresAte(int numero){
         int maiorMultiplo = 1;
         for(int i = 1; i <= numero; i++){
