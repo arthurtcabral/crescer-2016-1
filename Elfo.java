@@ -3,22 +3,25 @@
      protected int flechas = 42; 
      private boolean acertar = true; 
      private Dwarf dwarf; 
-     protected double vida = 100.0; 
+     protected double vida = 100.0;
+     protected static int cont = 0;
       
-     public Elfo(String nome) 
-     { 
+     public Elfo(String nome) { 
          super(nome);
+         cont++;
      } 
       
      public Elfo(String nome, int experiencia) 
      { 
          super(nome, experiencia); 
-     } 
+         cont++;
+        } 
       
      public Elfo(String nome, int experiencia, int flechas){ 
          super(nome, experiencia); 
          this.flechas = flechas; 
-     } 
+         cont++;
+        } 
         
      public void atirarFlecha(Dwarf dwarf){ 
          this.experiencia++; 
