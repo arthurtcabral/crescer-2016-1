@@ -32,26 +32,29 @@ public class ElfoTest
        
        int experienciaEsperada = 101;
        int experienciaObtida = e3.getExperiencia();
-       assertEquals(experienciaEsperada, experienciaObtida);
+       assertTrue(e3.getExperiencia() == 101);
        
        int flechasEsperadas = 41;
        int flechasObtidas = e3.getFlechas();
-       assertEquals(flechasEsperadas, flechasObtidas);
+       assertTrue(e3.getFlechas() == 41);
        
-       
-       int vidaEsperada = 100;
-       int vidaObtida = d1.getVida();
-       assertEquals(vidaEsperada, vidaObtida);
-       
+       assertTrue(d1.getVida() == 100.0);
     }
     
    @Test
    public void testaConstrutorDwarf(){
        Dwarf d1 = new Dwarf("Mestre");
-       int esperado = 110;
-       int obtido = d1.getVida();
-       assertEquals(esperado, obtido);
+       double esperado = 110;
+       double obtido = d1.getVida();
+       assertTrue(d1.getVida() == 110);
        
+    }
+    
+    @Test
+    public void contador(){
+    Elfo e10 = new Elfo("Goiás");
+    assertTrue(Elfo.cont == 4);
+    
     }
    
 }
