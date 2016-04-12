@@ -11,9 +11,15 @@ public class ElfosVerdesTest {
     ev1.atirarFlecha(new Dwarf("Marquinhos"));
     assertTrue(ev1.getExperiencia() == 2);
     
-    ev1.adicionarItem(new Item(3, "Espada de aço valiriano"));
-    ev1.adicionarItem(new Item(2, "Arco e Flecha de Vidro"));
+    ev1.setInventario();
+    
+    Item item = new Item(3, "Espada de aço valiriano");
+    Item item2 = new Item(2, "Arco e Flecha de Vidro");
+    
+    ev1.getInventario().adicionarItem(item);
+    ev1.getInventario().adicionarItem(item2);
     assertTrue(ev1.getInventario().getListaItens().size() == 2);
     
     }
+    
 }

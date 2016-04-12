@@ -14,9 +14,9 @@ public class ElfosVerdes extends Elfo {
     
     public void adicionarItem(Item item){
     if(item.getDescricao().equals("Espada de aço valiriano") || item.getDescricao().equals("Arco e Flecha de Vidro")){
-        this.getInventario().adicionarItem(item);
+        this.getInventario().getListaItens().add(item);
     }
-        
+ 
 }
 
 }

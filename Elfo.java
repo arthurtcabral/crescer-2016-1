@@ -1,30 +1,28 @@
 
-public class Elfo
+public class Elfo extends Raca
 {
     
-    private String nome;
-    private int experiencia;
-    private int flechas;
+    protected int flechas;
     private boolean acertar = true;
     private Dwarf dwarf;
+    protected double vida = 100.0;
     
     public Elfo(String nome)
     {
+        super(nome);
         this.nome = nome;
         this.flechas = 42;
     }
     
     public Elfo(String nome, int experiencia)
     {
-        this.nome = nome;
+        super(nome, experiencia);
         this.flechas = 42;
-        this.experiencia = experiencia;
     }
     
     public Elfo(String nome, int experiencia, int flechas){
-        this.nome = nome;
+        super(nome, experiencia);
         this.flechas = flechas;
-        this.experiencia = experiencia;
     }
       
     public void atirarFlecha(Dwarf dwarf){
@@ -35,10 +33,14 @@ public class Elfo
   
     public int getFlechas(){
     return this.flechas;
+   }
+       
+    public void setVida(double vida){
+        this.vida = vida;
     }
     
-    public int getExperiencia(){
-    return this.experiencia;
+    public double getVida(){
+        return this.vida;
     }
     
     public String toString(){
