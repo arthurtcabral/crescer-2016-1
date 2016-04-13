@@ -5,6 +5,12 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    
+    @After
+    public void tearDown(){
+    System.gc();            //Limpar objetos a cada teste
+    }
+    
    @Test
    public void testaConstrutor1(){
        Elfo e1 = new Elfo("Dobby");
@@ -53,7 +59,7 @@ public class ElfoTest
     @Test
     public void contador(){
     Elfo e10 = new Elfo("Goiás");
-    assertTrue(Elfo.cont == 4);
+    assertEquals(1, Elfo.cont);
     
     }
    
