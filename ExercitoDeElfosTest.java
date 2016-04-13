@@ -39,7 +39,7 @@ public class ExercitoDeElfosTest {
     }
 
     @Test
-    public void agrupandoPorStatus(){
+    public void agrupandoPorStatusVivo(){
     ElfosVerdes elfoVerde = new ElfosVerdes("ElfoVerde");
     ElfosNoturnos elfoNoturno = new ElfosNoturnos("ElfoNoturno");
     ElfosNoturnos elfoNoturno2 = new ElfosNoturnos("ElfoNoturno2");
@@ -49,9 +49,40 @@ public class ExercitoDeElfosTest {
     exercito.alistarElfoNoExercito(elfoNoturno2);
     exercito.agruparPorStatus();
     
-    System.out.println(exercito.getAgrupadoPorStatus().keySet() == Status.VIVO);
+    assertTrue(exercito.buscarPorStatus(Status.VIVO).size() == 3);
     
-    // assertTrue(exercito.getAgrupadoPorStatus().values().size() == 3);
+    }
+    
+    @Test
+    public void agrupandoPorStatusMorto(){
+    ElfosVerdes elfoVerde = new ElfosVerdes("ElfoVerde");
+    ElfosNoturnos elfoNoturno = new ElfosNoturnos("ElfoNoturno");
+    ElfosNoturnos elfoNoturno2 = new ElfosNoturnos("ElfoNoturno2");
+    ExercitoDeElfos exercito = new ExercitoDeElfos();
+    elfoNoturno2.setStatus(Status.MORTO);
+    exercito.alistarElfoNoExercito(elfoVerde);
+    exercito.alistarElfoNoExercito(elfoNoturno);
+    exercito.alistarElfoNoExercito(elfoNoturno2);
+    exercito.agruparPorStatus();
+    
+    assertTrue(exercito.buscarPorStatus(Status.MORTO).size() == 1);
+    
+    }
+    
+    @Test
+    public void agrupandoPorStatusMortoBuscandoFalhas(){
+    ElfosVerdes elfoVerde = new ElfosVerdes("ElfoVerde");
+    ElfosNoturnos elfoNoturno = new ElfosNoturnos("ElfoNoturno");
+    ElfosNoturnos elfoNoturno2 = new ElfosNoturnos("ElfoNoturno2");
+    ExercitoDeElfos exercito = new ExercitoDeElfos();
+    elfoNoturno2.setStatus(Status.MORTO);
+    exercito.alistarElfoNoExercito(elfoVerde);
+    exercito.alistarElfoNoExercito(elfoNoturno);
+    exercito.alistarElfoNoExercito(elfoNoturno2);
+    exercito.agruparPorStatus();
+    
+    assertFalse(exercito.buscarPorStatus(Status.MORTO).size() == 2);
+    
     }
     
 }   
