@@ -23,6 +23,11 @@
          cont++;
         } 
         
+     protected void finalize() throws Throwable {
+         Elfo.cont--;
+         super.finalize();
+        }
+        
      public void atirarFlecha(Dwarf dwarf){ 
          this.experiencia++; 
          this.flechas--; 
