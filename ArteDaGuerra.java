@@ -6,54 +6,51 @@ public class ArteDaGuerra implements Estrategias{
         return intencoes;
     }
     
-    private int elfosNoturnosQuePodemAtacar(int intencoesDeAtaque){
+    private int ataquesDeNoturnos(int intencoesDeAtaque){
         double percentualElfosNoturnosQueAtacam = intencoesDeAtaque * 0.3;
-        int elfosNoturnosQuePodemAtacar = (int) percentualElfosNoturnosQueAtacam;
+        int percentualNoturnos = (int) percentualElfosNoturnosQueAtacam;
        
-        return elfosNoturnosQuePodemAtacar;
+        return percentualNoturnos;
     }
     
     public ArrayList<Elfo> estrategia (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
         exercito.agruparPorStatus();
         ArrayList<Elfo> elfosVivos = exercito.buscarPorStatus(Status.VIVO);
         int intencoes = intencoesDeAtaque(listaDwarves, elfosVivos);
-        int elfosNoturnosQueAtacam = elfosNoturnosQuePodemAtacar(intencoes);
-        int contadorElfosNoturnos = 0;
+        int elfosNoturnosQueAtacam = ataquesDeNoturnos(intencoes);
+        int contadorAtaquesElfosNoturnos = 0;
         
+        // Retorno do método
         ArrayList<Elfo> elfosQueAtacam = new ArrayList<Elfo>();
-        
-        // Adicionar a quantidade certa de elfos noturnos que podem atacar
-        for(int a = 0; a < elfosVivos.size(); a++){
-            
-            if(elfosVivos.get(a) instanceof ElfosNoturnos){
-                elfosQueAtacam.add(elfosVivos.get(a));
-                contadorElfosNoturnos++;
-            }
-            
-            if(contadorElfosNoturnos == elfosNoturnosQueAtacam){
-                break;
-            }
-        
-        }
-        
-        // Adicionar demais elfos que podem atacar
-        for(int b = 0; b < elfosVivos.size(); b++){
-            if(!(elfosVivos.get(b) instanceof ElfosNoturnos)){
-                elfosQueAtacam.add(elfosVivos.get(b));
-            }
-        
-        }
+        elfosQueAtacam.add(new Elfo("Evitar NULL"));
        
         // Atacar dwarves
-        for(int i = 0; i < elfosQueAtacam.size(); i++){
+        for(int i = 0; i < elfosVivos.size(); i++){
             for(int j = 0; j < listaDwarves.size(); j++){
-                elfosQueAtacam.get(i).atirarFlecha(listaDwarves.get(j));
+            if(elfosVivos.get(i) instanceof ElfosNoturnos){
+                if(contadorAtaquesElfosNoturnos != elfosNoturnosQueAtacam){
+                elfosVivos.get(i).atirarFlecha(listaDwarves.get(j));
+                contadorAtaquesElfosNoturnos++;
+                    if(!(elfosQueAtacam.get(i).equals(elfosVivos.get(i)))){
+                        elfosQueAtacam.set(i, elfosVivos.get(i));
+                        elfosQueAtacam.add(new Elfo("Evitar NULL"));
+                    }
+            }else{
+            continue;
+            }  
+            }else if(!(elfosVivos.get(i) instanceof ElfosNoturnos)){
+                elfosVivos.get(i).atirarFlecha(listaDwarves.get(j));
+                if(!(elfosQueAtacam.get(i).equals(elfosVivos.get(i)))){
+                        elfosQueAtacam.set(i, elfosVivos.get(i));
+                        elfosQueAtacam.add(new Elfo("Evitar NULL"));
+                }
             }
         }
-        
+    }
+        elfosQueAtacam.remove(elfosQueAtacam.get(elfosQueAtacam.size() - 1));
         return elfosQueAtacam;
     }
        
-    }
+}
  
 
