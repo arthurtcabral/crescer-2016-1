@@ -1,16 +1,17 @@
 import java.util.*;
-
 public class ExercitoDeElfos {    
     
     private Elfo elfo;
     private HashMap<String, Elfo> exercitoDeElfos = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> agrupadoPorStatus = new HashMap<>();
-    
-    public void alistarElfoNoExercito(Elfo elfo){
+      
+    public void alistarElfoNoExercito(Elfo elfo) throws NaoPodeAlistarException{
         if(elfo instanceof ElfosNoturnos || elfo instanceof ElfosVerdes){
             this.exercitoDeElfos.put(elfo.getNome(), elfo);
         
-        }      
+        }else{
+            throw new NaoPodeAlistarException();
+        }
    }
    
    public void agruparPorStatus(){ // Criar ArrayList, pois os Status são de mesma chave(VIVO)
