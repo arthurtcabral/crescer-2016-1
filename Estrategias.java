@@ -1,5 +1,5 @@
 import java.util.*;
 public interface Estrategias {
-    public ArrayList<Elfo> estrategia (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito);
+    public ArrayList<Elfo> atacar(ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito);
     
 }
