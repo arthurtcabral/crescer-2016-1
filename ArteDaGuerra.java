@@ -7,13 +7,10 @@ public class ArteDaGuerra implements Estrategias{
     }
     
     private int ataquesDeNoturnos(int intencoesDeAtaque){
-        double percentualElfosNoturnosQueAtacam = intencoesDeAtaque * 0.3;
-        int percentualNoturnos = (int) percentualElfosNoturnosQueAtacam;
-       
-        return percentualNoturnos;
+        return (int)(intencoesDeAtaque * 0.3);
     }
     
-    public ArrayList<Elfo> estrategia (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
+    public ArrayList<Elfo> atacar (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
         exercito.agruparPorStatus();
         ArrayList<Elfo> elfosVivos = exercito.buscarPorStatus(Status.VIVO);
         int intencoes = intencoesDeAtaque(listaDwarves, elfosVivos);
