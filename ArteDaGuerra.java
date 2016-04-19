@@ -19,7 +19,6 @@ public class ArteDaGuerra implements Estrategias{
         
         // Retorno do método
         ArrayList<Elfo> elfosQueAtacam = new ArrayList<Elfo>();
-        //elfosQueAtacam.add(new Elfo("Evitar NULL"));
        
         // Atacar dwarves
         for(int i = 0; i < elfosVivos.size(); i++){
@@ -45,7 +44,6 @@ public class ArteDaGuerra implements Estrategias{
             }
         }
     }
-        //elfosQueAtacam.remove(elfosQueAtacam.get(elfosQueAtacam.size() - 1));
         return elfosQueAtacam;
     }
        
