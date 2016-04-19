@@ -5,30 +5,20 @@ public class NoturnosPorUltimo implements Estrategias {
         exercito.agruparPorStatus();
         ArrayList<Elfo> elfosVivos = exercito.buscarPorStatus(Status.VIVO);
         
-        // Retorno do método
-        ArrayList<Elfo> elfosQueAtacam = new ArrayList<Elfo>();
-        
-        // Adicionar elfos verdes primeiro
-        for(Elfo elfoAux : elfosVivos){
-            if(elfoAux instanceof ElfosVerdes){
-                elfosQueAtacam.add(elfoAux);
+        int i = 0;
+        int j = 0;
+        Elfo elfoAux;
+ 
+        for(i = 0; i < elfosVivos.size(); i++){
+        for(j = 0; j < elfosVivos.size() - 1; j++){
+            if(elfosVivos.get(j) instanceof ElfosNoturnos && elfosVivos.get(j + 1) instanceof ElfosVerdes){
+               elfoAux = elfosVivos.get(j);
+               elfosVivos.set(j, elfosVivos.get(j + 1));
+               elfosVivos.set((j + 1), elfoAux); 
             }
         }
-        
-        // Adicionar elfos noturnos
-        for(Elfo elfoAux : elfosVivos){
-            if(elfoAux instanceof ElfosNoturnos){
-                elfosQueAtacam.add(elfoAux);
-            }
-        }
-        
-         for(int i = 0; i < elfosQueAtacam.size(); i++){
-            for(int j = 0; j < listaDwarves.size(); j++){
-                elfosQueAtacam.get(i).atirarFlecha(listaDwarves.get(j));
-            }
-        }
-        
-        return elfosQueAtacam;
+    }   
+        return elfosVivos;
     }
     
 }

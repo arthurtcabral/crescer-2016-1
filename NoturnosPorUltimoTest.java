@@ -12,6 +12,23 @@ public class NoturnosPorUltimoTest {
     }
     
     @Test
+    public void checarOrdenacao(){
+        ArrayList<Dwarf> listaDwarves = new ArrayList<Dwarf>();
+        listaDwarves.add(new Dwarf("Hach"));
+        listaDwarves.add(new Dwarf("Hech"));
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 1"));
+        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Verde 1"));
+        
+        Estrategias estrategia = new NoturnosPorUltimo();
+        ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
+        assertTrue(elfosQueAtacaram.get(0).getNome().equals("Elfo Verde 1"));
+        assertTrue(elfosQueAtacaram.get(1).getNome().contains("Elfo Noturno 1"));
+        assertFalse(elfosQueAtacaram.get(0).getNome().contains("Elfo Noturno 1"));
+        assertFalse(elfosQueAtacaram.get(1).getNome().contains("Elfo Verde 1"));
+    }
+    
+    @Test
     public void checarListagemDeElfosQueAtacaram(){
         ArrayList<Dwarf> listaDwarves = new ArrayList<Dwarf>();
         listaDwarves.add(new Dwarf("Hach"));
