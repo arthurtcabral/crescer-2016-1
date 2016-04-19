@@ -1,7 +1,7 @@
 import java.util.*;
 public class NoturnosPorUltimo implements Estrategias {
     
-    public ArrayList<Elfo> estrategia (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
+    public ArrayList<Elfo> atacar (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
         exercito.agruparPorStatus();
         ArrayList<Elfo> elfosVivos = exercito.buscarPorStatus(Status.VIVO);
         
@@ -11,13 +11,6 @@ public class NoturnosPorUltimo implements Estrategias {
         // Adicionar elfos verdes primeiro
         for(Elfo elfoAux : elfosVivos){
             if(elfoAux instanceof ElfosVerdes){
-                elfosQueAtacam.add(elfoAux);
-            }
-        }
-        
-        // Adicionar elfo comum
-        for(Elfo elfoAux : elfosVivos){
-            if(!(elfoAux instanceof ElfosVerdes || elfoAux instanceof ElfosNoturnos)){
                 elfosQueAtacam.add(elfoAux);
             }
         }
