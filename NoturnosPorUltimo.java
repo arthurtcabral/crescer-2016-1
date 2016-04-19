@@ -2,8 +2,10 @@ import java.util.*;
 public class NoturnosPorUltimo implements Estrategias {
     
     public ArrayList<Elfo> atacar (ArrayList<Dwarf> listaDwarves, ExercitoDeElfos exercito){
+        ArrayList<Elfo> elfosVivos;
+        if(exercito.getExercitoDeElfos().size() != 0){
         exercito.agruparPorStatus();
-        ArrayList<Elfo> elfosVivos = exercito.buscarPorStatus(Status.VIVO);
+        elfosVivos = exercito.buscarPorStatus(Status.VIVO);
         
         int i = 0;
         int j = 0;
@@ -11,14 +13,18 @@ public class NoturnosPorUltimo implements Estrategias {
  
         for(i = 0; i < elfosVivos.size(); i++){
         for(j = 0; j < elfosVivos.size() - 1; j++){
-            if(elfosVivos.get(j) instanceof ElfosNoturnos && elfosVivos.get(j + 1) instanceof ElfosVerdes){
+            if(elfosVivos.get(j) instanceof ElfoNoturno && elfosVivos.get(j + 1) instanceof ElfoVerde){
                elfoAux = elfosVivos.get(j);
                elfosVivos.set(j, elfosVivos.get(j + 1));
                elfosVivos.set((j + 1), elfoAux); 
             }
         }
     }   
-        return elfosVivos;
-    }
+    
+   }else{
+       elfosVivos = null;
+   }
+     return elfosVivos;
+   }
     
 }

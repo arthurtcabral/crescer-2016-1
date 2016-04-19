@@ -17,8 +17,8 @@ public class NoturnosPorUltimoTest {
         listaDwarves.add(new Dwarf("Hach"));
         listaDwarves.add(new Dwarf("Hech"));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 1"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Verde 1"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 1"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Verde 1"));
         
         Estrategias estrategia = new NoturnosPorUltimo();
         ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
@@ -34,10 +34,10 @@ public class NoturnosPorUltimoTest {
         listaDwarves.add(new Dwarf("Hach"));
         listaDwarves.add(new Dwarf("Hech"));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
-        exercito.alistarElfoNoExercito(new ElfosVerdes("Elfo Verde 1"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 1"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 2"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 3"));
+        exercito.alistarElfoNoExercito(new ElfoVerde("Elfo Verde 1"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 1"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 2"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 3"));
         
         Estrategias estrategia = new NoturnosPorUltimo();
         ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
@@ -51,9 +51,9 @@ public class NoturnosPorUltimoTest {
         listaDwarves.add(new Dwarf("Hach"));
         listaDwarves.add(new Dwarf("Hech"));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
-        exercito.alistarElfoNoExercito(new ElfosVerdes("Elfo Verde 1"));
-        exercito.alistarElfoNoExercito(new ElfosVerdes("Elfo Verde 2"));
-        exercito.alistarElfoNoExercito(new ElfosVerdes("Elfo Verde 3"));
+        exercito.alistarElfoNoExercito(new ElfoVerde("Elfo Verde 1"));
+        exercito.alistarElfoNoExercito(new ElfoVerde("Elfo Verde 2"));
+        exercito.alistarElfoNoExercito(new ElfoVerde("Elfo Verde 3"));
         
         Estrategias estrategia = new NoturnosPorUltimo();
         ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
@@ -68,9 +68,9 @@ public class NoturnosPorUltimoTest {
         listaDwarves.add(new Dwarf("Hach"));
         listaDwarves.add(new Dwarf("Hech"));
         ExercitoDeElfos exercito = new ExercitoDeElfos();
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 1"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 2"));
-        exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 3"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 1"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 2"));
+        exercito.alistarElfoNoExercito(new ElfoNoturno("Elfo Noturno 3"));
         
         Estrategias estrategia = new NoturnosPorUltimo();
         ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
@@ -78,4 +78,17 @@ public class NoturnosPorUltimoTest {
         assertTrue(elfosQueAtacaram.get(1).getNome().contains("Noturno"));
         assertTrue(elfosQueAtacaram.get(2).getNome().contains("Noturno"));
     }
+    
+    @Test
+    public void checarComListaVazia(){
+        ArrayList<Dwarf> listaDwarves = new ArrayList<Dwarf>();
+        listaDwarves.add(new Dwarf("Hach"));
+        listaDwarves.add(new Dwarf("Hech"));
+        ExercitoDeElfos exercito = new ExercitoDeElfos();
+        
+        Estrategias estrategia = new NoturnosPorUltimo();
+        ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
+        assertTrue(elfosQueAtacaram == null);
+    }
+    
 }
