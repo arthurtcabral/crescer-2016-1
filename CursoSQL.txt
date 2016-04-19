@@ -1,0 +1,90 @@
+insert into Associado 
+      (IDAssociado, 
+       Nome, 
+       DataNascimento, 
+       Sexo,
+	   CPF)
+  values  
+      (3, 
+       'Julio de Castilhos', 
+       convert(datetime, '14/12/1947', 103), 
+       'M', '21234567895');
+
+insert into Associado 
+      (IDAssociado, 
+       Nome, 
+       DataNascimento, 
+       Sexo,
+	   CPF)
+  values  
+      (4, 
+       'Antonio Augusto Borges de Medeiros', 
+       convert(datetime, '19/03/1942', 103), 
+       'M', '81234567891');
+
+insert into Associado 
+      (IDAssociado, 
+       Nome, 
+       DataNascimento, 
+       Sexo,
+	   CPF)
+  values  
+      (5, 
+       'Osvaldo Aranha', 
+       convert(datetime, '08/02/1958', 103), 
+       'M', '01234567893');
+
+SELECT * INTO CidadeAux From Cidade;
+
+Truncate table CidadeAux;
+
+INSERT INTO CidadeAux (IDCidade, Nome, UF)
+SELECT * FROM Cidade;
+
+SELECT * FROM CidadeAux;
+
+CREATE TABLE Produto (
+idProduto		INT			NOT NULL	IDENTITY	UNIQUE,
+nomeCurto		VARCHAR(45)	NOT NULL,
+nomeDescritivo	VARCHAR(45)	NOT NULL,
+dataCriacao		DATE		NOT NULL,
+localEstoque	VARCHAR(45)	NOT NULL,
+quantidade		INT			NOT NULL,
+preco			FLOAT		NOT NULL,
+constraint PK_Produto primary key (idProduto)
+);
+
+
+INSERT INTO Produto
+(
+nomeCurto,
+nomeDescritivo,
+dataCriacao,
+localEstoque,
+quantidade,
+preco) 
+VALUES (
+'Bolacha Maria',
+'Bolacha para lanche',
+convert(datetime, '08/02/2015', 103),
+'Armazém Estrela',
+10,
+4.99
+);
+
+INSERT INTO Produto
+(
+nomeCurto,
+nomeDescritivo,
+dataCriacao,
+localEstoque,
+quantidade,
+preco) 
+VALUES (
+'Miojo Nissim',
+'Preparo em 3 minutos',
+convert(datetime, '22/03/2016', 103),
+'Armazém Estrela',
+45,
+5.30
+);
