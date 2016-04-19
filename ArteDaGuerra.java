@@ -19,32 +19,33 @@ public class ArteDaGuerra implements Estrategias{
         
         // Retorno do método
         ArrayList<Elfo> elfosQueAtacam = new ArrayList<Elfo>();
-        elfosQueAtacam.add(new Elfo("Evitar NULL"));
+        //elfosQueAtacam.add(new Elfo("Evitar NULL"));
        
         // Atacar dwarves
         for(int i = 0; i < elfosVivos.size(); i++){
+            int dwarvesAtacadosPeloMesmoElfo = 0;
             for(int j = 0; j < listaDwarves.size(); j++){
             if(elfosVivos.get(i) instanceof ElfosNoturnos){
                 if(contadorAtaquesElfosNoturnos != elfosNoturnosQueAtacam){
                 elfosVivos.get(i).atirarFlecha(listaDwarves.get(j));
                 contadorAtaquesElfosNoturnos++;
-                    if(!(elfosQueAtacam.get(i).equals(elfosVivos.get(i)))){
-                        elfosQueAtacam.set(i, elfosVivos.get(i));
-                        elfosQueAtacam.add(new Elfo("Evitar NULL"));
+                    if(dwarvesAtacadosPeloMesmoElfo == 0){
+                        elfosQueAtacam.add(elfosVivos.get(i));
+                        dwarvesAtacadosPeloMesmoElfo++;
                     }
             }else{
             continue;
             }  
             }else if(!(elfosVivos.get(i) instanceof ElfosNoturnos)){
                 elfosVivos.get(i).atirarFlecha(listaDwarves.get(j));
-                if(!(elfosQueAtacam.get(i).equals(elfosVivos.get(i)))){
-                        elfosQueAtacam.set(i, elfosVivos.get(i));
-                        elfosQueAtacam.add(new Elfo("Evitar NULL"));
+                if(dwarvesAtacadosPeloMesmoElfo == 0){
+                        elfosQueAtacam.add(elfosVivos.get(i));
+                        dwarvesAtacadosPeloMesmoElfo++;
                 }
             }
         }
     }
-        elfosQueAtacam.remove(elfosQueAtacam.get(elfosQueAtacam.size() - 1));
+        //elfosQueAtacam.remove(elfosQueAtacam.get(elfosQueAtacam.size() - 1));
         return elfosQueAtacam;
     }
        
