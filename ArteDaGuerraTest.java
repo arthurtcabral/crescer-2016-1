@@ -12,7 +12,7 @@ public class ArteDaGuerraTest {
     }
     
     @Test
-    public void listarElfosQueAtacaram(){
+    public void checarElfosQueAtacaram(){
         ArrayList<Dwarf> listaDwarves = new ArrayList<Dwarf>();
         listaDwarves.add(new Dwarf("Hach"));
         listaDwarves.add(new Dwarf("Hech"));
@@ -23,8 +23,20 @@ public class ArteDaGuerraTest {
         exercito.alistarElfoNoExercito(new ElfosNoturnos("Elfo Noturno 3"));
         
         Estrategias estrategia = new ArteDaGuerra();
-        ArrayList<Elfo> elfosQueAtacaram = estrategia.estrategia(listaDwarves, exercito);
+        ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
         assertTrue(elfosQueAtacaram.size() == 2);
+        
+        int contadorElfosNoturnos = 0;
+        int contadorElfosVerdes = 0;
+        for(int i = 0; i < elfosQueAtacaram.size(); i++){
+            if(elfosQueAtacaram.get(i) instanceof ElfosNoturnos){
+                contadorElfosNoturnos++;
+            }else{
+            contadorElfosVerdes++;
+            }
+        }
+        assertTrue(contadorElfosNoturnos == 1);
+        assertTrue(contadorElfosVerdes == 1);
     }
     
     @Test
@@ -40,7 +52,7 @@ public class ArteDaGuerraTest {
         
         
         Estrategias estrategia = new ArteDaGuerra();
-        ArrayList<Elfo> elfosQueAtacaram = estrategia.estrategia(listaDwarves, exercito);
+        ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
         assertTrue(elfosQueAtacaram.size() == 4);
     }
     
@@ -57,7 +69,7 @@ public class ArteDaGuerraTest {
         
         
         Estrategias estrategia = new ArteDaGuerra();
-        ArrayList<Elfo> elfosQueAtacaram = estrategia.estrategia(listaDwarves, exercito);
+        ArrayList<Elfo> elfosQueAtacaram = estrategia.atacar(listaDwarves, exercito);
         assertTrue(elfosQueAtacaram.size() == 1);
     }
 }
