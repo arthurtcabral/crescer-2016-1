@@ -1,0 +1,16 @@
+SELECT NomeEmpregado			  	   --Exercício 1
+FROM Empregado
+ORDER BY DataAdmissao ASC;
+
+SELECT NomeEmpregado, Salario	  		   --Exercício 2
+FROM Empregado
+WHERE Cargo = 'Atendente'
+OR Salario < 18.500;
+
+SELECT IDCidade					   --Exercício 3	
+FROM Cidade
+WHERE Nome = 'Uberlândia';
+
+SELECT IDCidade, Nome as Municipio 	 	   --Exercício 4
+FROM Cidade
+WHERE UF = 'RS';
