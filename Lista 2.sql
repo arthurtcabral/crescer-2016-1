@@ -63,7 +63,7 @@ DATEDIFF(MONTH, DataAdmissao, GETDATE()) as MesesDeTrabalho
 FROM Empregado
 Where DataAdmissao BETWEEN ('1980-05-01') AND ('1982-01-20');
 
-SELECT TOP 1 Cargo, COUNT(1) as CargoComMaisEmpregados											 						 --Exercício 4
+SELECT TOP 1 Cargo, COUNT(1) as CargoComMaisEmpregados					 						 --Exercício 4
 FROM Empregado
 GROUP BY Cargo
 ORDER BY CargoComMaisEmpregados DESC;
@@ -92,30 +92,30 @@ HAVING Count(Nome) > 1;
 
 SELECT * FROM Associado;
 
-SELECT TOP 1																						  --Exercício 9
+SELECT TOP 1																					  --Exercício 9
 (IDAssociado + 1) as ProximoIDAssociado
 FROM Associado
 ORDER BY IDAssociado DESC;
 
-INSERT INTO CidadeAux (IDCidade, Nome, UF)														 				 --Exercício 10
+INSERT INTO CidadeAux (IDCidade, Nome, UF)										 				 --Exercício 10
 SELECT min(IDCidade), Nome, UF FROM Cidade GROUP BY Nome, UF;
 
 SELECT * FROM Cidade;
 
-UPDATE Cidade																					 	 --Exercício 11
+UPDATE Cidade																				 	 --Exercício 11
 SET Nome = '*' + Nome
 WHERE Nome in
 (SELECT Nome FROM Cidade GROUP BY Nome
 HAVING COUNT(Nome) > 1);
 
-SELECT Nome,																						 --Exercício 12
+SELECT Nome,																					 --Exercício 12
 CASE WHEN Sexo = 'F' THEN 'Feminino' 
 WHEN Sexo = 'M' THEN 'Masculino'
 End as Sexo from Associado;
 
 SELECT * FROM Empregado;
 
-SELECT NomeEmpregado, Salario,																				 --Exercício 13
+SELECT NomeEmpregado, Salario,																	 --Exercício 13
 CASE WHEN Salario < 1164.00 THEN '0%'
 WHEN Salario BETWEEN (1164.00) AND (2326.00) THEN '15%'
 WHEN Salario > 2326.00 THEN '27.5%'
@@ -123,7 +123,7 @@ END as 'DescontoImpostoDeRenda' FROM Empregado;
 
 SELECT * FROM Cidade;
 
-DELETE FROM Cidade																					 --Exercício 14
+DELETE FROM Cidade																				 --Exercício 14
 WHERE Nome IN	
   (SELECT Nome FROM Cidade
   GROUP BY Nome
@@ -133,5 +133,79 @@ WHERE Nome IN
    GROUP BY Nome
    HAVING COUNT(Nome)>1)
 
-ALTER TABLE Cidade																					 --Exercício 15											
-ADD UNIQUE (Nome);
+ALTER TABLE Cidade																			 --Exercício 15											
+ADD UNIQUE (Nome, UF); --(Nome, UF)
+
+
+SELECT IDAssociado,
+		Nome,
+		IDCidade
+FROM	Associado
+
+Select 
+a.Nome as NomeAssociado, 
+c.Nome as NomeCidade 
+From Associado a 
+INNER JOIN Cidade c 
+ON c.IDCidade = a.IDCidade
+
+Select								--INNER
+a.Nome as NomeAssociado, 
+c.Nome as NomeCidade,
+c.UF as NomeEstado 
+From Associado a 
+INNER JOIN Cidade c 
+ON c.IDCidade = a.IDCidade;
+
+Select								--LEFT
+a.Nome as NomeAssociado, 
+c.Nome as NomeCidade,
+c.UF as NomeEstado 
+From Associado a 
+LEFT JOIN Cidade c 
+ON c.IDCidade = a.IDCidade;
+	
+Select								--RIGHT
+a.Nome as NomeAssociado, 
+c.Nome as NomeCidade,
+c.UF as NomeEstado 
+From Associado a 
+RIGHT JOIN Cidade c 
+ON c.IDCidade = a.IDCidade;
+
+Select								--SELF
+e.NomeEmpregado as NomeEmpregado, 
+g.NomeEmpregado as NomeGerente 
+From Empregado e 
+INNER JOIN Empregado g ON e.IDGerente = g.IDEmpregado
+
+Select a.IDAssociado, a.Nome,		--CROSS 
+a.IDCidade IDCidadeEmp, 
+c.IDCidade, c.Nome 
+From Associado a, Cidade c;
+
+Select IDCidade, 
+Nome 
+From Cidade e 
+Where IDCidade --Mesmo valor (não pode colocar, no select abaixo, IDCidade e Nome, por exemplo)
+IN (Select IDCidade From Associado);
+
+Select IDCidade, 
+Nome 
+From Cidade e 
+Where EXISTS 
+(Select 1 
+From  Associado a 
+Where  a.IDCidade = e.IDCidade);
+
+CREATE VIEW ConsultaCargo as
+SELECT Cargo,
+		COUNT(1) total_empregado
+		FROM Empregado
+		GROUP BY cargo 
+
+SELECT Nome					--UNIR DADOS DE TABELAS DIFERENTES
+FROM Associado
+UNION ALL					--UNION ELIMINA RESULTADOS DUPLICADOS ENTRE DUAS CONSULTAS, UNION ALL NÃO
+SELECT NomeEmpregado
+FROM Empregado;
