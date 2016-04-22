@@ -1,0 +1,24 @@
+SELECT														--Exercício 1
+e.NomeEmpregado		as		NomeEmpregado,
+d.NomeDepartamento	as		NomeDepartamento
+FROM Empregado e
+INNER JOIN Departamento d
+ON d.IDDepartamento = e.IDDepartamento;
+
+SELECT														--Exercício 2
+a.Nome	as	NomeAssociado,
+c.Nome  as	Nome
+FROM Associado a
+LEFT JOIN Cidade c
+ON c.IDCidade = a.IDCidade;
+
+SELECT														--Exercício 3
+c.UF,
+COUNT(c.Nome) as Total_Cidades
+FROM Cidade c
+INNER JOIN Associado a
+ON a.IDCidade <> c.IDCidade
+GROUP BY c.UF;
+
+SELECT
+a.NomeAssociado,
