@@ -1,0 +1,26 @@
+header{
+  text-align: center;
+  font-family: comic sans ms;
+}
+
+body{
+  background-image: url("http://wallpaper.ultradownloads.com.br/173799_Papel-de-Parede-Pokebola-Pokemon--173799_1600x1200.jpg");
+  background-repeat: no-repeat;
+
+}
+
+h1 span:nth-child(1){
+  display: none;
+}
+
+.personagens h2:last-of-type{
+  display: none;
+}
+
+.personagens ul:last-of-type{
+  display: none;
+}
+
+.digiescolhidos{
+  display: none;
+}
