@@ -1,0 +1,15 @@
+.collapse.navbar-collapse#bs-example-navbar-collapse-1{
+  position: absolute;
+  left:1200px;
+}
+
+#imagem-usuario{
+  margin-left: 35px;
+  border: grey solid 3px;
+  border-radius: 50px;
+}
+
+.informacoes-usuario{
+  text-align: center;
+  margin: 5px 5px;
+}
