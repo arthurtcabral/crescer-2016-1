@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+ <header>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+   <title>Projeto Crescer</title>
+   <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cadastro-usuario.css">
+   <!--[if lt IE 9]>
+     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+   <![endif]-->
+   <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Projeto Crescer</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="administrativo.html">Administrativo</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="cadastro-usuario.html">Cadastro</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+              <img id="imagem-usuario" src="https://yt3.ggpht.com/-lf1EPj4qRxI/AAAAAAAAAAI/AAAAAAAAAAA/Bje7xUMLSms/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="Imagem indisponível">
+            <p class="informacoes-usuario">Arthur Tassinari Cabral</p>
+            <p class="informacoes-usuario">arthur.cabral@cwi.com.br</p>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+ </header>
+
+ <body id="cor-fundo">
+   <div class="cor-div" id="div-superior">
+     <h3 id="cadastro-texto">Dashboard</h3>
+     <br>
+     <h4 id="usuario-texto">Administrativo</h4>
+
+     <ol class="breadcrumb cor-div" id="posicao-breadcrumbs">
+       <li><a id="cor-breadcrumbs" href="#">Home</a></li>
+       <li><a id="cor-breadcrumbs">Dashboard</a></li>
+       <li class="active">Administrativo</li>
+     </ol>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="caixa-superior">
+        <div class="icone-caixa-superior" id="primeiro-icone">
+        <i class="fa fa-usd" id="simbolo-primeiro-icone" aria-hidden="true"></i>
+        </div>
+        <div class="text-right">
+          <h3 class="text-dark">
+            <strong>31,570</strong>
+            </h3>
+            <h4 class="text-dark">Total Lucro</h4>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-3">
+    <div class="caixa-superior">
+      <div class="icone-caixa-superior" id="segundo-icone">
+        <i class="fa fa-shopping-cart" id="simbolo-segundo-icone" aria-hidden="true"></i>
+      </div>
+      <div class="text-right">
+        <h3 class="text-dark">
+          <strong>280</strong>
+          </h3>
+          <h4 class="text-dark">Pedidos</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="caixa-superior">
+      <div class="icone-caixa-superior" id="terceiro-icone">
+        <i class="fa fa-bar-chart" id="simbolo-terceiro-icone" aria-hidden="true"></i>
+      </div>
+      <div class="text-right">
+        <h3 class="text-dark">
+          <strong>0.16%</strong>
+          </h3>
+          <h4 class="text-dark">Crescimento</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="caixa-superior">
+      <div class="icone-caixa-superior" id="quarto-icone">
+        <i class="fa fa-eye" id="simbolo-quarto-icone" aria-hidden="true"></i>
+      </div>
+      <div class="text-right">
+        <h3 class="text-dark">
+          <strong>64.570</strong>
+          </h3>
+          <h4 class="text-dark">Visitantes Hoje</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+<div class="grafico">
+<h3 class="titulo-grafico">ACESSOS POR DISPOSITIVO</h3>
+<div>
+  <ul class="lista-grafico">
+    <li>
+      <h5><i class="fa fa-circle cor-desktop" aria-hidden="true"><label class="cor-cinza">Desktops</label></i></h5>
+      <h5><i class="fa fa-circle cor-tablets" aria-hidden="true"><label class="cor-cinza">Tablets</label></i></h5>
+      <h5><i class="fa fa-circle cor-mobiles" aria-hidden="true"><label class="cor-cinza">Mobiles</label></i></h5>
+    </li>
+  </ul>
+  <img src="http://imageshack.com/a/img922/8434/NXJVvS.jpg" id="imagem-grafico" alt="Imagem indisponível">
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="grafico">
+  <h3 class="titulo-grafico">NAVEGADORES MAIS UTILIZADOS</h3>
+  <ul class="lista-grafico">
+    <li>
+      <h5><i class="fa fa-chrome" aria-hidden="true"><label class="cor-cinza">Chrome</label></i></h5>
+      <h5><i class="fa fa-internet-explorer" aria-hidden="true"><label class="cor-cinza">IE</label></i></h5>
+      <h5><i class="fa fa-firefox" aria-hidden="true"><label class="cor-cinza">Firefox</label></i></h5>
+      <h5><i class="fa fa-safari" aria-hidden="true"><label class="cor-cinza">Safari</label></i></h5>
+      <h5><i class="fa fa-opera" aria-hidden="true"><label class="cor-cinza">Opera</label></i></h5>
+    </li>
+  </ul>
+  <img src="http://www.rgbcomunicacao.com.br/imagens/uploads/kcfinder/image/Web%20Brower%20Marketing%20Share.jpg" id="imagem-grafico-2" alt="Imagem indisponível">
+</div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="grafico">
+      <h3 class="titulo-grafico">GOOGLE GLASSES</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/wTxFxk2dwaQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="grafico">
+    <h3 class="titulo-grafico">FALE CONOSCO</h3>
+    <input type="text" class="form-control margin-bottom-fale" id="nome" placeholder="Nome">
+    <input type="email" class="form-control margin-bottom-fale" id="nome" placeholder="E-Mail">
+    <textarea name="textarea" rows="3" cols="76" class="margin-bottom-fale" placeholder="Mensagem"></textarea>
+    <input class="btn btn-primary float-right" type="submit" value="Enviar">
+    </div>
+</div>
+</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <script>window.jQuery || document.write('<script src="https://getbootstrap.com/assets/js/vendor/jquery.min.js"><\/script>')</script>
+     <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+     <script src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+   </body>
+  </html>

@@ -3,13 +3,284 @@
   left:1200px;
 }
 
+#cadastro-de-usuario{
+  color: grey;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 40px;
+
+}
+
+#cor-breadcrumbs{
+  color: #696969;
+}
+
+#posicao-breadcrumbs{
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+
+#cadastro-texto{
+  position: absolute;
+  margin-left: 20px;
+  top: 70px;
+  font: arial;
+}
+
+#usuario-texto{
+  position: absolute;
+  margin-left: 20px;
+  top: 120px;
+  font: arial;
+  color: #A9A9A9;
+}
+
 #imagem-usuario{
   margin-left: 35px;
   border: grey solid 3px;
   border-radius: 50px;
 }
 
+#cor-fundo{
+  background-color: #DCDCDC;
+}
+
+#div-superior{
+  margin: 10px 0px;
+  width: 100%;
+  height: 105px;
+
+}
+
+#div-principal{
+  margin: 20px;
+  border-radius: 10px;
+  width: auto;
+  height: 450px;
+  padding: 10px 10px 0px 15px;
+  overflow: auto;
+}
+
+#margin-nome{
+  margin-right: 20px;
+}
+
+#correcao-ultimo-box{
+background-color: #DCDCDC;
+}
+
+#correcao-ultimo-dropdown{
+  position: relative;
+  background-color: #DCDCDC;
+  width: 200px;
+  height: 30px;
+  margin-top: -5px;
+}
+
+#correcao-texto-ultimo-dropdown{
+  display: block;
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+#correcao-textarea{
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#imagem-grafico{
+  width: 500px;
+  height: 250px;
+  margin: 20px;
+}
+
+#imagem-grafico-2{
+  width: 550px;
+  height: 250px;
+  margin: 20px;
+}
+
+
+#primeiro-icone{
+  background-color: rgba(52, 211, 235, 0.2);
+  border: 1px solid #34d3eb;
+}
+
+#simbolo-primeiro-icone{
+    font-size: 32px;
+    line-height: 80px;
+    color: #34d3eb;
+}
+
+#segundo-icone{
+  background-color: rgba(251, 109, 157, 0.2);
+  border: 1px solid #fb6d9d;
+}
+
+#simbolo-segundo-icone{
+  font-size: 32px;
+  line-height: 80px;
+  color: #fb6d9d;
+}
+
+#terceiro-icone{
+  background-color: rgba(114, 102, 186, 0.2);
+  border: 1px solid #7266ba;
+}
+
+#simbolo-terceiro-icone{
+  font-size: 32px;
+  line-height: 80px;
+  color: #7266ba;
+}
+
+#quarto-icone{
+  background-color: rgba(129, 200, 104, 0.2);
+  border: 1px solid #81c868;
+}
+
+#simbolo-quarto-icone{
+  font-size: 32px;
+  line-height: 80px;
+  color: #81c868;
+}
+
+.caixa-superior {
+    width: 252px;
+    height: 124px;
+    padding: 20px;
+    border: 1px solid rgba(54, 64, 74, 0.05);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    background-color: #ffffff;
+}
+
+.icone-caixa-superior{
+  position: absolute;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-clip: padding-box;
+}
+
+.texto-cinza{
+  color: grey;
+}
+
+.float-right{
+  float: right;
+}
+
+.margin-bottom-fale{
+  margin-bottom: 5px;
+}
+
+.dropdown-helper{
+  margin-right: 155px;
+  margin-bottom: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: #DCDCDC;
+}
+
+.block-textos{
+  display: block;
+  width: 100%;
+}
+
+.boxes-text{
+  margin-right: 75px;
+  margin-bottom: 0px;
+  background-color: #DCDCDC;
+}
+
+.cor-div{
+  background-color: white;
+}
+
 .informacoes-usuario{
   text-align: center;
   margin: 5px 5px;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-dark{
+  color: #797979;
+}
+
+.grafico{
+  width: 598px;
+  height: 412px;
+  padding: 20px;
+  border: 1px solid rgba(54, 64, 74, 0.05);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-clip: padding-box;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.titulo-grafico{
+  color: grey;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 16px;
+  margin-bottom: 8px;
+}
+
+.lista-grafico{
+  padding-left: 0;
+  margin-left: -5px;
+  text-align: center;
+}
+
+.lista-grafico li {
+display: inline;
+}
+
+.lista-grafico li h5{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.cor-cinza{
+  color: grey;
+}
+
+.cor-desktop{
+  color: #5fbeaa;
+}
+
+.cor-tablets{
+  color: #5d9cec;
+}
+
+.cor-mobiles{
+  color: #ebeff2;
+}
+
+@media screen and (min-width: 10px) and (max-width: 600px) {
+    body > .cor-div#div-superior > .breadcrumb.cor-div#posicao-breadcrumbs {
+      display: none;
+    }
 }
