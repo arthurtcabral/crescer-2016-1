@@ -16,25 +16,17 @@ for (var i = 0; i < arrayStrings.length; i++) {
 return maiorPalavra;
 }
 
-function forImprime(arrayStrings){                //Exercício 3
-  for (var i = 0; i < arrayStrings.length; i++) {
-    console.log('Olá querido instrutor: ' + arrayStrings[i]);
-  }
-}
-
-function imprime(arrayStrings, fn){               //Exercício 3
-  if (typeof fn === 'function') {
-  fn(forImprime(arrayStrings));
-} else {
-  console.log(typeof fn + ' is not a function');
-}
-}
+function imprime(arrayStrings, fn) {
+  arrayStrings.forEach(function(instrutor) { //Para cada instrutor do array
+    if (typeof fn === 'function') fn(instrutor);  //Se fn for uma função, ele a usa. O ideal é que a função seja de impressão na tela.
+  });
+};
 
 var somaDiferentona = function(numero1){          //Exercício 4
    return function(numero2){
      return numero1 + numero2;
-   }
-}
+   };
+};
 
 var fiboSum = function(n){                        //Exercício 5
   var arrayFibo = [n];
@@ -57,14 +49,14 @@ console.log(soma);
 }else{
   console.log('Digite número maior que 0.');
 }
-}
+};
 
 function queroCafe(mascada, precos){              //Exercício 6
   precos.sort();
   var precosOrdenados = " ";
   for (var i = 0; i < precos.length; i++) {
     if(precos[i] <= mascada){
-      precosOrdenados = precosOrdenados + precos[i] + " , "
+      precosOrdenados = precosOrdenados + precos[i] + " , ";
     }
   }
   precosOrdenados = precosOrdenados.substring(0, (precosOrdenados.length - 2));
@@ -78,7 +70,7 @@ function contarPorTipo(obj, tipoObj){               // Exercício 7
         if(tipoObj === null){
         cont++;
       }
-      }else if(obj[i].constructor === tipoObj){
+    }else if(obj[i].constructor === tipoObj){
         cont++;
       }
     }
