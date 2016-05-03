@@ -74,7 +74,11 @@ function queroCafe(mascada, precos){              //Exercício 6
 function contarPorTipo(obj, tipoObj){               // Exercício 7
     var cont = 0;
     for(var i in obj){
-      if(typeof obj[i] === tipoObj){
+      if(obj[i] === null){
+        if(tipoObj === null){
+        cont++;
+      }
+      }else if(obj[i].constructor === tipoObj){
         cont++;
       }
     }
