@@ -7,9 +7,9 @@ function daisyGame(numero){         // Exercício 1
 }
 
 function maiorTexto(arrayStrings){             // Exercício 2
-var maiorPalavra = " ";
+var maiorPalavra = "";
 for (var i = 0; i < arrayStrings.length; i++) {
-  if(arrayStrings[i].length >= maiorPalavra.length){
+  if(arrayStrings[i].length > maiorPalavra.length){
     maiorPalavra = arrayStrings[i];
   }
 }
@@ -87,10 +87,12 @@ return cont;
 
 var gohan = 'gohan', goku = 'Goku';
 function revelarSaiyaman() {
-  console.log(gohan);               //A função desconhece a variável gohan, logo aparece undefined
-  goku = 'Son Goku';                // goku é renomeado
-  var gohan = 'Son ' + gohan;       // gohan recebe 'Son', ficando 'Son undefined'
+  // var gohan;
+  console.log(gohan);
+  goku = 'Son Goku'; //Como goku não vou redeclarado, foi reescrito.
+  var gohan = 'Son ' + gohan;    // o JS puxa todas as declarações de variável para o início, ficando var gohan; Ele puxa apenas a declaração.
+  // variavel local gohan vira 'Son + undefined'
   return gohan;
 }
-console.log(revelarSaiyaman());     // printa-se 'Son undefined'
-console.log(goku);                  // printa-se o nome renomeado ('Son goku')
+console.log(revelarSaiyaman()); // imprime a variavel local gohan
+console.log(goku);              // imprime o novo valor da variavel goku
