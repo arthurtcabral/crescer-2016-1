@@ -101,3 +101,54 @@ function obterAlturaMediana(){                //Exercício 5
     }
     return Math.round(mediana * 100) / 100;
 }
+
+function auxiliarPesoMedio(arrayDosCavaleiros){       //Exercício 6a e 6b
+  var somaPesos = 0;
+  var cont = 0;
+  for (var i = 0; i < arrayDosCavaleiros.length; i++) {
+    if(arrayDosCavaleiros[i].hasOwnProperty('pesoLb')){
+        somaPesos += arrayDosCavaleiros[i].pesoLb;
+        cont++;
+    }
+  }
+  var somaPesosEmKg = somaPesos / 2.2046;
+  var media = somaPesosEmKg / cont;
+  return Math.round(media * 100) / 100;
+}
+
+function obterPesoMedio(){                      //Exercício 6a
+    return auxiliarPesoMedio(goldSaints);
+}
+
+function obterPesoMedioDoadores(){             //Exercício 6b
+    return auxiliarPesoMedio(obterDoadores());
+}
+
+function auxiliarIMC(cavaleiro){                //Auxiliar para os exercícios 7 e 8
+  var pesoEmKg = cavaleiro.pesoLb / 2.2046;
+  var alturaEmM = cavaleiro.alturaCm / 100;
+  return Math.round(pesoEmKg / (Math.pow(alturaEmM, 2))* 100)/100;
+}
+
+function obterIMC(){                            //Exercício 7
+  var imc = [];
+  for (var i = 0; i < goldSaints.length; i++) {
+    if(goldSaints[i].hasOwnProperty('pesoLb')){
+      imc.push(auxiliarIMC(goldSaints[i]));
+    }
+  }
+  return imc;
+}
+
+function obterSobrepeso(){                      //Exercício 8
+    var cavaleirosComSobrepeso = [];
+
+    for (var i = 0; i < goldSaints.length; i++) {
+      if(goldSaints[i].hasOwnProperty('pesoLb')){
+        if(auxiliarIMC(goldSaints[i]) >= 25){
+          cavaleirosComSobrepeso.push(goldSaints[i]);
+        }
+    }
+  }
+  return cavaleirosComSobrepeso;
+}
