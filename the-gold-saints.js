@@ -106,7 +106,7 @@ function auxiliarPesoMedio(arrayDosCavaleiros){       //Exercício 6a e 6b
   var somaPesos = 0;
   var cont = 0;
   for (var i = 0; i < arrayDosCavaleiros.length; i++) {
-    if(arrayDosCavaleiros[i].hasOwnProperty('pesoLb')){
+    if(verificaSeTemPesoRegistrado(arrayDosCavaleiros[i])){
         somaPesos += arrayDosCavaleiros[i].pesoLb;
         cont++;
     }
