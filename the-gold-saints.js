@@ -130,10 +130,15 @@ function auxiliarIMC(cavaleiro){                //Auxiliar para os exercícios 7
   return Math.round(pesoEmKg / (Math.pow(alturaEmM, 2))* 100)/100;
 }
 
+function verificaSeTemPesoRegistrado(cavaleiro){
+    return cavaleiro.hasOwnProperty('pesoLb');
+
+}
+
 function obterIMC(){                            //Exercício 7
   var imc = [];
   for (var i = 0; i < goldSaints.length; i++) {
-    if(goldSaints[i].hasOwnProperty('pesoLb')){
+    if(verificaSeTemPesoRegistrado(goldSaints[i])){
       imc.push(auxiliarIMC(goldSaints[i]));
     }
   }
@@ -144,7 +149,7 @@ function obterSobrepeso(){                      //Exercício 8
     var cavaleirosComSobrepeso = [];
 
     for (var i = 0; i < goldSaints.length; i++) {
-      if(goldSaints[i].hasOwnProperty('pesoLb')){
+      if(verificaSeTemPesoRegistrado(goldSaints[i])){
         if(auxiliarIMC(goldSaints[i]) >= 25){
           cavaleirosComSobrepeso.push(goldSaints[i]);
         }
