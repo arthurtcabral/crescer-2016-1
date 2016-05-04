@@ -131,7 +131,7 @@ function auxiliarIMC(cavaleiro){                //Auxiliar para os exercícios 7
 }
 
 function verificaSeTemPesoRegistrado(cavaleiro){
-    return cavaleiro.hasOwnProperty('pesoLb');
+    return cavaleiro.hasOwnProperty('pesoLb') && typeof cavaleiro.pesoLb !== 'undefined';
 
 }
 
