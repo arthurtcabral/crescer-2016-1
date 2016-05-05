@@ -39,10 +39,8 @@ $(function() {
       };
 
       var converterData = function(data){
-        var dia = data.substring(8, 10);
-        var mes = data.substring(5, 7);
-        var ano = data.substring(0, 4);
-        return dia + "-" + mes + "-" + ano;
+        var objDate = new Date(data);
+        return objDate.getDate() + '/' + objDate.getMonth() + '/' + objDate.getFullYear();
       }
 
       for (var i = 0; i < goldSaintsAdaptados.length; i++) {
