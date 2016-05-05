@@ -28,7 +28,7 @@
         border-radius: 2px;
         background-color: transparent;
         position: relative;
-        top: -100px;
+        top: -300px;
         left: 500px;
         right: 500px;
         width: 400px;
@@ -40,11 +40,50 @@
     <script type="text/javascript" src="exercicios-jquery.js"></script>
   </head>
   <body>
-    <div id="headers">
-      <h1>Olá jQuery</h1>
-      <h1>Hello jQuery</h1>
-    </div>
-    <button type="button" name="btnCarregaCavaleiros">Carregar!</button>
+    <form id="frmNovoCavaleiro" method="POST">
+      <label for="txtNomeCavaleiro">Nome</label>
+      <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu">
+      <label for="slTipoSanguineo">Tipo Sanguíneo</label>
+      <select id="slTipoSanguineo" name="tipoSanguineo">
+        <option>Selecione</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+      </select>
+      <label for="txtUrlImagem">URL Imagem</label>
+      <input id="txtUrlImagem" type="text" name="urlImagem" placeholder="Ex: bit.ly/shiryu.png">
+      <label for="dateDataNascimento"> Data de Nascimento</label>
+      <input id="dateDataNascimento" type="text" name="dataNascimento" placeholder="dd/mm/yyyy">
+      <label for="numAlturaCm">Altura</label>
+      <input id="numAlturaCm" type="number" name="alturaCm" min="0.01" step="0.01">
+      <label for="numPesoLb">Peso</label>
+      <input id="numPesoLb" type="number" name="pesoLb" min="0.01" step="0.01">
+      <label for="slSigno">Signo</label>
+      <select id="slSigno" name="signo">
+        <option>Selecione</option>
+        <option value="capricornio">Capricórnio</option>
+        <option value="aquario">Aquário</option>
+        <option value="peixes">Peixes</option>
+        <option value="aries">Áries</option>
+        <option value="touro">Touro</option>
+        <option value="gemeos">Gêmeos</option>
+        <option value="cancer">Câncer</option>
+        <option value="leao">Leão</option>
+        <option value="virgem">Virgem</option>
+        <option value="libra">Libra</option>
+        <option value="escorpiao">Escorpião</option>
+        <option value="sagitario">Sagitário</option>
+      </select>
+      <label for="txtLocalNascimento">Local de Nascimento</label>
+      <input id="txtLocalNascimento" type="text" name="localNascimento" placeholder="Ex: Papua Nova Guiné">
+      <label for="txtLocalTreinamento">Local de Treinamento</label>
+      <input id="txtLocalTreinamento" type="text" name="localTreinamento" placeholder="Ex: Suriname">
+      <button id="btAddGolpe" type="button" name="addGolpe">Adicionar Golpe</button>
+      <!--<input type="submit" value="Cadastrar!">-->
+      <button type="submit">Cadastrar!</button>
+    </form>
+    <div id="headers"></div>
     <ul id="cavaleiros"></ul>
     <div id="div-mostra"></div>
   </body>
