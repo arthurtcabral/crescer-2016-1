@@ -18,6 +18,14 @@ $('button[name=addGolpe]').click(function(){
       $('button[name=addGolpe]').after($('<input id="add-golpe">'));
   });
 
+//<input type="checkbox" name="vehicle" value="Bike">I have a bike
+
+$('button[name=addImagem]').click(function(){
+        var $url =  $('<input id="url-imagem" type="text" placeholder="URL">');
+        var $check =  $('<input id="e-thb" type="checkbox">');
+        $('button[name=addImagem]').after($url, $check);
+  });
+
   $frmNovoCavaleiro.submit(function(e) {
     e.preventDefault();
     console.log($(this));
@@ -35,7 +43,10 @@ $('button[name=addGolpe]').click(function(){
     $("#add-golpe").each(function(){
       golpes.push($(this).val())
     });
-
+    var imagens = [];
+    $('#url-imagem').each(function(){
+      imagens.push({url: $(this).val(), isThumb: true});
+    });
     $('#cavaleiros')
       .append(
         $('<li>').append(
@@ -45,9 +56,6 @@ $('button[name=addGolpe]').click(function(){
 
     goldSaintsAdaptados.push({
       nome: nome,
-      imagens: [
-        { url: urlImagem, isThumb: true }
-      ],
       tipoSanguineo: tipoSanguineo,
       dataNascimento: dataNascimento,
       alturaCm: alturaCm,
@@ -56,7 +64,8 @@ $('button[name=addGolpe]').click(function(){
       localNascimento: localNascimento,
       localTreinamento: localTreinamento,
       id: (goldSaintsAdaptados[goldSaintsAdaptados.length-1].id + 1),
-      golpes : golpes
+      golpes : golpes,
+      imagens : imagens
     });
 
     localStorage['cavaleiros'] = JSON.stringify(goldSaintsAdaptados);
