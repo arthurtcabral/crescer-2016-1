@@ -35,6 +35,9 @@
         height: 200px;
         z-index: 1;
       }
+      .botao-remover{
+          position: absolute;
+      }
     </style>
     <script type="text/javascript" src="lib/jquery-2.2.3.min.js"></script>
     <script type="text/javascript" src="exercicios-jquery.js"></script>
@@ -80,8 +83,9 @@
       <label for="txtLocalTreinamento">Local de Treinamento</label>
       <input id="txtLocalTreinamento" type="text" name="localTreinamento" placeholder="Ex: Suriname">
       <button id="btAddGolpe" type="button" name="addGolpe">Adicionar Golpe</button>
+      <button id="btAddImagem" type="button" name="addImagem">Adicionar Imagem</button>
       <!--<input type="submit" value="Cadastrar!">-->
-      <button type="submit">Cadastrar!</button>
+      <button id="submit" type="submit">Cadastrar!</button>
     </form>
     <div id="headers"></div>
     <ul id="cavaleiros"></ul>

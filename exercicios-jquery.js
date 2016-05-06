@@ -13,9 +13,10 @@ $(function() {
 
   var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
 
-  $('button[name=addGolpe]').click(function(){
-    $frmNovoCavaleiro.append($('<input>')).attr($('type', 'text').attr('id', //numero));
-});
+$('button[name=addGolpe]').click(function(){
+      $('<input id="add-golpe">').attr('placeholder','Golpe');
+      $('button[name=addGolpe]').after($('<input id="add-golpe">'));
+  });
 
   $frmNovoCavaleiro.submit(function(e) {
     e.preventDefault();
@@ -30,6 +31,11 @@ $(function() {
     var signo = $('#slSigno').val();
     var localNascimento = $('#txtLocalNascimento').val();
     var localTreinamento = $('#txtLocalTreinamento').val();
+    var golpes = [];
+    $("#add-golpe").each(function(){
+      golpes.push($(this).val())
+    });
+
     $('#cavaleiros')
       .append(
         $('<li>').append(
@@ -49,7 +55,8 @@ $(function() {
       signo: signo,
       localNascimento: localNascimento,
       localTreinamento: localTreinamento,
-      id: (goldSaintsAdaptados[goldSaintsAdaptados.length-1].id + 1)
+      id: (goldSaintsAdaptados[goldSaintsAdaptados.length-1].id + 1),
+      golpes : golpes
     });
 
     localStorage['cavaleiros'] = JSON.stringify(goldSaintsAdaptados);
@@ -57,14 +64,26 @@ $(function() {
   });
 
       goldSaintsAdaptados.forEach(function(e) {
+        if(e !== null){
         var $imgMu = $('<img>')
           .attr('src', e.imagens[0].url)
           .attr('id', e.id)
           .attr('alt', e.nome);
-        $('#cavaleiros').append( $('<li>').append($imgMu) );
+        $('#cavaleiros').append( $('<li>').append($imgMu));
+        $('#cavaleiros').append( $('<li>').append($imgMu)
+        .append($('<button>').text('Remover')
+        .attr('name','remover')
+        .attr('id', e.id)
+        .attr('class','botao-remover')));
+      }
       });
 
-
+      $('#cavaleiros button').click(function(e){
+          e.preventDefault();
+          var self = $(this);
+          goldSaintsAdaptados.splice(goldSaintsAdaptados[self[0].id-1].id-1, 1);
+          localStorage['cavaleiros'] = JSON.stringify(goldSaintsAdaptados);
+      });
 
       $("#cavaleiros img").hover(
   			function(){
