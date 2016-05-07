@@ -8,9 +8,6 @@ namespace MegamanLista1
 {
     public class Megaman : Robo
     {
-        public Megaman() : base(6, 0)
-        { 
-        }
 
         public override string Nome
         {
@@ -20,18 +17,39 @@ namespace MegamanLista1
             }
         }
 
+        protected override int Ataque
+        {
+            get
+            {
+                return 6;
+            }
+            set
+            {
+                Ataque = value;
+            }
+        }
+        protected override int Defesa
+        {
+            get
+            {
+                return 0;
+            }
+            set
+            {
+                Defesa = value;
+            }
+        }
+
         public override void Atacar(Robo robo)
         {
             if (Vida < 30)
             {
-                robo.Vida = robo.Vida - 3;
-                base.Atacar(robo);
+                robo.ReceberAtaque((this.Ataque + 3));
             }
             else
             {
-                base.Atacar(robo);
+                robo.ReceberAtaque(this.Ataque);
             }
         }
-
     }
 }
