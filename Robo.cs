@@ -8,54 +8,48 @@ namespace MegamanLista1
 {
     public abstract class Robo
     {
-        private int vida = 100;
-        private int ataque = 5;
-        private int defesa = 0;
-        private int contadorMortesProtoman = 0;
+        
+        public abstract string Nome { get; }
+        public virtual int Vida { get; protected set; }
 
-        public Robo(int ataque, int defesa)
+        public Robo()
         {
-            this.ataque = ataque;
-            this.defesa = defesa;
+            Vida = 100;
         }
 
-        public abstract string Nome { get; }
-        public virtual int Vida
-        {
-            get
-            {
-                return this.vida;
-            }
-            set
-            {
-                vida = value;
-            }
-        } 
         protected virtual int Ataque
         {
             get
             {
-                return ataque;
+                return 5;
+            }
+            set
+            {
+                Ataque = value;
             }
         }
         protected virtual int Defesa
         {
             get
             {
-                return defesa;
+                return 0;
+            }
+            set
+            {
+                Defesa = value;
             }
         }
         public virtual void Atacar(Robo robo)
         {
-            robo.vida = robo.vida - (ataque - robo.defesa);
-            Boolean protomanMorreu = robo.Nome.Equals("Protoman") && robo.Vida <= 0;
-            Boolean protomanAindaNaoHaviaMorrido = contadorMortesProtoman == 0;
-            if (protomanMorreu && protomanAindaNaoHaviaMorrido)
-            {
-                contadorMortesProtoman++;
-                robo.vida = 20;
-            }
+            robo.ReceberAtaque(this.Ataque);
         }
+
+        public virtual void ReceberAtaque(int ataque)
+        {
+            int dano = ataque - this.Defesa;
+            this.Vida -= dano;
+        }
+
         public virtual string ToString()
         {
          
