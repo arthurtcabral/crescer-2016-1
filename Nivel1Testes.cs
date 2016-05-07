@@ -6,34 +6,9 @@ using System.Diagnostics;
 namespace MegamanNivel1Testes
 {
     [TestClass]
-    public class UnitTest1
+    public class Nivel1Testes
     {
-        [TestMethod]
-        public void GerarToString()
-        {
-            var megaman = new Megaman();
-            Debug.WriteLine(megaman.ToString());
-
-            var protoman = new Protoman();
-            Debug.WriteLine(protoman.ToString());
-
-            var bot = new Bot();
-            Debug.WriteLine(bot.ToString());
-        }
-
-        [TestMethod]
-        public void ToStringRetornaString()
-        {
-            var megaman = new Megaman();
-            Assert.AreEqual(true, megaman.ToString().GetType() == typeof(string));
-
-            var protoman = new Protoman();
-            Assert.AreEqual(true, protoman.ToString().GetType() == typeof(string));
-
-            var bot = new Bot();
-            Assert.AreEqual(true, bot.ToString().GetType() == typeof(string));
-        }
-
+        
         [TestMethod]
         public void MegamanDeveTerMegamanComoNome()
         {
@@ -82,9 +57,13 @@ namespace MegamanNivel1Testes
         {
             var megaman = new Megaman();
             var bot = new Bot();
-            megaman.Vida = 25;
+            for(var i = 0; i < 15; i++)
+            {
+               bot.Atacar(megaman);
+            }
             megaman.Atacar(bot);
             Assert.AreEqual(91, bot.Vida);
+            
         }
 
         [TestMethod]
@@ -131,7 +110,10 @@ namespace MegamanNivel1Testes
         {
             var megaman = new Megaman();
             var protoman = new Protoman();
-            protoman.Vida = 4;
+            for (var i = 0; i < 25; i++)
+            {
+                megaman.Atacar(protoman);
+            }
             megaman.Atacar(protoman);
             Assert.AreEqual(20, protoman.Vida);
         }
@@ -141,14 +123,33 @@ namespace MegamanNivel1Testes
         {
             var megaman = new Megaman();
             var protoman = new Protoman();
-            protoman.Vida = 4;
+            for (var i = 0; i < 25; i++)
+            {
+                megaman.Atacar(protoman);
+            }
             megaman.Atacar(protoman);
             Assert.AreEqual(20, protoman.Vida);
-            protoman.Vida = 1;
+            for (var i = 0; i < 5; i++)
+            {
+                megaman.Atacar(protoman);
+            }
             megaman.Atacar(protoman);
-            Assert.AreEqual(-3, protoman.Vida);
+            Assert.AreEqual(-4, protoman.Vida);
         }
 
+        [TestMethod]
+        public void ProtomanGanha7DeAtaqueAoMorrer()
+        {
+            var megaman = new Megaman();
+            var protoman = new Protoman();
+            for (var i = 0; i < 25; i++)
+            {
+                megaman.Atacar(protoman);
+            }
+            megaman.Atacar(protoman);
+            protoman.Atacar(megaman);
+            Assert.AreEqual(93, megaman.Vida);
+        }
     }
 }
 
