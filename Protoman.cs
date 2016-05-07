@@ -10,6 +10,7 @@ namespace MegamanLista1
     {
 
         private int contadorMortesProtoman = 0;
+        private int bonusAtaqueProtomanPorMorrer = 0;
         public override string Nome
         {
             get
@@ -17,6 +18,9 @@ namespace MegamanLista1
                 return "Protoman";
             }
         }
+
+        private int ataque;
+        private int defesa;
         protected override int Ataque
         {
             get
@@ -25,7 +29,7 @@ namespace MegamanLista1
             }
             set
             {
-                Ataque = value;
+                ataque = value;
             }
         }
         protected override int Defesa
@@ -34,17 +38,25 @@ namespace MegamanLista1
             {
                 return 2;
             }
+            set
+            {
+                defesa = value;
+            }
+        }
+        public virtual void Atacar(Robo robo)
+        {
+            robo.ReceberAtaque(this.Ataque + UpgradeBonusParaAtacar + bonusAtaqueProtomanPorMorrer);
         }
         public override void ReceberAtaque(int ataque)
         {
             Boolean protomanMorreu = this.Vida <= 0;
             Boolean protomanAindaNaoHaviaMorrido = contadorMortesProtoman == 0;
-            int dano = ataque - this.Defesa;
+            int dano = ataque - (this.Defesa + UpgradeBonusParaDefender);
             this.Vida -= dano;
             if (protomanMorreu && protomanAindaNaoHaviaMorrido)
             {
                 this.Vida = 20;
-                this.Ataque = this.Ataque + 2;
+                this.bonusAtaqueProtomanPorMorrer = 2;
                 contadorMortesProtoman++;
             }
         }

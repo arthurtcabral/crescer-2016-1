@@ -17,6 +17,8 @@ namespace MegamanLista1
             }
         }
 
+        private int ataque;
+        private int defesa;
         protected override int Ataque
         {
             get
@@ -25,7 +27,7 @@ namespace MegamanLista1
             }
             set
             {
-                Ataque = value;
+                ataque = value;
             }
         }
         protected override int Defesa
@@ -36,7 +38,7 @@ namespace MegamanLista1
             }
             set
             {
-                Defesa = value;
+                defesa = value;
             }
         }
 
@@ -44,12 +46,13 @@ namespace MegamanLista1
         {
             if (Vida < 30)
             {
-                robo.ReceberAtaque((this.Ataque + 3));
+                robo.ReceberAtaque(this.Ataque + 3 + UpgradeBonusParaAtacar);
             }
             else
             {
-                robo.ReceberAtaque(this.Ataque);
+                robo.ReceberAtaque(this.Ataque + UpgradeBonusParaAtacar);
             }
         }
+
+        }
     }
-}
