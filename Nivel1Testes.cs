@@ -8,8 +8,6 @@ namespace MegamanNivel1Testes
     [TestClass]
     public class Nivel1Testes
     {
-        public IUpgrade CanhaoDePlasma { get; }
-
         [TestMethod]
         public void MegamanDeveTerMegamanComoNome()
         {
@@ -42,6 +40,9 @@ namespace MegamanNivel1Testes
 
             var bot = new Bot();
             Assert.AreEqual(100, bot.Vida);
+
+            var rush = new Rush();
+            Assert.AreEqual(100, rush.Vida);
         }
 
         [TestMethod]
@@ -325,6 +326,76 @@ namespace MegamanNivel1Testes
             Assert.AreEqual(93, bot.Vida);
             bot.Atacar(protoman);
             Assert.AreEqual(99, protoman.Vida);
+        }
+        [TestMethod]
+        public void RushDeveTerRushComoNome()
+        {
+            var rush = new Rush();
+            Assert.AreEqual("Rush", rush.Nome);
+        }
+        [TestMethod]
+        public void RushTemAtaqueValendo4()
+        {
+            var rush = new Rush();
+            var bot = new Bot();
+            rush.Atacar(bot);
+            Assert.AreEqual(96, bot.Vida);
+        }
+        [TestMethod]
+        public void RushTemDefesaValendo3()
+        {
+            var rush = new Rush();
+            var bot = new Bot();
+            bot.Atacar(rush);
+            Assert.AreEqual(98, rush.Vida);
+        }
+        [TestMethod]
+        public void RushTemUpgradeDoTipoLendario()
+        {
+            var rush = new Rush();
+            Assert.AreEqual("Lendário", rush.TipoUpgrade);
+        }
+        [TestMethod]
+        public void CanhaoDePlasmaEDoTipoAtaque()
+        {
+            var canhaoDePlasma = new CanhaoDePlasma();
+            Assert.AreEqual("Ataque", canhaoDePlasma.TipoUpgrade);
+        }
+        [TestMethod]
+        public void EscudoDeEnergiaEDoTipoDefesa()
+        {
+            var escudoDeEnergia = new EscudoDeEnergia();
+            Assert.AreEqual("Defesa", escudoDeEnergia.TipoUpgrade);
+        }
+        [TestMethod]
+        public void BotasDeSuperVelocidadeEDoTipoLendario()
+        {
+            var botasDeSuperVelocidade = new BotasDeSuperVelocidade();
+            Assert.AreEqual("Lendário", botasDeSuperVelocidade.TipoUpgrade);
+        }
+        [TestMethod]
+        public void RushPodeTerAteDoisUpgradesETerRushComoUpgrade()
+        {
+            var rush = new Rush();
+            var bot = new Bot();
+            rush.EquiparUpgrade(new CanhaoDePlasma());
+            rush.EquiparUpgrade(new Rush());
+            rush.EquiparUpgrade(new BotasDeSuperVelocidade()); //Esse deverá ser ineficaz
+            rush.Atacar(bot);
+            Assert.AreEqual(90, bot.Vida);
+        }
+        [TestMethod]
+        public void RobosPodemEquiparRush()
+        {
+            var rush = new Rush();
+            var bot = new Bot();
+            var botSemUpgrade = new Bot();
+            rush.EquiparUpgrade(new CanhaoDePlasma());
+            bot.EquiparUpgrade(rush);
+            bot.Atacar(botSemUpgrade);
+            Assert.AreEqual(89, botSemUpgrade.Vida);
+            botSemUpgrade.Atacar(bot);
+            Assert.AreEqual(98, bot.Vida);
         }
     }
 }
