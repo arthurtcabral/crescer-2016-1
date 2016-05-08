@@ -23,5 +23,13 @@ namespace MegamanLista1
                 return 0;
             }
         }
+
+        public string TipoUpgrade
+        {
+            get
+            {
+                return "Ataque";
+            }
+        }
     }
 }

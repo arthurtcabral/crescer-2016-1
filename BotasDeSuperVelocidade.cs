@@ -23,5 +23,13 @@ namespace MegamanLista1
                 return 1;
             }
         }
+
+        public string TipoUpgrade
+        {
+            get
+            {
+                return "Lendário";
+            }
+        }
     }
 }
