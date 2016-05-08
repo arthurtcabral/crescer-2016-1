@@ -4,7 +4,7 @@ namespace MegamanLista1
 {
     public abstract class Robo
     {
-        private int contadorUpgrades = 0;
+        protected int contadorUpgrades = 0;
         public abstract string Nome { get; }
         public virtual int Vida { get; protected set; }
 
@@ -41,21 +41,15 @@ namespace MegamanLista1
 
         public virtual void EquiparUpgrade(IUpgrade upgrade)
         {
-            Boolean ECanhaoDePlasma = upgrade.GetType() == typeof(CanhaoDePlasma);
-            Boolean EEscudoDeEnergia = upgrade.GetType() == typeof(EscudoDeEnergia);
-            Boolean EBotasDeSuperVelocidade = upgrade.GetType() == typeof(BotasDeSuperVelocidade);
-            Boolean PossuiMenosDe3Upgrades = contadorUpgrades < 3;
-            if (PossuiMenosDe3Upgrades)
-            {
-                if (ECanhaoDePlasma || EEscudoDeEnergia || EBotasDeSuperVelocidade)
+            Boolean EUpgrade = upgrade is IUpgrade;
+            Boolean RoboPossuiMenosDe3Upgrades = contadorUpgrades < 3;
+                if (RoboPossuiMenosDe3Upgrades && EUpgrade)
                 {
                     UpgradeBonusParaAtacar = UpgradeBonusParaAtacar + upgrade.BonusAtaque;
                     UpgradeBonusParaDefender = UpgradeBonusParaDefender + upgrade.BonusDefesa;
-                }
-                contadorUpgrades++;
+                    contadorUpgrades++;
             }
-            
-        }
+            }
 
         public virtual void Atacar(Robo robo)
         {
