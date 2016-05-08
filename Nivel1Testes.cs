@@ -307,6 +307,25 @@ namespace MegamanNivel1Testes
             bot.Atacar(megaman);
             Assert.AreEqual(100, megaman.Vida);
         }
+        [TestMethod]
+        public void ContadorDeUpgradesSaoUnicosParaCadaTipoDeRobo()
+        {
+            IUpgrade iup1 = new CanhaoDePlasma();
+            IUpgrade iup2 = new EscudoDeEnergia();
+            IUpgrade iup3 = new BotasDeSuperVelocidade();
+            IUpgrade iup4 = new BotasDeSuperVelocidade();
+            var protoman = new Protoman();
+            var bot = new Bot();
+
+            protoman.EquiparUpgrade(iup1);
+            protoman.EquiparUpgrade(iup2);
+            protoman.EquiparUpgrade(iup3);
+            bot.EquiparUpgrade(iup4);
+            protoman.Atacar(bot);
+            Assert.AreEqual(93, bot.Vida);
+            bot.Atacar(protoman);
+            Assert.AreEqual(99, protoman.Vida);
+        }
     }
 }
 
