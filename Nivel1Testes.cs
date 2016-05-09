@@ -350,30 +350,6 @@ namespace MegamanNivel1Testes
             Assert.AreEqual(98, rush.Vida);
         }
         [TestMethod]
-        public void RushTemUpgradeDoTipoLendario()
-        {
-            var rush = new Rush();
-            Assert.AreEqual("Lendário", rush.TipoUpgrade);
-        }
-        [TestMethod]
-        public void CanhaoDePlasmaEDoTipoAtaque()
-        {
-            var canhaoDePlasma = new CanhaoDePlasma();
-            Assert.AreEqual("Ataque", canhaoDePlasma.TipoUpgrade);
-        }
-        [TestMethod]
-        public void EscudoDeEnergiaEDoTipoDefesa()
-        {
-            var escudoDeEnergia = new EscudoDeEnergia();
-            Assert.AreEqual("Defesa", escudoDeEnergia.TipoUpgrade);
-        }
-        [TestMethod]
-        public void BotasDeSuperVelocidadeEDoTipoLendario()
-        {
-            var botasDeSuperVelocidade = new BotasDeSuperVelocidade();
-            Assert.AreEqual("Lendário", botasDeSuperVelocidade.TipoUpgrade);
-        }
-        [TestMethod]
         public void RushPodeTerAteDoisUpgradesETerRushComoUpgrade()
         {
             var rush = new Rush();
