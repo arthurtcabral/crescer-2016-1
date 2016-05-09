@@ -41,9 +41,8 @@ namespace MegamanLista1
 
         public virtual void EquiparUpgrade(IUpgrade upgrade)
         {
-            Boolean EUpgrade = upgrade is IUpgrade;
-            Boolean RoboPossuiMenosDe3Upgrades = contadorUpgrades < 3;
-                if (RoboPossuiMenosDe3Upgrades && EUpgrade)
+                Boolean RoboPossuiMenosDe3Upgrades = contadorUpgrades < 3;
+                if (RoboPossuiMenosDe3Upgrades)
                 {
                     UpgradeBonusParaAtacar = UpgradeBonusParaAtacar + upgrade.BonusAtaque;
                     UpgradeBonusParaDefender = UpgradeBonusParaDefender + upgrade.BonusDefesa;
