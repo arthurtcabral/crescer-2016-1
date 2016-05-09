@@ -24,14 +24,6 @@ namespace MegamanLista1
             }
         }
 
-        public string TipoUpgrade
-        {
-            get
-            {
-                return "Lendário";
-            }
-        }
-
         public override string Nome
         {
             get
@@ -66,9 +58,8 @@ namespace MegamanLista1
         }
         public override void EquiparUpgrade(IUpgrade upgrade)
         {
-            Boolean EUpgrade = upgrade is IUpgrade;
             Boolean RushPossuiMenosDe2Upgrades = contadorUpgrades < 2;
-            if (RushPossuiMenosDe2Upgrades && EUpgrade)
+            if (RushPossuiMenosDe2Upgrades)
             {
                 UpgradeBonusParaAtacar = UpgradeBonusParaAtacar + upgrade.BonusAtaque;
                 UpgradeBonusParaDefender = UpgradeBonusParaDefender + upgrade.BonusDefesa;

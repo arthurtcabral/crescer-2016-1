@@ -10,6 +10,5 @@ namespace MegamanLista1
     {
         int BonusAtaque { get; }
         int BonusDefesa { get; }
-        string TipoUpgrade { get; }
     }
 }

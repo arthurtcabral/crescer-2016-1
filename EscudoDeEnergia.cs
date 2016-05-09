@@ -23,13 +23,5 @@ namespace MegamanLista1
                 return 2;
             }
         }
-
-        public string TipoUpgrade
-        {
-            get
-            {
-                return "Defesa";
-            }
-        }
     }
 }
