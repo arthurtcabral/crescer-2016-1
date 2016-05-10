@@ -1,0 +1,219 @@
+HTTP 
+
+Request (requisitar) e response (resposta)
+
+GET
+
+---
+
+MVC (Model, View, Controller)
+
+É um padrão de apresentação. Pode ser aplicado em qualquer interface. Tornou-se muito popular a 8 anos quando foi criado o framework Ruby-On-Rails, para a linguagem Ruby.
+
+MODEL: Classe que possui propriedades as quais se deseja mostrar na tela, quando a tela é atualizada (classe com propriedades, lembrar do exemplo do personagens).
+VIEW: Visão (html e css).
+CONTROLLER: Requests e responses.
+
+
+
+--- INICIANDO PROJETO
+1
+
+New project > Web > asp.net > Empty (MVC vem com bootstrap e banco de dados).
+Marcar CheckBox MVC.
+
+
+
+--- ADICIONANDO CONTROLLER E ENTENDENDO ACTIONS
+2
+
+Botão direito em controller > Add > Controller > Empty
+Por um nome
+
+Método, em MVC, é Action()
+Action é um método dentro da controller. A controller possui muitas actions.
+
+
+
+--- ADICIONANDO VIEW E ENTENDENDO RETORNOS 
+3
+
+Botao direito na pasta View > Add > View (empty)
+Dermarcar tudo e dar ok.
+
+Surgira uma página html (que é a view).
+
+Ao rodar, controller abre a view através da ConventionsOverConfigurations
+
+No link: primeira barra é a controler, a segunda é o nome da action.
+
+Ao dar F5, é instanciado um servidor HTTP. http://localhost...
+
+Ctrl + alt + enter no lugar do F5 quando se for atualizar.
+
+return View(); //Se o cara não passar o nome da view, ele retorna o nome da action (não do arquivo na pasta). 1ª Convenção
+
+2ª Convenção: Pelo nome do arquivo.
+
+Nome da action e nome do arquivo devem ser similares.
+
+Ou...
+
+
+
+--- RETORNOS CUSTOMIZADOS
+4
+
+return View("HelloWorld");
+
+ps. ActionResult é a classe mais genérica.
+
+retornando o endereço da pasta e da view a ser usada:
+
+return View("~/Views/Erros/NotFound.cshtml");
+
+~ = raiz (começando na raiz do projeto).
+
+
+
+--- INSERÇÃO DE IMAGENS
+5
+
+Para por css e imagens
+
+Criar pasta Content > Imagens
+
+Colar imagens na pasta
+
+ShowAllFiles (no cabeçalho)
+
+Botão direito na imagem > comando para incluir que fica na metade superior.
+
+url('../../Content/Imagens/nome-da-imagem.extensao');
+
+
+
+--- RAZOR
+6
+
+Uso de C# no html em Visual Studio
+
+@DateTime.Now (exemplo).
+
+Esse @ identifica que a próxima expressão é C#. Ele converte a expressão para que o navegador possa interpretá-la.
+
+@ é uso do razor. Razor é a tecnologia responsável por fazer isso.
+
+@if
+
+@while
+
+@{
+var l = new List();
+}
+
+Atenção:
+
+@if(true){
+	Verdadeiro //Isso da erro, pois ele espera que dentro do bloco tenha C#, e "Verdadeiro" não foi declarado em momento algum.
+}
+
+Dentro de um bloco de código C# pode colocar tags html. Pode colocar JS.
+
+[Ver exemplos feitos em aula pelo instrutor]
+
+
+
+--- HELPERS
+7
+
+@Html.Algo
+
+Para <script></script>
+
+@Html.Raw(scriptJS)
+
+
+
+--- MODEL
+8
+
+No início do código, colocar @Model e o que vai vir
+
+Criar na pasta Model uma classe
+
+@Model List<string>
+
+Chamar ClasseModel no Controller
+
+foreach(var personagem in Model){}
+
+Padrão de nomenclatura: PersonagemModel, ExemploModel
+
+
+
+--- ISEXPRESS
+9
+
+Similar ao Apache
+
+
+
+--- VIEWBAG E VIEWDATA
+10
+
+É um dynamic, pode receber e trabalhar com qualquer coisa.
+
+ViewBag.MensagemBoasVindas = "Olá";
+
+Uso: @ViewBag.MensagemBoasVindas;
+
+Evitar usar ViewBag.
+
+ViewData é A MESMA COISA que o ViewBag.
+
+Duram só uma requisição (De uma controller para uma view).
+
+Dica: Usar TempData. TempData acaba quando ela for lida.
+
+
+
+--- SETAR ACTION A SER UTILIZADA QUANDO SE TEM MAIS DE UMA
+11
+
+ps. return RedirectToAction("Controller", "NomeDoArquivo");
+
+return View ("caminho do arquivo controller", "Teste" //nome da pagina);
+
+ps. http://server/Exemplo/Testes/PARAMETRO
+
+
+
+--- PERMISSÃO PARA NULL
+12
+
+int? = declara que pode ser null
+
+
+
+--- MACETE NO DEBUG
+13
+
+Arraste a setinha para a linha que deseja debugar.
+
+É possível alterar o valor de uma varíavel na hora.
+
+
+
+--- DRY - VIEW COMPARTILHADA
+14
+
+Convenção: _Layout
+
+Criar na pasta Shared
+
+Estes arquivos servem para evitar repetição de código, quando um mesmo código é usado muitas vezes.
+
+@RenderBody dentro da view. Esse comando serve para carregar os códigos das views que utilizarem esse layout da shared.
+
+ps. Quando criar uma nova view, selecione a opção use layout page (e escolha a view compartilhada).
