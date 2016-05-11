@@ -31,3 +31,6 @@ C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.csprojResolveAssemblyReference.cache
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.dll
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\obj\Debug\MVC.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.AspNet.Http.Features.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\Aula 3\Exemplos\01 - MVC\MVC\MVC\bin\Microsoft.Extensions.WebEncoders.Core.dll
