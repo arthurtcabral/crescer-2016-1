@@ -5,37 +5,27 @@
 
 <!DOCTYPE html>
 <html lang="pt">
-<head>
+<header>
     <meta charset="UTF-8">
-    <title>Street Fighter - @ViewBag.Title</title>
     <link href="~/Content/Estilos/main.css" rel="stylesheet" />
-</head>
+</header>
 
-<body>
-    <div class="menu">
-        <span class="item">
-            @Html.ActionLink("Inicio", "Index", "StreetFighter", new { style = "border: 1px solid yellow;", @class = "menu-link" })            
-            @*<a href="~/StreetFighter">Início</a>*@
-        </span>
-        <span class="item">
-            <a href="https://www.google.com.br/search?q=Street+Fighter&tbm=nws">Noticia</a>
-        </span>
-        <span class="item">
-            <a href="ficha-tecnica.html#conteudo">Ficha Técnica</a>
-        </span>
-        <span class="item">
-            <a href="sobre.html#conteudo">Sobre</a>
-        </span>
-    </div>
+<body class="corpo">
 
-    <div id="conteudo" class="conteudo">
-        <div class="titulo">
-            <h1>@ViewBag.Title</h1>
+    <nav>
+        <div id="menu">
+            <ul>
+                <li>@Html.ActionLink("Início", "Index", "StreetFighter")</li>
+                <li><a href="https://www.google.com.br/?gfe_rd=cr&ei=AUAgV6qhDYyFxAT98LuQCA#q=street+fighter"><b>Notícias</b></a></li>
+                <li>@Html.ActionLink("Ficha Técnica", "FichaTecnica", "StreetFighter")</li>
+                <li>@Html.ActionLink("Sobre", "SobreMim", "StreetFighter")</li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="corpo">
-            @RenderBody()
-        </div>
+    <h1 id="divtitulo">@ViewBag.Title</h1>
+    <div id="divcorpo">
+        @RenderBody()
     </div>
 </body>
 </html>

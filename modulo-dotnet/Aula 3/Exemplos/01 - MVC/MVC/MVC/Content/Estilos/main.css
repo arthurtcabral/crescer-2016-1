@@ -3,46 +3,116 @@ body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-    .menu {
-        margin: 230px auto 0;
-        display: table;
-        padding: 10px;
-        border: 1px solid #fff;
-        border-radius: 10px;
-        background: rgba(140, 140, 140, .6);
-    }
-    
-        .menu > .item {
-            margin: 25px;
-        }
-            
-            .menu > .item > a {
-                color: #fff;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            
-    .conteudo {
-        margin: 70px auto;
-        width: 800px;
-        background: #eee;
-    }
-    
-        .conteudo > .titulo {
-            padding: 10px 15px;
-            background: #5a5a5a;
-            color: #eee;
-        }
-        
-        .conteudo > .corpo {
-            padding: 15px;
-        }
-        
-        .conteudo > .corpo.medio {
-            min-height: 550px;
-        }
-        
-            .corpo > .imagem-descricao {
-                float: left;
-                margin-right: 15px;
-            }
+    #menu ul{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 500px;
+  height: 70px;
+  top: 35%;
+  left: 27%;
+  padding-top: 15px;
+  padding-left: 15px;
+  -moz-border-radius:7px;
+  -webkit-border-radius:7px;
+   border-radius:7px;
+   border: solid 2px white;
+   margin: 0px 50px 10px 50px;
+   padding: auto;
+}
+
+#menu ul li { display: inline; }
+
+#menu ul li a {
+padding: 15px 25px;
+display: inline-block;
+color: white;
+text-decoration: initial;
+}
+
+#menu ul li a:hover {
+color: red;
+}
+
+#divcorpo > ul > li > a{
+  color: black;
+}
+
+#divcorpo > ul > li > a:hover{
+  color: white;
+}
+
+#divtitulo{
+  position: relative;
+  top: 350px;
+  background-color: #000000;
+  background-image: url("https://upload.wikimedia.org/wikipedia/pt/e/e9/Street_Fighter_Logo.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  border: white solid 2px;
+  color: white;
+  height: 70px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0px 350px;
+}
+
+#divtituloblanka{
+  position: relative;
+  top: 350px;
+  background-color: #000000;
+  background-image: url("http://2.bp.blogspot.com/-78GqzXvrDM4/VQmqlhe56TI/AAAAAAAAN2I/3OAcJlZw3Bs/s1600/Blanka%2B8.gif");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  border: white solid 2px;
+  color: white;
+  height: 70px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0px 350px;
+}
+
+#divtituloblanka:hover{
+  background-image: url("http://4.bp.blogspot.com/-wwdADdcQ3lI/VQmqgPb85WI/AAAAAAAAN0w/pWhvOzLXj7w/s1600/Blanka%2B13.gif");
+}
+
+#divcorpo{
+  overflow: auto;
+  position: relative;
+  top: 350px;
+  background-color: #ADADAD;
+  border: black solid 2px;
+  color: black;
+  margin: 500px auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0px 350px;
+}
+
+#nome{
+  float: top;
+}
+
+#imagem-blanka{
+  float: left;
+}
+
+#imagem-arthur{
+  float: left;
+  position: relative;
+  width: 259px;
+  height: 380px;
+  margin-right: 10px;
+}
+
+.corpo{
+  font-family: arial;
+  background-image: url(https://jovemnerd.com.br/wp-content/uploads/Ryu-Street-Fighter-V-Promotional-Artwork.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1500px auto;
+}
