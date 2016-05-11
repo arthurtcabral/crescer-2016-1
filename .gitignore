@@ -11,3 +11,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+modulo-dotnet/Aula 3/Exemplos/01 - MVC/MVC/packages/Microsoft.Net.Compilers.1.0.0/tools/Microsoft.CodeAnalysis.CSharp.dll
+modulo-dotnet/Aula 3/Exemplos/01 - MVC/MVC/MVC/obj/Debug/MVC.dll
+modulo-dotnet/Aula 3/Exemplos/01 - MVC/MVC/packages/Microsoft.Net.Compilers.1.0.0/tools/Microsoft.Build.Tasks.CodeAnalysis.dll
