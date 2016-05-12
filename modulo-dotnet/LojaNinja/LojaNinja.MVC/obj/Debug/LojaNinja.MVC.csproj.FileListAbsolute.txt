@@ -1,0 +1,74 @@
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\csc.exe
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\vbc.exe
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.dll.config
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.pdb
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Razor.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.pdb
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.pdb
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Razor.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.xml
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
+C:\Users\arthur.cabral\Documents\instrutores\src\modulo-05-dotnet\Aula 5\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\csc.exe
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\vbc.exe
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\VBCSCompiler.exe
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.dll.config
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.MVC.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Razor.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Deployment.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Dominio.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\LojaNinja.Repositorio.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Razor.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Deployment.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb

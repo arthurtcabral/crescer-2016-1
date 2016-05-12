@@ -37,3 +37,68 @@ if(model.Estado == "RS" && model.Cidade = "SL"){
 ModelState.AddModelError("passar a propriedade, caso o erro seja em apenas uma específica. Nesse caso, são duas", "Mensagem de erro.");
 }
 
+
+
+--- VIEWSTART
+5
+
+MVC executa o arquivo _ViewStart.cshtml antes de executar qualquer outra view. Isso é uma convenção.
+
+O layout que está na view, caso haja, sobrescreve o que está na ViewStart.
+
+
+
+--- LOCAL DO JQUERY
+6
+
+Ao utilizar em _Layout, o correto é que o jQuery fique no topo da página, visto que os validates do jQuery (que estão nas views) dependem dele.
+
+Além disso, as views devem ter, no início:
+
+@section nomeDaSection{
+
+jQuery validações
+
+}
+
+E o layout deve ter, abaixo do } do @RenderBody?
+@RenderSection("nomeDaSection", false) (false seta se é obrigatório ou não).
+
+
+
+--- SUMMARY
+7
+
+/// (Digitar isso em cima dos construtores, nas classes).
+
+/// <summary> Frase explicativa
+
+
+
+
+EXERCÍCIO (DICAS):
+
+ANTES DE ENVIAR PRA TELA DETALHES, SALVAR NUM ARQUIVO DE TEXTO.
+
+PÁGINA DE LISTAGEM
+
+PÁGINA DE EDIÇÃO: HIDDEN FIELD, ID NA MODEL (DEIXAR POR ÚLTIMO. ELA NÃO É URGENTE, MAS IMPORTANTE).
+
+
+EM DOMINIO, FICAM AS REGRAS DE NEGÓCIO (SE FOR MENOS DE 7 DIAS NAO OCORRE A ENTREGA... ENTRE 7 E 14, COM URGÊNCIA... ETC).
+
+IncluirPedido() NÃO RECEBE UM PedidoModel
+
+Dica: 
+
+try{
+
+var pedido = new Pedido(construtorSimplesQueNaoTemId);
+repositorio.InserirPedido(pedido);
+
+}
+catch(ArgumentException ex)
+{
+	ModelState.AddModelError("Mensagem de erro", ex.Message);
+	return View("Cadastro", model);
+}

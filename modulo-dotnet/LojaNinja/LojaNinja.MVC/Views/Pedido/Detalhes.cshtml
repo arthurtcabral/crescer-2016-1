@@ -1,0 +1,25 @@
+﻿@model LojaNinja.MVC.Models.PedidoModel
+
+@{
+    Layout = "~/Shared/_Shared.cshtml"; ;
+}
+
+<header class="cabecalho">
+    <span>@Html.DisplayNameFor(model => model.DataDesejoEntrega)</span>
+    <span>@Html.DisplayNameFor(model => model.NomeProduto)</span>
+    <span>@Html.DisplayNameFor(model => model.ValorVenda)</span>
+    <span>@Html.DisplayNameFor(model => model.NomeCliente)</span>
+    <span>@Html.DisplayNameFor(model => model.Cidade)</span>
+    <span>@Html.DisplayNameFor(model => model.Estado)</span>
+</header>
+
+<form class="dados">
+    <span>@Model.DataDesejoEntrega.ToString("dd/MM/yyyy")</span>
+    <span>@Model.NomeProduto</span>
+    <span id="valor-venda">@Model.ValorVenda</span>
+    <span id="cidade">@Model.NomeCliente</span>
+    <span>@Model.Cidade</span>
+    <span>@Model.Estado.ToUpper()</span>
+</form>
+
+<link href="~/Content/css/detalhes.css" rel="stylesheet" />

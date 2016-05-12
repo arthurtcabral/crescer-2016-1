@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/Content/css/shared.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <title>Novo Pedido</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <ul class="nav navbar-nav">
+            <li> <a href="/Pedido">Home</a></li>
+            <li> <a href="/Pedido/Cadastro">Cadastrar</a></li>
+            <li> <a href="/Pedido/Lista">Listar</a></li>
+        </ul>
+    </nav>
+    <div class="form-horizontal">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @RenderSection("scripts", false)
+    
+</body>
+</html>
