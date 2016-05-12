@@ -1,0 +1,130 @@
+--- ADICIONANDO REFERENCIAS A UM PROJETO
+1
+
+Botao Direito no projeto > add > References
+
+E então uma referencia a uma class... dll... pode ser adicionada. Assim, pode-se usar métodos de outras classes.
+
+Isso é bom para linkar com classe de teste.
+
+
+
+--- BOOTSTRAP
+2
+
+Botao Direito na classe > Manage NuGet e então adiciona
+
+Ou
+
+Tools > NuGet Package > Install-Package Bootstrap
+
+Ou
+
+Pesquise por "bootstrap nuget", entre no site do nuget e copie a linha para por no console.
+
+CUIDAR O LOCAL ONDE SERÁ INSTALADO! HÁ UM DROPDOWN PARA CHECAR ISSO!
+
+
+
+--- PASSANDO MODEL COMO PARÂMETRO EM CONTORLLER
+3
+
+public Index ActionResult(ExemploSimplesModel Model){}
+
+Em <from>, fazer, por exemplo, <form action="/Exemplo/Index" method="get ou post">
+					     (Pasta/NomeDaView)
+
+Exemplo visto em aula: <form action="http://www.google.com.br" method="get"> //Com tags text e um submit
+
+A propriedade Name das tags text deve possuir a mesma denominação das propriedades da Model sendo utilizada. Ou seja, se em ExemploSimplesModel tiver uma propriedade Nome e uma propriedade Altura20, as tags text devem possuir Name="Nome" e Name="Altura20".
+
+Não vai name na tag submit!
+
+Só se pode passar UMA MODEL POR PARÂMETRO.
+
+ATENÇÃO: A função da model é ser um exemplo dos dados que a view, ou a controller, precisa. Ela diz o que vai de contorller para a view e vice-versa.
+
+ATENÇÃO: A model pega propriedades, mas não atributos.
+
+
+
+--- @HTML.TEXTBOXFOR(func) E OUTRAS FACILIDADES
+4
+
+Dica: func lembra lambda-linq.
+
+@Html.LabelFor(model => model.Nome);
+@Html.TextBoxFor(model => model.Nome); //Substitui a tag text
+
+@using (Html.BeginForm("Action", "Controller", FormMethod.Get ou FormMethod.Post))	       // Gera o <form>
+{
+}
+
+
+
+--- VALIDATION
+5
+
+jQuery
+jQuery.Validation
+plugin jQuery Validation da Microsoft
+
+Clicar e arrastar o que foi instalado para o cshtml sendo utilizado.
+
+Depois usar:
+
+@Html.ValidationMessageFor(model => model.Idade);
+
+
+
+--- USO DE CLASS EM TAGS HTML
+6
+
+@class, não apenas class
+
+
+
+--- DESGRUDAR NOMES
+7
+
+Na model, escrever:
+
+[DisplayName("Frase que você quer que apareça.")];
+
+
+
+--- REGRAS ESPECÍFICAS DE VALIDAÇÃO
+8
+
+Nas strings da Model, por em cima:
+
+[Required(ErrorMessage = "Todos usuários devem ter um nome")]
+[StirngLength(160)] //Tamanho máximo é 160
+public string Nome = { get; set; }
+
+[Range(1, 150, ErrorMessage="Idade Inválida")] //Não permite negativo. Só permite números no intervalo de 1 até 150.
+public int Idade = { get; set; }
+
+
+
+--- TRANSFORMANDO EM RADIOBUTTON
+9
+
+Usar @Html.RadioButtonFor(model => model.Sexo, "M") Masculino
+Usar @Html.RadioButtonFor(model => model.Sexo, "F") Feminino
+
+
+
+EXERCÍCIO:
+
+Cadastro de:
+
+DataEntrega
+NomeProduto
+ValorVenda
+TipoPagamento (Enum - Dropdown) Mastercard, Visa, Dinners e mais um
+NomeCliente
+Cidade
+Estado
+
+Nome da controller: PedidoController.
