@@ -1,0 +1,39 @@
+--- PARTIAL
+1
+
+Parecido com _Layout, mas _Layout é universal.
+Partial é usado em casos como: Códigos que só se deseja mostrar em telas de cadastro... ou só em telas de pesquisa... etc.
+
+@Html.Partial("NomeDaPartialQueETipoUm_Layout", new EnderecoDaModel()) {Alguma ação opcional}
+
+
+
+--- @Html.Action
+2
+
+@Html.Action("Action", "Controller")
+
+Similar ao Partial, porém esse comando passa primeiro por uma action, onde pode conter outros comandos.
+
+O partial devolve diretamente um _Layout (código html).
+
+
+
+--- ModelState.isValid
+3
+
+if(ModelState.isValid)
+
+Abre os dados da model que vieram por parâmetro e checa se todos os campos preenchidos foram preenchidos da maneira correta. Caso haja algum erro, retorna false.
+
+
+
+--- MOSTRAR ERROS PARA CAMPOS ESPECÍFICOS, EM CONTROLLER
+4
+
+Na action, por, por exemplo:
+
+if(model.Estado == "RS" && model.Cidade = "SL"){
+ModelState.AddModelError("passar a propriedade, caso o erro seja em apenas uma específica. Nesse caso, são duas", "Mensagem de erro.");
+}
+
