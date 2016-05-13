@@ -12,3 +12,10 @@ C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinj
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.dll
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Repositorio.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Repositorio.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Dominio.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\bin\Debug\LojaNinja.Dominio.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.csprojResolveAssemblyReference.cache
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.Repositorio\obj\Debug\LojaNinja.Repositorio.pdb

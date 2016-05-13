@@ -1,25 +1,43 @@
-﻿@model LojaNinja.MVC.Models.PedidoModel
+﻿@model LojaNinja.Dominio.Pedido
+ 
 
 @{
     Layout = "~/Shared/_Shared.cshtml"; ;
 }
 
-<header class="cabecalho">
-    <span>@Html.DisplayNameFor(model => model.DataDesejoEntrega)</span>
-    <span>@Html.DisplayNameFor(model => model.NomeProduto)</span>
-    <span>@Html.DisplayNameFor(model => model.ValorVenda)</span>
-    <span>@Html.DisplayNameFor(model => model.NomeCliente)</span>
-    <span>@Html.DisplayNameFor(model => model.Cidade)</span>
-    <span>@Html.DisplayNameFor(model => model.Estado)</span>
-</header>
-
-<form class="dados">
-    <span>@Model.DataDesejoEntrega.ToString("dd/MM/yyyy")</span>
-    <span>@Model.NomeProduto</span>
-    <span id="valor-venda">@Model.ValorVenda</span>
-    <span id="cidade">@Model.NomeCliente</span>
-    <span>@Model.Cidade</span>
-    <span>@Model.Estado.ToUpper()</span>
-</form>
-
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/css/detalhes.css" rel="stylesheet" />
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.DataEntregaDesejada)</th>
+            <th>@Html.DisplayNameFor(model => model.NomeProduto)</th>
+            <th>@Html.DisplayNameFor(model => model.Valor)</th>
+            <th>@Html.DisplayNameFor(model => model.NomeCliente)</th>
+            <th>@Html.DisplayNameFor(model => model.Cidade)</th>
+            <th>@Html.DisplayNameFor(model => model.Estado)</th>
+            <th>@Html.DisplayNameFor(model => model.PedidoUrgente)</th> 
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.DataEntregaDesejada.ToString("dd/MM/yyyy")</td>
+                <td>@Model.NomeProduto</td>
+                <td>R$ @Model.Valor</td>
+                <td>@Model.NomeCliente</td>
+                <td>@Model.Cidade</td>
+                <td>@Model.Estado.ToUpper()</td>
+                @if (@Model.PedidoUrgente == true)
+                {
+                    <td><i id="vermelho" class="fa fa-exclamation-circle" aria-hidden="true"></i></td>
+                }
+                else
+                {
+                    <td>Não é urgente</td>
+                }
+
+            </tr>
+            </tbody>
+</table>
+</div>

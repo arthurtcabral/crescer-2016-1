@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LojaNinja.Dominio
 {
@@ -7,8 +8,10 @@ namespace LojaNinja.Dominio
         /// <summary>
         /// Construtor utilizado para montar pedidos novos
         /// </summary>
-        public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, string nomeCliente, string cidade, string estado)
+        public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, 
+            string nomeCliente, string cidade, string estado)
         {
+            Id = 0; //POR ENQUANTO!!!!!
             DataEntregaDesejada = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;
@@ -18,11 +21,12 @@ namespace LojaNinja.Dominio
             Estado = estado;
 
             //DateTime.Now contaria as horas, minutos e segundos, isso inviabliziaria algumas validações a seguir
-            DataPedido = DateTime.Today; 
+            DataPedido = DateTime.Today;
 
             var diasRestantesParaConcluirEntrega = (dataEntregaDesejada - DataPedido).TotalDays;
             ValidaPossibilidadeEntrega(diasRestantesParaConcluirEntrega);
-            DefineUrgenciaDoPedido(diasRestantesParaConcluirEntrega);
+            PedidoUrgente = DefineUrgenciaDoPedido(diasRestantesParaConcluirEntrega);
+
         }
 
         /// <summary>
@@ -47,15 +51,25 @@ namespace LojaNinja.Dominio
             
         }
 
+        [Display(Name = "Id ")]
         public int Id { get; private set; }
+        [Display(Name = "Data do pedido ")]
         public DateTime DataPedido { get; private set; }
+        [Display(Name = "Data da entrega ")]
         public DateTime DataEntregaDesejada { get; private set; }
+        [Display(Name = "Produto ")]
         public string NomeProduto { get; private set; }
+        [Display(Name = "Valor ")]
         public decimal Valor { get; private set; }
+        [Display(Name = "Tipo de Pagamento ")]
         public TipoPagamento TipoPagamento { get; private set; }
+        [Display(Name = "Cliente ")]
         public string NomeCliente { get; private set; }
+        [Display(Name = "Cidade ")]
         public string Cidade { get; private set; }
+        [Display(Name = "Estado ")]
         public string Estado { get; private set; }
+        [Display(Name = "É Urgente? ")]
         public bool PedidoUrgente { get; private set; }
 
         private void ValidaPossibilidadeEntrega(double diasRestantesParaConcluirEntrega)
@@ -64,9 +78,9 @@ namespace LojaNinja.Dominio
                 throw new ArgumentException("A data de entrega desejada deve ser no mínimo 1 dia maior do que a data atual.");
         }
 
-        private void DefineUrgenciaDoPedido(double diasRestantesParaConcluirEntrega)
+        private bool DefineUrgenciaDoPedido(double diasRestantesParaConcluirEntrega)
         {
-            PedidoUrgente = diasRestantesParaConcluirEntrega < 7;
+            return diasRestantesParaConcluirEntrega <= 14;    
         }
     }
 }

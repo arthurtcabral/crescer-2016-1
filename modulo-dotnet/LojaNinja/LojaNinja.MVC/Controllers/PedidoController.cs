@@ -43,6 +43,9 @@ namespace LojaNinja.MVC.Controllers
             if (model.DataDesejoEntrega.AddDays(-7) < DateTime.Today)
                 ModelState.AddModelError("DataEntrega", "Data deve ser maior do que 7 dias");
 
+            if(model.DataDesejoEntrega < DateTime.Today)
+                ModelState.AddModelError("DataDesejoEntrega", "Este dia já passou, escolha uma data válida");
+
             if (ModelState.IsValid)
             {
                 try
@@ -55,9 +58,23 @@ namespace LojaNinja.MVC.Controllers
                         model.NomeCliente,
                         model.Cidade,
                         model.Estado);
-                    repositorio.IncluirPedido(pedido);
 
-                    return View("Detalhes", model);
+                    var pedidoFinal = new Pedido(
+                        pedido.Id,
+                        pedido.DataPedido,
+                        pedido.DataEntregaDesejada,
+                        pedido.NomeProduto,
+                        pedido.Valor,
+                        pedido.TipoPagamento,
+                        pedido.NomeCliente,
+                        pedido.Cidade,
+                        pedido.Estado,
+                        pedido.PedidoUrgente
+                        );
+                    //repositorio.IncluirPedido(pedido);
+                    
+
+                    return View("Detalhes", pedidoFinal);
                 } 
                 catch(ArgumentException ex)
                 {

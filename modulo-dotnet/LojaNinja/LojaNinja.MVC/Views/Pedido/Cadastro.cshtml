@@ -10,10 +10,10 @@
     Layout = "~/Shared/_Shared.cshtml";
 }
 
-<h4>Pedido Ninja</h4>
+<h4 id="titulo-cadastro">Pedido Ninja</h4>
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
-    <img id="imagem-ninja" src="~/Content/imagens/Ninja_crouch.png" />
+    <img id="imagem-ninja" src="http://3.bp.blogspot.com/-c_Od4gwttms/U7xY3iEg7jI/AAAAAAABch4/RTVJMJjF52A/s1600/98.png" />
     <hr>
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -74,7 +74,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Cadastrar" class="btn btn-default" />
+            <input type="submit" value="Cadastrar" class="btn btn-success" />
         </div>
     </div>
 }
