@@ -152,6 +152,7 @@
     <Content Include="Views\Pedido\Detalhes.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Shared\_Shared.cshtml" />
+    <Content Include="Views\Pedido\Excluir.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

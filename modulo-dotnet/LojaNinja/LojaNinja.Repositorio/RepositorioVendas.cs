@@ -11,13 +11,12 @@ namespace LojaNinja.Repositorio
     public class RepositorioVendas
     {
         private const string PATH_ARQUIVO = @"C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\vendas.txt";
+        private static List<string> LINHAS_ARQUIVO = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
         private static readonly object objetoLock = new object();
 
         public List<Pedido> ObterPedidos()
         {
-            var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
-
-            return ConverteLinhasEmPedidos(linhasArquivo);
+            return ConverteLinhasEmPedidos(LINHAS_ARQUIVO);
         }
 
         public Pedido ObterPedidoPorId(int id)
@@ -59,10 +58,19 @@ namespace LojaNinja.Repositorio
             //TODO: Implementar
         }
 
-        public void ExcluirPedido(int id)
-        {
-            //TODO: Implementar
-        }
+            public void ExcluirPedido(int id)
+            {
+
+            foreach(var linha in LINHAS_ARQUIVO)
+            {
+                if (linha.StartsWith(id.ToString()))
+                {
+                    LINHAS_ARQUIVO.Remove(linha);
+                    break;
+                }
+            }
+            File.WriteAllLines(PATH_ARQUIVO, LINHAS_ARQUIVO);            
+            }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
         {

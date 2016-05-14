@@ -80,7 +80,7 @@ namespace LojaNinja.MVC.Controllers
         {
             var pedidos = repositorio.ObterPedidos()
               .Where(p =>
-                  (cliente == null || cliente == "" || p.NomeCliente == cliente)
+                  (cliente == null || cliente == "" || p.NomeCliente.Contains(cliente))
                   &&
                   (produto == null || produto == "" || p.NomeProduto == produto));
             return View(pedidos);
@@ -90,9 +90,9 @@ namespace LojaNinja.MVC.Controllers
         {
             repositorio.ExcluirPedido(id);
 
-            ViewBag.Mensagem = "Pedido excluído!";
+            ViewBag.MensagemExclusao = "Pedido excluído!";
 
-            return View("Mensagem");
+            return View();
         }
     }
 }
