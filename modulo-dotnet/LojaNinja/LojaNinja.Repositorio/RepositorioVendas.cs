@@ -10,7 +10,7 @@ namespace LojaNinja.Repositorio
 {
     public class RepositorioVendas
     {
-        private const string PATH_ARQUIVO = @"C:\Users\fabriciosilva\Desktop\Vendas.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\vendas.txt";
         private static readonly object objetoLock = new object();
 
         public List<Pedido> ObterPedidos()
@@ -35,7 +35,7 @@ namespace LojaNinja.Repositorio
 
                 File.AppendAllText(PATH_ARQUIVO, novaLinha);
 
-                //pedido.AtualizarId(idGerado);
+                pedido.AtualizarId(idGerado);
             }
         }
 

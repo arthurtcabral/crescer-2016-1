@@ -1,67 +1,90 @@
 ﻿@model IEnumerable<LojaNinja.Dominio.Pedido>
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Shared/_Shared.cshtml"; ;
 }
 
-<p>
-    @Html.ActionLink("Create New", "Cadastro")
-</p>
-<table class="table table-bordered table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DataPedido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataEntregaDesejada)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeProduto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeCliente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
+<link href="~/Content/css/detalhes.css" rel="stylesheet" />
+<link href="~/Content/css/shared.css" rel="stylesheet" />
 
-    @foreach (var item in Model)
+    <a href="~/Pedido/Cadastro" class="btn btn-primary">Cadastrar novo Pedido</a>
+    @using (Html.BeginForm("Listagem", "Pedido", FormMethod.Get))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataPedido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataEntregaDesejada)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeProduto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeCliente)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Ver Detalhes", "Detalhes", new { id = item.Id }) |
-                @Html.ActionLink("Remover", "Deletar", new { id = item.Id })
-            </td>
-        </tr>
+        <input type="text" name="cliente" placeholder="Cliente"/>
+        <input type="text" name="produto" placeholder="Produto"/>
+        <input type="submit" value="Pesquisar" class="btn btn-default">
     }
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataPedido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataEntregaDesejada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeProduto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PedidoUrgente)
+                </th>
+            </tr>
+        </thead>
+
+     @foreach (var item in Model)
+            {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataPedido)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DataEntregaDesejada)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeProduto)
+                                </td>
+                                <td>
+                                    R$ @Html.DisplayFor(modelItem => item.Valor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NomeCliente)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cidade)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </td>                               
+                                    @if(item.PedidoUrgente == true)
+                                    {
+                                    <td>Sim</td>
+                                    }
+                                    else
+                                    {
+                                    <td>Não</td>
+                                    }
+                                <td>
+                                    <a href="~/Pedido/Cadastro/@item.Id"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                    <a href="~/Pedido/Detalhes/@item.Id"><i class="fa fa-info" aria-hidden="true"></i></a>
+                                    <a href="~/Pedido/Excluir/@item.Id"><i class="fa fa-times" aria-hidden="true"></i></a> 
+                                </td>
+                            </tr>
+                        </tbody>
+                            }
 </table>
+</div>
