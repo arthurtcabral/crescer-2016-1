@@ -7,12 +7,11 @@ namespace LojaNinja.Dominio
     {
 
         /// <summary>
-        /// Construtor utilizado para atualizar a lista
+        /// Construtor utilizado para montar pedidos novos
         /// </summary>
-        public Pedido(int id, DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento,
+        public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, 
             string nomeCliente, string cidade, string estado)
         {
-            Id = id;
             DataEntregaDesejada = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;
@@ -31,11 +30,12 @@ namespace LojaNinja.Dominio
         }
 
         /// <summary>
-        /// Construtor utilizado para montar pedidos novos
+        /// Construtor utilizado para atualizar a lista
         /// </summary>
-        public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, 
+        public Pedido(int id, DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento,
             string nomeCliente, string cidade, string estado)
         {
+            Id = id;
             DataEntregaDesejada = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;
@@ -68,11 +68,6 @@ namespace LojaNinja.Dominio
             Estado = estado;
             DataPedido = dataPedido;
             PedidoUrgente = pedidoUrgente;
-        }
-
-        public void IncluirPedido(Pedido pedido)
-        {
-            
         }
 
         [Display(Name = "Id ")]

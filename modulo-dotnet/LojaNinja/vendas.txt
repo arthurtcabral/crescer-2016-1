@@ -1,5 +1,5 @@
 Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Tipo de pagamento;Nome do cliente;Nome da cidade;Nome do estado;Urgente
-3;15/05/2016 00:00;30/05/2016 00:00;luvas;1200,00;MASTERCARD;LUVAS;LUVAS;LU;False
+3;15/05/2016 00:00;29/09/2016 00:00;luvas;1200,00;MASTERCARD;LUVAS;LUVAS;LU;False
 4;01/03/2009 14:44;01/03/2009 14:44;Kunai;1200;Selecione;Gouya;Echuca;Victoria;True
 5;01/04/2009 20:11;01/04/2009 20:11;Shuriken;1200;Selecione;Fleur;Peoria                      ;IL;True
 6;01/02/2009 20:09;01/02/2009 20:09;Shuriken;1200;Selecione;adam;Martin                      ;TN;True
@@ -999,3 +999,4 @@ Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Ti
 1000;15/05/2016 00:00;28/05/2016 00:00;Oléo de Soja;20,00;VISA;Auriel;Esteio;RS;False
 1001;15/05/2016 00:00;30/05/2016 00:00;OLIVIA;20,00;VISA;OLEO;OLEO;OL;False
 1002;15/05/2016 00:00;28/05/2016 00:00;CASACO;220,00;MASTERCARD;CASACO;CASACO;CA;False
+1003;15/05/2016 00:00;30/05/2016 00:00;Faixa vermelha;20,00;MASTERCARD;Arnold;Sapucaia do Sul;RS;False

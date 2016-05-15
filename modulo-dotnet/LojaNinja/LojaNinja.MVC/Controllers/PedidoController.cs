@@ -115,12 +115,8 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Listagem(string cliente, string produto)
         {
-            var pedidos = repositorio.ObterPedidos()
-              .Where(p =>
-                  (cliente == null || cliente == "" || p.NomeCliente.Contains(cliente))
-                  &&
-                  (produto == null || produto == "" || p.NomeProduto == produto));
-            return View(pedidos);
+            var pedidos = repositorio.ObterPedidoPorFiltro(cliente, produto);
+            return View("Listagem", pedidos);
         }
 
         public ActionResult Excluir(int id)

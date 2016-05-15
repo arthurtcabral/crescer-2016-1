@@ -38,19 +38,14 @@ namespace LojaNinja.Repositorio
             }
         }
 
-        private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
+        public List<Pedido> ObterPedidoPorFiltro(string cliente, string produto)
         {
-            return string.Format(Environment.NewLine + "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
-                                proximoId,
-                                pedido.DataPedido.ToString("dd/MM/yyyy HH:mm"),
-                                pedido.DataEntregaDesejada.ToString("dd/MM/yyyy HH:mm"),
-                                pedido.NomeProduto,
-                                pedido.Valor,
-                                pedido.TipoPagamento,
-                                pedido.NomeCliente,
-                                pedido.Cidade,
-                                pedido.Estado,
-                                pedido.PedidoUrgente);
+            var pedidos = this.ObterPedidos()
+              .Where(p =>
+                  (cliente == null || cliente == "" || p.NomeCliente.Contains(cliente))
+                  &&
+                  (produto == null || produto == "" || p.NomeProduto == produto)).ToList();
+            return pedidos;
         }
 
         public void AtualizarPedido(Pedido pedido)
@@ -80,6 +75,21 @@ namespace LojaNinja.Repositorio
                 }
             }
             File.WriteAllLines(PATH_ARQUIVO, linhasArquivo);
+        }
+
+        private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
+        {
+            return string.Format(Environment.NewLine + "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
+                                proximoId,
+                                pedido.DataPedido.ToString("dd/MM/yyyy HH:mm"),
+                                pedido.DataEntregaDesejada.ToString("dd/MM/yyyy HH:mm"),
+                                pedido.NomeProduto,
+                                pedido.Valor,
+                                pedido.TipoPagamento,
+                                pedido.NomeCliente,
+                                pedido.Cidade,
+                                pedido.Estado,
+                                pedido.PedidoUrgente);
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
