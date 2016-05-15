@@ -38,21 +38,6 @@ namespace LojaNinja.Repositorio
             }
         }
 
-        private string ConvertePedidoCSV(Pedido pedido)
-        {
-            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
-                                pedido.Id,
-                                pedido.DataPedido.ToString("dd/MM/yyyy"),
-                                pedido.DataEntregaDesejada.ToString("dd/MM/yyyy"),
-                                pedido.NomeProduto,
-                                pedido.Valor,
-                                pedido.TipoPagamento,
-                                pedido.NomeCliente,
-                                pedido.Cidade,
-                                pedido.Estado,
-                                pedido.PedidoUrgente);
-        }
-
         private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
         {
             return string.Format(Environment.NewLine + "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",

@@ -43,31 +43,5 @@ namespace LojaNinja.MVC.Models
         [Required(ErrorMessage = "Informe o estado.")]
         public string Estado { get; set; }
 
-        public PedidoModel(DateTime dataDesejoEntrega, string nomeProduto, decimal valorVenda, TipoPagamento tipoPagamento, string cliente, string cidade, string estado)
-        {
-            DataDesejoEntrega = dataDesejoEntrega;
-            NomeProduto = nomeProduto;
-            ValorVenda = valorVenda;
-            TipoDePagamento = tipoPagamento;
-            NomeCliente = cliente;
-            Cidade = cidade;
-            Estado = estado;
-        }
-
-        public PedidoModel() {
-        }
-
-        public PedidoModel(Pedido pedido)
-        {
-            Id = pedido.Id;
-            DataDesejoEntrega = pedido.DataEntregaDesejada;
-            NomeProduto = pedido.NomeProduto;
-            ValorVenda = pedido.Valor;
-            TipoDePagamento = pedido.TipoPagamento;
-            NomeCliente = pedido.NomeCliente;
-            Cidade = pedido.Cidade;
-            Estado = pedido.Estado;
-        }
-
     }
 }

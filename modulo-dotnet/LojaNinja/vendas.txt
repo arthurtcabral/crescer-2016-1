@@ -997,4 +997,5 @@ Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Ti
 998;01/06/2009 07:18;01/06/2009 07:18;Pokebola;1200;Selecione;John;Banbury;England;True
 999;13/05/2016 19:35;20/05/2016 00:00;Facas Tramontina;220,25;Selecione;Auriel;Esteio;RS;False
 1000;15/05/2016 00:00;28/05/2016 00:00;Oléo de Soja;20,00;VISA;Auriel;Esteio;RS;False
-1001;15/05/2016 00:00;30/05/2016 00:00;OLEO;20,00;VISA;OLEO;OLEO;OL;False
+1001;15/05/2016 00:00;30/05/2016 00:00;OLIVIA;20,00;VISA;OLEO;OLEO;OL;False
+1002;15/05/2016 00:00;28/05/2016 00:00;CASACO;220,00;MASTERCARD;CASACO;CASACO;CA;False
