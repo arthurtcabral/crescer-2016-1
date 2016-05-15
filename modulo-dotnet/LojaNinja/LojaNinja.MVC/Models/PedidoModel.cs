@@ -9,6 +9,9 @@ namespace LojaNinja.MVC.Models
 {
     public class PedidoModel
     {
+
+        public int? Id { get; set; }
+
         [Display(Name = "Data de entrega ")]
         [Required(ErrorMessage = "Informe a data de entrega.")]
         [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}")]
@@ -39,5 +42,32 @@ namespace LojaNinja.MVC.Models
         [StringLength(2, ErrorMessage = "Estado deverá ter 2 caracteres")]
         [Required(ErrorMessage = "Informe o estado.")]
         public string Estado { get; set; }
+
+        public PedidoModel(DateTime dataDesejoEntrega, string nomeProduto, decimal valorVenda, TipoPagamento tipoPagamento, string cliente, string cidade, string estado)
+        {
+            DataDesejoEntrega = dataDesejoEntrega;
+            NomeProduto = nomeProduto;
+            ValorVenda = valorVenda;
+            TipoDePagamento = tipoPagamento;
+            NomeCliente = cliente;
+            Cidade = cidade;
+            Estado = estado;
+        }
+
+        public PedidoModel() {
+        }
+
+        public PedidoModel(Pedido pedido)
+        {
+            Id = pedido.Id;
+            DataDesejoEntrega = pedido.DataEntregaDesejada;
+            NomeProduto = pedido.NomeProduto;
+            ValorVenda = pedido.Valor;
+            TipoDePagamento = pedido.TipoPagamento;
+            NomeCliente = pedido.NomeCliente;
+            Cidade = pedido.Cidade;
+            Estado = pedido.Estado;
+        }
+
     }
 }

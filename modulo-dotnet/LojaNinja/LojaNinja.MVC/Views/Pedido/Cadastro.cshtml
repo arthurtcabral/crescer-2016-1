@@ -15,11 +15,13 @@
 {
     <img id="imagem-ninja" src="http://3.bp.blogspot.com/-c_Od4gwttms/U7xY3iEg7jI/AAAAAAABch4/RTVJMJjF52A/s1600/98.png" />
     <hr>
+    @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control", style="visibility: hidden" } })
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.DataDesejoEntrega, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.DataDesejoEntrega, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.DataDesejoEntrega, new { htmlAttributes = new { @class = "form-control"} })
             @Html.ValidationMessageFor(model => model.DataDesejoEntrega, "", new { @class = "text-danger" })
         </div>
     </div>

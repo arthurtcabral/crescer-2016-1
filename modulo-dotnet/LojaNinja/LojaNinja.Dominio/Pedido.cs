@@ -5,13 +5,37 @@ namespace LojaNinja.Dominio
 {
     public class Pedido
     {
+
+        /// <summary>
+        /// Construtor utilizado para atualizar a lista
+        /// </summary>
+        public Pedido(int id, DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento,
+            string nomeCliente, string cidade, string estado)
+        {
+            Id = id;
+            DataEntregaDesejada = dataEntregaDesejada;
+            NomeProduto = nomeProduto;
+            Valor = valor;
+            TipoPagamento = tipoPagamento;
+            NomeCliente = nomeCliente;
+            Cidade = cidade;
+            Estado = estado;
+
+            //DateTime.Now contaria as horas, minutos e segundos, isso inviabliziaria algumas validações a seguir
+            DataPedido = DateTime.Today;
+
+            var diasRestantesParaConcluirEntrega = (dataEntregaDesejada - DataPedido).TotalDays;
+            ValidaPossibilidadeEntrega(diasRestantesParaConcluirEntrega);
+            PedidoUrgente = DefineUrgenciaDoPedido(diasRestantesParaConcluirEntrega);
+
+        }
+
         /// <summary>
         /// Construtor utilizado para montar pedidos novos
         /// </summary>
         public Pedido(DateTime dataEntregaDesejada, string nomeProduto, decimal valor, TipoPagamento tipoPagamento, 
             string nomeCliente, string cidade, string estado)
         {
-            Id = 0; //POR ENQUANTO!!!!!
             DataEntregaDesejada = dataEntregaDesejada;
             NomeProduto = nomeProduto;
             Valor = valor;

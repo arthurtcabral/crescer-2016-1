@@ -11,12 +11,12 @@ namespace LojaNinja.Repositorio
     public class RepositorioVendas
     {
         private const string PATH_ARQUIVO = @"C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\vendas.txt";
-        private static List<string> LINHAS_ARQUIVO = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
         private static readonly object objetoLock = new object();
 
         public List<Pedido> ObterPedidos()
         {
-            return ConverteLinhasEmPedidos(LINHAS_ARQUIVO);
+            var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
+            return ConverteLinhasEmPedidos(linhasArquivo);
         }
 
         public Pedido ObterPedidoPorId(int id)
@@ -38,6 +38,21 @@ namespace LojaNinja.Repositorio
             }
         }
 
+        private string ConvertePedidoCSV(Pedido pedido)
+        {
+            return string.Format("{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
+                                pedido.Id,
+                                pedido.DataPedido.ToString("dd/MM/yyyy"),
+                                pedido.DataEntregaDesejada.ToString("dd/MM/yyyy"),
+                                pedido.NomeProduto,
+                                pedido.Valor,
+                                pedido.TipoPagamento,
+                                pedido.NomeCliente,
+                                pedido.Cidade,
+                                pedido.Estado,
+                                pedido.PedidoUrgente);
+        }
+
         private string ConvertePedidoEmLinhaCSV(Pedido pedido, int proximoId)
         {
             return string.Format(Environment.NewLine + "{0};{1};{2};{3};{4};{5};{6};{7};{8};{9}",
@@ -55,22 +70,32 @@ namespace LojaNinja.Repositorio
 
         public void AtualizarPedido(Pedido pedido)
         {
-            //TODO: Implementar
+            var linhasArquivo = ObterPedidos();
+            var idPedido = linhasArquivo.FindIndex(linha => linha.Id == pedido.Id); //Retorna indice do array
+            linhasArquivo.Remove(linhasArquivo.FirstOrDefault(linha => linha.Id == pedido.Id));
+            linhasArquivo.Insert(idPedido, pedido);
+
+            string linhas = "Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Tipo de pagamento;Nome do cliente;Nome da cidade;Nome do estado;Urgente";
+            foreach (var linha in linhasArquivo)
+            {
+                linhas += this.ConvertePedidoEmLinhaCSV(linha, linha.Id);
+            }
+            File.WriteAllText(PATH_ARQUIVO, linhas);
         }
 
-            public void ExcluirPedido(int id)
+        public void ExcluirPedido(int id)
             {
-
-            foreach(var linha in LINHAS_ARQUIVO)
+            var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
+            foreach (var linha in linhasArquivo)
             {
                 if (linha.StartsWith(id.ToString()))
                 {
-                    LINHAS_ARQUIVO.Remove(linha);
+                    linhasArquivo.Remove(linha);
                     break;
                 }
             }
-            File.WriteAllLines(PATH_ARQUIVO, LINHAS_ARQUIVO);            
-            }
+            File.WriteAllLines(PATH_ARQUIVO, linhasArquivo);
+        }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
         {

@@ -13,9 +13,30 @@ namespace LojaNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
-        public ActionResult Cadastro()
+        public ActionResult Cadastro(int? id)
         {
-            return View();
+            if (id.HasValue)
+            {
+                var pedido = repositorio.ObterPedidoPorId(id.Value);
+
+                var model = new PedidoModel()
+                {
+                    Id = pedido.Id,
+                    DataDesejoEntrega = pedido.DataEntregaDesejada,
+                    NomeProduto = pedido.NomeProduto,
+                    ValorVenda = pedido.Valor,
+                    TipoDePagamento = pedido.TipoPagamento,
+                    NomeCliente = pedido.NomeCliente,
+                    Cidade = pedido.Cidade,
+                    Estado = pedido.Estado
+                }
+                ;
+                return View("Cadastro", model);
+            }
+            else
+            {
+                return View("Cadastro");
+            }
         }
 
         public ActionResult Detalhes(int id)
@@ -27,53 +48,69 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Salvar(PedidoModel model)
         {
-            if (model.Estado == "RS" && model.Cidade == "SL")
-                ModelState.AddModelError("", "Cidade e Estado inválidos");
+                if (model.Estado == "RS" && model.Cidade == "SL")
+                    ModelState.AddModelError("", "Cidade e Estado inválidos");
 
-            if (model.DataDesejoEntrega < DateTime.Today)
-                ModelState.AddModelError("DataDesejoEntrega", "Este dia já passou, escolha uma data válida");
+                if (model.DataDesejoEntrega < DateTime.Today)
+                    ModelState.AddModelError("DataDesejoEntrega", "Este dia já passou, escolha uma data válida");
 
-            if (ModelState.IsValid)
-            {
-                try
+                if (ModelState.IsValid)
                 {
-                    var pedido = new Pedido(
-                        model.DataDesejoEntrega,
-                        model.NomeProduto,
-                        model.ValorVenda,
-                        model.TipoDePagamento,
-                        model.NomeCliente,
-                        model.Cidade,
-                        model.Estado);
-
-                    var pedidoFinal = new Pedido(
-                        pedido.Id,
-                        pedido.DataPedido,
-                        pedido.DataEntregaDesejada,
-                        pedido.NomeProduto,
-                        pedido.Valor,
-                        pedido.TipoPagamento,
-                        pedido.NomeCliente,
-                        pedido.Cidade,
-                        pedido.Estado,
-                        pedido.PedidoUrgente
-                        );
-                    repositorio.IncluirPedido(pedido);
-
-
-                    return View("Detalhes", pedidoFinal);
+                Pedido pedidoAux = null;
+                    try
+                    {
+                    if(model.Id == 0 || model.Id == null)
+                    {
+                var pedido = new Pedido(
+                            model.DataDesejoEntrega,
+                            model.NomeProduto,
+                            model.ValorVenda,
+                            model.TipoDePagamento,
+                            model.NomeCliente,
+                            model.Cidade,
+                            model.Estado);
+                        repositorio.IncluirPedido(pedido);
+                        pedidoAux = pedido;
                 }
-                catch (ArgumentException ex)
+                    else
+                    {
+                        var pedido = new Pedido(
+                            (int) model.Id,
+                            model.DataDesejoEntrega,
+                            model.NomeProduto,
+                            model.ValorVenda,
+                            model.TipoDePagamento,
+                            model.NomeCliente,
+                            model.Cidade,
+                            model.Estado);
+
+                        var pedidoFinal = new Pedido(
+                           pedido.Id,
+                           pedido.DataPedido,
+                           pedido.DataEntregaDesejada,
+                           pedido.NomeProduto,
+                           pedido.Valor,
+                           pedido.TipoPagamento,
+                           pedido.NomeCliente,
+                           pedido.Cidade,
+                           pedido.Estado,
+                           pedido.PedidoUrgente
+                           );
+                        repositorio.AtualizarPedido(pedidoFinal);
+                        pedidoAux = pedido;
+                    } 
+                    }
+                    catch (ArgumentException ex)
+                    {
+                        ModelState.AddModelError("", ex.Message);
+                        return View("Cadastro", model);
+                    }
+                return View("Detalhes", pedidoAux);
+            }
+                else
                 {
-                    ModelState.AddModelError("", ex.Message);
                     return View("Cadastro", model);
                 }
-
-            }
-            else
-            {
-                return View("Cadastro", model);
-            }
         }
 
         public ActionResult Listagem(string cliente, string produto)
