@@ -54,7 +54,6 @@ namespace LojaNinja.Repositorio
             var idPedido = linhasArquivo.FindIndex(linha => linha.Id == pedido.Id); //Retorna indice do array
             linhasArquivo.Remove(linhasArquivo.FirstOrDefault(linha => linha.Id == pedido.Id));
             linhasArquivo.Insert(idPedido, pedido);
-
             string linhas = "Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Tipo de pagamento;Nome do cliente;Nome da cidade;Nome do estado;Urgente";
             foreach (var linha in linhasArquivo)
             {
@@ -64,7 +63,7 @@ namespace LojaNinja.Repositorio
         }
 
         public void ExcluirPedido(int id)
-            {
+        {
             var linhasArquivo = File.ReadAllLines(PATH_ARQUIVO, Encoding.UTF8).ToList();
             foreach (var linha in linhasArquivo)
             {

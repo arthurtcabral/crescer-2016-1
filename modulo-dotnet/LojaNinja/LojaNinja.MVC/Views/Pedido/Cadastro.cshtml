@@ -10,10 +10,12 @@
     Layout = "~/Shared/_Shared.cshtml";
 }
 
-<h4 id="titulo-cadastro">Pedido Ninja</h4>
+<img id="imagem-ninja" src="http://3.bp.blogspot.com/-c_Od4gwttms/U7xY3iEg7jI/AAAAAAABch4/RTVJMJjF52A/s1600/98.png" />
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
-    <img id="imagem-ninja" src="http://3.bp.blogspot.com/-c_Od4gwttms/U7xY3iEg7jI/AAAAAAABch4/RTVJMJjF52A/s1600/98.png" />
+    <div>
+        <img id="camelo" src="~/Content/imagens/tnnt.png" />
+    </div>
     <hr>
     @Html.EditorFor(model => model.Id, new { htmlAttributes = new { @class = "form-control", style="visibility: hidden" } })
 

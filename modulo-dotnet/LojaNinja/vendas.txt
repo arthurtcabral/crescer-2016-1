@@ -1,8 +1,5 @@
-Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Tipo de pagamento;Nome do cliente;Nome da cidade;Nome do estado;Urgente
-3;15/05/2016 00:00;29/09/2016 00:00;luvas;1200,00;MASTERCARD;LUVAS;LUVAS;LU;False
-4;01/03/2009 14:44;01/03/2009 14:44;Kunai;1200;Selecione;Gouya;Echuca;Victoria;True
+﻿Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Tipo de pagamento;Nome do cliente;Nome da cidade;Nome do estado;Urgente
 5;01/04/2009 20:11;01/04/2009 20:11;Shuriken;1200;Selecione;Fleur;Peoria                      ;IL;True
-6;01/02/2009 20:09;01/02/2009 20:09;Shuriken;1200;Selecione;adam;Martin                      ;TN;True
 7;01/04/2009 13:17;01/04/2009 13:17;Faca de Gaudério;1200;Selecione;Nunes;São Leopoldo;Rio Grande do Sul;True
 8;01/04/2009 14:11;01/04/2009 14:11;Katana;1200;Selecione;Aidan;Chatou;Ile-de-France;True
 9;01/05/2009 02:42;01/05/2009 02:42;Kunai;1200;Selecione;Stacy;New York                    ;NY;True
@@ -1000,3 +997,6 @@ Numero do pedido;Data do pedido;Data de Entrega;Nome do produto;Valor produto;Ti
 1001;15/05/2016 00:00;30/05/2016 00:00;OLIVIA;20,00;VISA;OLEO;OLEO;OL;False
 1002;15/05/2016 00:00;28/05/2016 00:00;CASACO;220,00;MASTERCARD;CASACO;CASACO;CA;False
 1003;15/05/2016 00:00;30/05/2016 00:00;Faixa vermelha;20,00;MASTERCARD;Arnold;Sapucaia do Sul;RS;False
+1004;15/05/2016 00:00;28/05/2016 00:00;Facas Tramontina;20,00;VISA;Auriel;Esteio;RS;False
+1005;15/05/2016 00:00;30/05/2016 00:00;Facas Guinsu;220,00;VISA;Auriel;Esteio;RS;False
+1006;15/05/2016 00:00;30/05/2016 00:00;Facas Tramontina;225,00;DINERS;Auriel;Esteio;RS;False
