@@ -19,16 +19,21 @@ namespace LojaNinja.Repositorio
             string connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
             using (var conexao = new SqlConnection(connectionString))
             {
-                string sql = String.Format("INSERT INTO Usuario (nome, email, senha) VALUES @p_nome, @p_email, @p_senha",
+                string sqlUsuario = String.Format("INSERT INTO Usuario (nome, email, senha) VALUES @p_nome, @p_email, @p_senha",
                     usuario.Nome, usuario.Email, usuario.Senha);
-                var comando = new SqlCommand(sql, conexao);
+                var comandoUsuario = new SqlCommand(sqlUsuario, conexao);
 
-                comando.Parameters.Add(new SqlParameter("p_nome", usuario.Nome));
-                comando.Parameters.Add(new SqlParameter("p_email", usuario.Email));
-                comando.Parameters.Add(new SqlParameter("p_senha", usuario.Senha));
+                comandoUsuario.Parameters.Add(new SqlParameter("p_nome", usuario.Nome));
+                comandoUsuario.Parameters.Add(new SqlParameter("p_email", usuario.Email));
+                comandoUsuario.Parameters.Add(new SqlParameter("p_senha", usuario.Senha));
 
                 conexao.Open();
-                comando.ExecuteNonQuery();
+                comandoUsuario.ExecuteNonQuery();
+
+                string sqlUsuarioPorPermissao = String.Format("INSERT INTO UsuarioPorPermissao(idUsuario, idPermissao)VALUES")
+                
+                //TODO: Implementar regra para inserção na tabela intermediária
+                
             }
         }
 

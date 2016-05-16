@@ -12,14 +12,7 @@ namespace LojaNinja.Filters
     public class Token : AuthorizeAttribute
     {
         private string[] _permissoesRequeridas = null;
-
-        public Token()
-        {
-            _permissoesRequeridas = String.IsNullOrWhiteSpace(this.Roles) ?
-                                        null :
-                                        this.Roles.Split(',');
-        }
-        
+               
         private bool TemAutorizacao
         {
             get
@@ -52,6 +45,10 @@ namespace LojaNinja.Filters
         
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
+            _permissoesRequeridas = String.IsNullOrWhiteSpace(this.Roles) ?
+                                        null :
+                                        this.Roles.Split(',');
+
             bool estaAutenticadoEAutorizado = this.AuthorizeCore(filterContext.HttpContext);
 
             if (!estaAutenticadoEAutorizado)
@@ -59,8 +56,8 @@ namespace LojaNinja.Filters
                 filterContext.Result = new RedirectToRouteResult(
                                    new RouteValueDictionary
                                    {
-                                       { "action", "Index" },
-                                       { "controller", "Login" }
+                                       { "action", "Cadastro" },
+                                       { "controller", "Pedido" }
                                    });
             }
 

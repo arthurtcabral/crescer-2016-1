@@ -66,17 +66,14 @@ namespace LojaNinja.MVC.Controllers
         {
             return View("CadastroUsuario");
         }
-
-        // Aqui, exigimos que somente alguém que tenha a permissão GOLD possa entrar.
+        
         [HttpGet]
         [Token(Roles = "ADMIN")]
         public ActionResult AreaSuuuperSecreta()
         {
             return View();
         }
-
-        //---------------------------------------------------------------------------------------------------------------------//
-
+        
         [HttpGet]
         [Token]
         public ActionResult Cadastro(int? id)

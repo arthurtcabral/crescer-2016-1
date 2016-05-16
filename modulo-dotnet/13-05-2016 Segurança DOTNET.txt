@@ -1,0 +1,91 @@
+--- TOKEN E COOKIE - GERAL
+1
+
+Número criptografado ou string criptografada (crachá) que dá ao usuário a identificação para acessar páginas que necessitem de email e senha. O tráfego de tokens são feito por meio de cookies.
+
+var cookie = new HttpCokkie("NOME_TOKEN", "VALOR DO COOKIE");
+
+HttpContext.Response.Cookies.Set(cookie); //Contém todas as informações envolvendo a transação http. Recebe tudo que for recebido pela response.
+
+Para cada cookie, gerar um valor diferente.
+
+Na ActionRedirecionada, por:
+
+if(HttpContext.Request.Cokkies.AllKeys.Any)
+
+Ou
+
+HttpCookie cookieDeAut = HttpContext.Request.Cookies.Get("NOME_TOKEN");
+
+if(cookieDeAut != null && cookieDeAut.Value.Equals("VALOR_DO_COOKIE")){ // REGRA: Valor do cookie deve ser único para cada usuário.
+	return View("");
+}
+else
+{
+return View("Index");
+}
+
+Cookies são guardados no browser.
+
+DICA:
+
+Criar Pasta Filter > Add class que herda de AuthorizeAttribute > Por códigos dos cookies dentro
+
+Assim, a action simplesmente retorna a View. Mas é importante que a action tenha, em cima... [ClasseDoFilter].
+
+Métodos para serem sobrescritos: 
+AuthorizeCore(HttpContextBase httpContext) //Para autenticar o cookie, o crachá
+OnAuthorization(AuthorizationContext filterContext) //Chama o AuthorizeCore, e se ele não estiver autorizado... filterContext.Result = new RedirectToRouteResult(
+																new RouteValueDictionary{
+																{"ACTION", "NOME DA ACTION"},
+																{"CONTROLLER", "NOME DA CONTROLLER"}
+																}); //Chave, Valor da Chave
+
+
+--- TOKEN E COOKIE - CADA USUÁRIO COM O SEU
+2
+
+Deve,se salvar o Token em um Dictionary<string, string> //Chave é o token, e o valor é o email do usuário
+
+Nota: Dictionary funciona como um HashMap<>;
+
+Guid: Gera aleatoriedades.
+
+Se o Dictionary estiver static, ou qualquer outra variável: Ela fica salva no processo, todos podem acessar.
+
+
+
+--- SESSION
+3
+
+
+Acessos a BD devem ser economizados! Interessante achar uma solução para não precisar pesquisas trocentas vezes coisas no BD.
+
+Interessante usar...
+
+Session["USUARIO_LOGADO"] = usuarioEncontrado;
+
+Sessão: ViewBag com os dados do usuário.
+
+USE SESSÃO PARA GUARDAR DADOS DO USUÁRIO!
+
+
+
+--- @Html.AntiForgeryToken
+4
+
+http://pt.stackoverflow.com/questions/86063/o-que-%C3%A9-o-antiforgerytoken
+
+
+
+--- AUTENTICAÇÃO X AUTORIZAÇÃO
+5
+
+Autenticação: Ter acesso a um sistema.
+
+Autorização: O que cada usuário tem acesso, quando ele está autenticado.
+
+[CWIToken(Roles = "GOLD")]
+
+string[] permissoesRequeridas = string.IsNullOrWhiteSpace(this.Roles) ? null : this.Roles.Split(',');
+No método AuthorizeCore > bool estaAutorizado;
