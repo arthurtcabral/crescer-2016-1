@@ -24,9 +24,5 @@ namespace LojaNinja.MVC.Models
         [DisplayName("Senha")]
         [StringLength(100)]
         public string Senha { get; set; }
-        
-        [DisplayName("Confirme a senha")]
-        [StringLength(100)]
-        public string ConfirmeASenha { get; set; }
     }
 }
