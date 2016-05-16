@@ -12,7 +12,7 @@ namespace LojaNinja.Repositorio
     public class UsuarioRepositorio : IUsuarioRepositorio
     {
 
-        private const string PATH_ARQUIVO = @"C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\usuarios.txt";
+        private const string PATH_ARQUIVO = @"C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\usuarios.txt";
         private static readonly object objetoLock = new object();
 
         public void Cadastrar(Usuario usuario)
@@ -37,10 +37,9 @@ namespace LojaNinja.Repositorio
 
         private string ConverteUsuarioEmLinhaCSV(Usuario usuario)
         {
-            return string.Format(Environment.NewLine + "{0};{1};{2}",
+            return string.Format(Environment.NewLine + "{0};{1}",
                                 usuario.Nome,
-                                usuario.Email,
-                                usuario.Senha);
+                                usuario.Email);
         }
 
         private List<Usuario> ConverteLinhasEmUsuarios(List<string> linhasArquivo)

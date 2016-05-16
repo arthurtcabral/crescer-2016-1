@@ -19,7 +19,7 @@ namespace LojaNinja.MVC.Controllers
         public PedidoController()
         {
             _usuarioServico = new UsuarioServico(
-                    new UsuarioRepositorio()
+                    new UsuarioRepositorioADO()
                 );
         }
 
@@ -61,36 +61,10 @@ namespace LojaNinja.MVC.Controllers
             return View("Index", usuarioLoginModel);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult CadastrarUsuario(UsuarioLoginModel usuarioLoginModel)
+        [HttpGet]
+        public ActionResult CadastroUsuario()
         {
-            if (!usuarioLoginModel.Senha.Equals(usuarioLoginModel.ConfirmeASenha))
-            {
-                ModelState.AddModelError("INVALID_USER", "Senha e confirmação de senha nao condizem.");
-                return View("CadastroUsuario");
-            }
-            else
-            {
-                if (ModelState.IsValid)
-                {
-                    Usuario usuarioEncontrado =
-                        _usuarioServico.BuscarUsuarioPorAutenticacao(
-                                usuarioLoginModel.Email, usuarioLoginModel.Senha
-                            );
-
-                    if (usuarioEncontrado != null)
-                    {
-                        ModelState.AddModelError("INVALID_USER", "E-Mail já em uso.");
-                        return View("CadastroUsuario");
-                    }
-                    else
-                    {
-                        _usuarioServico.Cadastrar(usuarioLoginModel.Nome, usuarioLoginModel.Email, usuarioLoginModel.Senha);
-                    }
-                }
-                return View("Index");
-            }
+            return View("CadastroUsuario");
         }
 
         // Aqui, exigimos que somente alguém que tenha a permissão GOLD possa entrar.
