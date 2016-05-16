@@ -1,0 +1,40 @@
+﻿@model LojaNinja.MVC.Models.UsuarioLoginModel
+
+@{
+    Layout = "~/Shared/_Shared.cshtml";
+}
+
+<h2>Cadastro de Usuário</h2>
+
+@using (Html.BeginForm("CadastroUsuario", "Pedido", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr/>
+        <div>
+            @Html.ValidationSummary(excludePropertyErrors: false)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nome) <br/>
+            @Html.TextBoxFor(m => m.Nome, new { required = "required"})
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email) <br/>
+            @Html.TextBoxFor(m => m.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Senha) <br/>
+            @Html.PasswordFor(m => m.Senha)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmeASenha) <br />
+            @Html.PasswordFor(m => m.ConfirmeASenha, new { required = "required" })
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Cadastrar" />
+        </div>
+    </div>
+}
+

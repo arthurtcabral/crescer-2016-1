@@ -10,9 +10,12 @@
     Layout = "~/Shared/_Shared.cshtml";
 }
 
+<h1 style="position: absolute">Bem vindo @ViewBag.NomeUsuarioLogado </h1>
+
 <img id="imagem-ninja" src="http://3.bp.blogspot.com/-c_Od4gwttms/U7xY3iEg7jI/AAAAAAABch4/RTVJMJjF52A/s1600/98.png" />
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
+    @Html.AntiForgeryToken();
     <div>
         <img id="camelo" src="~/Content/imagens/tnnt.png" />
     </div>

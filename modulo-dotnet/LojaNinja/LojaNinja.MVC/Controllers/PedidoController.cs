@@ -1,6 +1,8 @@
 ﻿using LojaNinja.Dominio;
+using LojaNinja.Filters;
 using LojaNinja.MVC.Models;
 using LojaNinja.Repositorio;
+using LojaNinja.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +14,101 @@ namespace LojaNinja.MVC.Controllers
     public class PedidoController : Controller
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
+        private UsuarioServico _usuarioServico;
 
+        public PedidoController()
+        {
+            _usuarioServico = new UsuarioServico(
+                    new UsuarioRepositorio()
+                );
+        }
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            if (!ServicoDeSessao.EstaLogado)
+            {
+                return View();
+            }
+
+            return RedirectToAction("Cadastro");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Entrar(UsuarioLoginModel usuarioLoginModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuarioEncontrado =
+                    _usuarioServico.BuscarUsuarioPorAutenticacao(
+                            usuarioLoginModel.Email, usuarioLoginModel.Senha
+                        );
+
+                if (usuarioEncontrado != null)
+                {
+                    var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
+                    
+                    ServicoDeSessao.CriarSessao(usuarioLogadoModel);
+                    return RedirectToAction("Cadastro");
+                }
+                else
+                {
+                    ModelState.AddModelError("INVALID_USER", "Usuário ou senha inválido.");
+                }
+            }
+
+            return View("Index", usuarioLoginModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CadastrarUsuario(UsuarioLoginModel usuarioLoginModel)
+        {
+            if (!usuarioLoginModel.Senha.Equals(usuarioLoginModel.ConfirmeASenha))
+            {
+                ModelState.AddModelError("INVALID_USER", "Senha e confirmação de senha nao condizem.");
+                return View("CadastroUsuario");
+            }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    Usuario usuarioEncontrado =
+                        _usuarioServico.BuscarUsuarioPorAutenticacao(
+                                usuarioLoginModel.Email, usuarioLoginModel.Senha
+                            );
+
+                    if (usuarioEncontrado != null)
+                    {
+                        ModelState.AddModelError("INVALID_USER", "E-Mail já em uso.");
+                        return View("CadastroUsuario");
+                    }
+                    else
+                    {
+                        _usuarioServico.Cadastrar(usuarioLoginModel.Nome, usuarioLoginModel.Email, usuarioLoginModel.Senha);
+                    }
+                }
+                return View("Index");
+            }
+        }
+
+        // Aqui, exigimos que somente alguém que tenha a permissão GOLD possa entrar.
+        [HttpGet]
+        [Token(Roles = "ADMIN")]
+        public ActionResult AreaSuuuperSecreta()
+        {
+            return View();
+        }
+
+        //---------------------------------------------------------------------------------------------------------------------//
+
+        [HttpGet]
+        [Token]
         public ActionResult Cadastro(int? id)
         {
+            UsuarioLogadoModel usuarioLogado = ServicoDeSessao.UsuarioLogado;
+            ViewBag.NomeUsuarioLogado = usuarioLogado.Nome;
             if (id.HasValue)
             {
                 var pedido = repositorio.ObterPedidoPorId(id.Value);
