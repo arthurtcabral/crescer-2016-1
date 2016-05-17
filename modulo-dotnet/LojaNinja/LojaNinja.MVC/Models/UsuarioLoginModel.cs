@@ -22,7 +22,9 @@ namespace LojaNinja.MVC.Models
 
         [Required]
         [DisplayName("Senha")]
-        [StringLength(100)]
         public string Senha { get; set; }
+        
+        [DisplayName("Repita a senha")]
+        public string RepitaASenha { get; set; }
     }
 }

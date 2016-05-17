@@ -6,9 +6,8 @@
 
 <h2>Cadastro de Usuário</h2>
 
-@using (Html.BeginForm("CadastroUsuario", "Pedido", FormMethod.Post))
+@using (Html.BeginForm("SucessoCadastroUsuario", "Pedido", FormMethod.Post))
 {
-
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
@@ -26,11 +25,15 @@
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Senha) <br/>
-            @Html.PasswordFor(m => m.Senha)
+            @Html.PasswordFor(m => m.Senha, new { pattern= @"^ (?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$",
+           ErrorMessage = "A senha deve conter no mínimo 8 caracteres tendo que ter uma letra minúscula e uma maiúscula." })
         </div>
         <div class="form-group">
-            <input type="submit" value="Cadastrar" />
+            @Html.LabelFor(m => m.RepitaASenha) <br />
+            @Html.PasswordFor(m => m.RepitaASenha)
+        </div>
+        <div class="form-group">
+            <input name="botao-envio" type="submit" value="Cadastrar" />
         </div>
     </div>
 }
-

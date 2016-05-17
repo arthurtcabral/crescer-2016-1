@@ -28,12 +28,12 @@ VALUES
 INSERT INTO Permissao
 (nome)
 VALUES 
-('ADMIN');
+('COMUM');
 
 INSERT INTO UsuarioPorPermissao
 (idUsuario, idPermissao)
 VALUES
-(1, 2);
+(1, 1);
 
 SELECT * FROM Usuario;
 

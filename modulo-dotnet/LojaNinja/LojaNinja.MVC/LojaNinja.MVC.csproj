@@ -131,6 +131,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Custom\valida-senha.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,8 @@
     <Content Include="Views\Pedido\Index.cshtml" />
     <Content Include="Shared\_SharedUsuario.cshtml" />
     <Content Include="Views\Pedido\CadastroUsuario.cshtml" />
+    <Content Include="Views\Pedido\SucessoCadastroUsuario.cshtml" />
+    <Content Include="Views\Pedido\ListagemUsuarios.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

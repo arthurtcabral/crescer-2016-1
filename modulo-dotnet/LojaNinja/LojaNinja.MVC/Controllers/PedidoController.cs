@@ -66,7 +66,30 @@ namespace LojaNinja.MVC.Controllers
         {
             return View("CadastroUsuario");
         }
-        
+
+        [HttpPost]
+        public ActionResult SucessoCadastroUsuario(UsuarioLoginModel usuarioLoginModel)
+        {
+
+            if (usuarioLoginModel.Senha != usuarioLoginModel.RepitaASenha)
+            {
+                ModelState.AddModelError("INVALID_PASSWORD", "Senhas não condizem.");
+                return RedirectToAction("CadastroUsuario", usuarioLoginModel);
+            }
+            else if(usuarioLoginModel.Senha.Length < 8)
+            {
+                ModelState.AddModelError("INVALID_PASSWORD", "Senha deve possuir pelo menos 8 caracteres");
+                return RedirectToAction("CadastroUsuario", usuarioLoginModel);
+            }
+            else
+            {
+                _usuarioServico.Cadastrar(usuarioLoginModel.Nome, usuarioLoginModel.Email, usuarioLoginModel.Senha);
+                ViewBag.MensagemCadastroSucesso = "Cadastrado com sucesso!";
+                return View("SucessoCadastroUsuario");
+            }
+            
+        }
+                
         [HttpGet]
         [Token(Roles = "ADMIN")]
         public ActionResult AreaSuuuperSecreta()
