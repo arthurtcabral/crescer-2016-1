@@ -32,6 +32,11 @@ namespace LojaNinja.Dominio
 
             return usuarioEncontrado;
         }
+
+        public List<Usuario> BuscarUsuarios()
+        {
+            return _usuarioRepositorio.BuscarUsuarios();
+        }
         
         private string Criptografar(string texto)
         {

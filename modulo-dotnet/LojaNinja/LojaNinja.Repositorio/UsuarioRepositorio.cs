@@ -62,5 +62,9 @@ namespace LojaNinja.Repositorio
             return listaUsuarios;
         }
 
+        public List<Usuario> BuscarUsuarios()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -72,6 +72,7 @@ C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinj
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
 C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\csc.exe
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -106,6 +107,5 @@ C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\b
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Webpages.Razor.xml
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Helpers.xml
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.xml
-C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.csprojResolveAssemblyReference.cache
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb

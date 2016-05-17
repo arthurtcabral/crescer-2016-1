@@ -90,11 +90,11 @@ namespace LojaNinja.MVC.Controllers
             
         }
                 
-        [HttpGet]
         [Token(Roles = "ADMIN")]
-        public ActionResult AreaSuuuperSecreta()
+        public ActionResult ListagemUsuarios()
         {
-            return View();
+            var listaUsuarios = _usuarioServico.BuscarUsuarios();
+            return View("ListagemUsuarios", listaUsuarios);
         }
         
         [HttpGet]

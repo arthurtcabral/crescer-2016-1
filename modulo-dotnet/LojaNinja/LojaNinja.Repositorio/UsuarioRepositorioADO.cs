@@ -68,6 +68,30 @@ namespace LojaNinja.Repositorio
             }
         }
 
+        public List<Usuario> BuscarUsuarios()
+        {
+            List<Usuario> usuarios = new List<Usuario>();
+            var connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
+            using (var conexao = new SqlConnection(connectionString))
+            {
+                string sql = String.Format("SELECT * FROM Usuario");
+                var comando = new SqlCommand(sql, conexao);
+
+                conexao.Open();
+
+                SqlDataReader leitor = comando.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.Nome = leitor["nome"].ToString();
+                    usuario.Email = leitor["email"].ToString();
+                    usuarios.Add(usuario);
+                }
+                return usuarios;
+            }
+       }
+
         private int BuscarIdDeUsuario(Usuario usuario)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
