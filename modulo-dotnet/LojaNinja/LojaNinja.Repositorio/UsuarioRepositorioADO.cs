@@ -62,9 +62,19 @@ namespace LojaNinja.Repositorio
                 {
                     usuario.Nome = leitor["nome"].ToString();
                     usuario.Email = leitor["email"].ToString();
+                    usuario.Permissoes = new List<Permissao>();
+                    usuario.Permissoes.Add(new Permissao()
+                    {
+                        Id = 1,
+                        Nome = "ADMIN"
+                    });
+
+                    return usuario;
+                }else
+                {
+                    return null;
                 }
 
-                return usuario;
             }
         }
 
@@ -74,7 +84,7 @@ namespace LojaNinja.Repositorio
             var connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
             using (var conexao = new SqlConnection(connectionString))
             {
-                string sql = String.Format("SELECT * FROM Usuario");
+                string sql = String.Format("SELECT nome, email FROM Usuario");
                 var comando = new SqlCommand(sql, conexao);
 
                 conexao.Open();

@@ -1,13 +1,15 @@
-﻿using System;
+﻿using LojaNinja.Dominio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Collections;
 
 namespace LojaNinja.MVC.Models
 {
-    public class UsuarioLoginModel
+    public class UsuarioLoginModel 
     {
         
         [DisplayName("Nome")]
@@ -26,5 +28,6 @@ namespace LojaNinja.MVC.Models
         
         [DisplayName("Repita a senha")]
         public string RepitaASenha { get; set; }
+
     }
 }

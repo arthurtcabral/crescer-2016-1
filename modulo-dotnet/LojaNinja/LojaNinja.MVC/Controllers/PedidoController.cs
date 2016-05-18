@@ -55,10 +55,11 @@ namespace LojaNinja.MVC.Controllers
                 else
                 {
                     ModelState.AddModelError("INVALID_USER", "Usuário ou senha inválido.");
+                    RedirectToAction("Index");
                 }
             }
 
-            return View("Index", usuarioLoginModel);
+            return View("Index");
         }
 
         [HttpGet]
@@ -89,7 +90,8 @@ namespace LojaNinja.MVC.Controllers
             }
             
         }
-                
+        
+        [HttpGet]      
         [Token(Roles = "ADMIN")]
         public ActionResult ListagemUsuarios()
         {

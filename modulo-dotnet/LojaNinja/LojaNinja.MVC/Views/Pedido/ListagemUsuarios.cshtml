@@ -1,7 +1,6 @@
-﻿@*@model LojaNinja.MVC.Models.UsuarioLoginModel
+﻿@model IEnumerable<LojaNinja.Dominio.Usuario>
 
 @{
-    ViewBag.Title = "ListagemUsuarios";
     Layout = "~/Shared/_SharedUsuario.cshtml";
 }
 
@@ -29,9 +28,12 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Email)
                     </td>
+                    <td>
+                        @Html.Raw(String.Join(", ", item.Permissoes.Select(p => p.Nome).ToArray())) @* Transforma lista em String. Separa pela vírgula*@
+                    </td>
                 </tr>
             </tbody>
         }
 
     </table>
-</div>*@
+</div>
