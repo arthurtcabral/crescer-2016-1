@@ -1,10 +1,10 @@
-﻿using LojaNinja.Dominio;
+﻿using LojaNinjaEF.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LojaNinja.MVC.Models
+namespace LojaNinjaEF.MVC.Models
 {
     public class UsuarioLogadoModel
     {
@@ -17,7 +17,7 @@ namespace LojaNinja.MVC.Models
 
         public string Email { get; private set; }
         public string Nome { get; private set; }
-        public Permissao[] Permissoes { get; private set; }
+        public List<Permissao> Permissoes { get; private set; }
 
         public bool TemPermissao(string permissao)
         {

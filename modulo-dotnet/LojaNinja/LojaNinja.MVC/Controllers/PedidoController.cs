@@ -1,15 +1,15 @@
-﻿using LojaNinja.Dominio;
-using LojaNinja.Filters;
-using LojaNinja.MVC.Models;
-using LojaNinja.Repositorio;
-using LojaNinja.Services;
+﻿using LojaNinjaEF.Dominio;
+using LojaNinjaEF.Filters;
+using LojaNinjaEF.MVC.Models;
+using LojaNinjaEF.Repositorio;
+using LojaNinjaEF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace LojaNinja.MVC.Controllers
+namespace LojaNinjaEF.MVC.Controllers
 {
     public class PedidoController : Controller
     {

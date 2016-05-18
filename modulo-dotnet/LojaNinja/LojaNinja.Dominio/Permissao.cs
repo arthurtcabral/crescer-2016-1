@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LojaNinja.Dominio
+namespace LojaNinjaEF.Dominio
 {
-    public enum Permissao
+    public class Permissao
     {
-        ADMIN,
-        COMUM
+
+        public Permissao () { }
+
+        public int Id { get; set; }
+        public string TipoPermissao { get; set; }
+        public List<Usuario> Usuarios { get; set; }
     }
+
 }

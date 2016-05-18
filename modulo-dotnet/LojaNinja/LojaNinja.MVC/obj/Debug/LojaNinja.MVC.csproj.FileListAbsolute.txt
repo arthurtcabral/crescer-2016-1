@@ -109,3 +109,7 @@ C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\b
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\System.Web.Mvc.xml
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.dll
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\obj\Debug\LojaNinja.MVC.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\EntityFramework.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\EntityFramework.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.MVC\bin\EntityFramework.SqlServer.xml

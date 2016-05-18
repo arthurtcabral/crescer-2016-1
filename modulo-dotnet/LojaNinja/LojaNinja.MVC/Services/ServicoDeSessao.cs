@@ -1,11 +1,11 @@
-﻿using LojaNinja.MVC.Models;
-using LojaNinja.Dominio;
+﻿using LojaNinjaEF.MVC.Models;
+using LojaNinjaEF.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LojaNinja.Services
+namespace LojaNinjaEF.Services
 {
     public static class ServicoDeSessao
     {

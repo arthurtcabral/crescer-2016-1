@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LojaNinja.MVC.Models
+namespace LojaNinjaEF.MVC.Models
 {
     public class UsuarioLoginModel
     {

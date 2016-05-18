@@ -1,4 +1,4 @@
-﻿using LojaNinja.Dominio;
+﻿using LojaNinjaEF.Dominio;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LojaNinja.Repositorio
+namespace LojaNinjaEF.Repositorio
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
     {

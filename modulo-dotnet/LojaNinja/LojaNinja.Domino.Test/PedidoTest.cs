@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LojaNinja.Dominio;
+using LojaNinjaEF.Dominio;
 
-namespace LojaNinja.Domino.Test
+namespace LojaNinjaEF.Domino.Test
 {
     [TestClass]
     public class PedidoTest

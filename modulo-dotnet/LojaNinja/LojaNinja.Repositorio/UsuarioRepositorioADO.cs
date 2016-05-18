@@ -1,4 +1,4 @@
-﻿using LojaNinja.Dominio;
+﻿using LojaNinjaEF.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LojaNinja.Repositorio
+namespace LojaNinjaEF.Repositorio
 {
     public class UsuarioRepositorioADO : IUsuarioRepositorio
     {
@@ -62,6 +62,7 @@ namespace LojaNinja.Repositorio
                 {
                     usuario.Nome = leitor["nome"].ToString();
                     usuario.Email = leitor["email"].ToString();
+                    usuario.Senha = leitor["senha"].ToString();
                 }
 
                 return usuario;
