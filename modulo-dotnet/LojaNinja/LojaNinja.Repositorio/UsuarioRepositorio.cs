@@ -66,5 +66,10 @@ namespace LojaNinja.Repositorio
         {
             throw new NotImplementedException();
         }
+
+        public bool ChecarSeUsuarioEAdmin(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

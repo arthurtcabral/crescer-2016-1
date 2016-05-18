@@ -90,13 +90,26 @@ namespace LojaNinja.MVC.Controllers
             }
             
         }
-        
-        [HttpGet]      
-        [Token(Roles = "ADMIN")]
+
+        //[HttpGet]      
+        //[token(roles = "admin")]
+        //TODO: Utilizar duas linhas acima para verificação da permissão.
         public ActionResult ListagemUsuarios()
         {
-            var listaUsuarios = _usuarioServico.BuscarUsuarios();
-            return View("ListagemUsuarios", listaUsuarios);
+            Usuario usuario = new Usuario();
+            usuario.Nome = ServicoDeSessao.UsuarioLogado.Nome;
+            usuario.Email = ServicoDeSessao.UsuarioLogado.Email;
+            var eAdm = _usuarioServico.ChecarSeUsuarioEAdmin(usuario);
+            
+            if (eAdm)
+            {
+                var listaUsuarios = _usuarioServico.BuscarUsuarios();
+                return View("ListagemUsuarios", listaUsuarios);
+            }else
+            {
+                return View("Cadastro");
+            }
+           
         }
         
         [HttpGet]

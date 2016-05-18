@@ -11,5 +11,6 @@ namespace LojaNinja.Dominio
         void Cadastrar(Usuario usuario);
         Usuario BuscarUsuarioPorAutenticacao(string email, string senha);
         List<Usuario> BuscarUsuarios();
+        Boolean ChecarSeUsuarioEAdmin(Usuario usuario);
     }
 }

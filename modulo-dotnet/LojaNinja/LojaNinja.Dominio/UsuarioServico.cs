@@ -33,6 +33,11 @@ namespace LojaNinja.Dominio
             return usuarioEncontrado;
         }
 
+        public Boolean ChecarSeUsuarioEAdmin(Usuario usuario)
+        {
+           return _usuarioRepositorio.ChecarSeUsuarioEAdmin(usuario);
+        }
+
         public List<Usuario> BuscarUsuarios()
         {
             return _usuarioRepositorio.BuscarUsuarios();

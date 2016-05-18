@@ -43,6 +43,31 @@ namespace LojaNinja.Repositorio
             }
         }
 
+        public Boolean ChecarSeUsuarioEAdmin(Usuario usuario)
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
+            using (var conexao = new SqlConnection(connectionString))
+            {
+                string sql = String.Format("SELECT idPermissao FROM UsuarioPorPermissao WHERE idUsuario=@p_idUsuario", this.BuscarIdDeUsuario(usuario));
+                var comando = new SqlCommand(sql, conexao);
+
+                comando.Parameters.Add(new SqlParameter("p_idUsuario", this.BuscarIdDeUsuario(usuario)));
+
+                conexao.Open();
+
+                SqlDataReader leitor = comando.ExecuteReader();
+
+                while (leitor.Read())
+                {
+                    if(Convert.ToInt32(leitor["idPermissao"]) == 1)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
             var connectionString = ConfigurationManager.ConnectionStrings["Conexao"].ConnectionString;
@@ -62,12 +87,12 @@ namespace LojaNinja.Repositorio
                 {
                     usuario.Nome = leitor["nome"].ToString();
                     usuario.Email = leitor["email"].ToString();
-                    usuario.Permissoes = new List<Permissao>();
-                    usuario.Permissoes.Add(new Permissao()
-                    {
-                        Id = 1,
-                        Nome = "ADMIN"
-                    });
+                    //usuario.Permissoes = new List<Permissao>();
+                    //usuario.Permissoes.Add(new Permissao()
+                    //{
+                    //    Id = 2,
+                    //    Nome = "COMUM"
+                    //});
 
                     return usuario;
                 }else
@@ -108,11 +133,10 @@ namespace LojaNinja.Repositorio
             using (var conexao = new SqlConnection(connectionString))
             {
                 int id = 0;
-                string sql = String.Format("SELECT id FROM Usuario WHERE email=@p_email and senha=@p_senha", usuario.Email, usuario.Senha);
+                string sql = String.Format("SELECT id FROM Usuario WHERE email=@p_email", usuario.Email);
                 var comando = new SqlCommand(sql, conexao);
 
                 comando.Parameters.Add(new SqlParameter("p_email", usuario.Email));
-                comando.Parameters.Add(new SqlParameter("p_senha", usuario.Senha));
 
                 conexao.Open();
                 SqlDataReader leitor = comando.ExecuteReader();
