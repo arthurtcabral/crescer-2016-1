@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace LojaNinja.Dominio
 {
-    public enum Permissao
+    public class Permissao
     {
-        ADMIN,
-        COMUM
+        public int Id { get; set; }
+        public string Nome { get; set; }
+
+        public List<Usuario> Usuarios { get; set; }
+
+        public Permissao() { }
     }
 }

@@ -215,5 +215,14 @@ namespace LojaNinja.MVC.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        [Token]
+        public ActionResult Deslogar()
+        {
+            ServicoDeSessao.EncerrarSessao();
+            return View("Index");
+        }
+
     }
 }

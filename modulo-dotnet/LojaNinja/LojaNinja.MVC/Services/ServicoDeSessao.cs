@@ -51,5 +51,13 @@ namespace LojaNinja.Services
 
             HttpContext.Current.Response.Cookies.Set(cookieDeAutenticacao);
         }
+
+        public static void EncerrarSessao()
+        {
+            var cookieDeAutenticacao = HttpContext.Current.Request.Cookies[COOKIE_AUTENTICACAO].Value;
+            _usuariosLogados.Remove(cookieDeAutenticacao);
+
+            HttpContext.Current.Session.Abandon();
+        }
     }
 }

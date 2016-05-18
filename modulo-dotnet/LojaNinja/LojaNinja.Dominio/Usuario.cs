@@ -14,7 +14,7 @@ namespace LojaNinja.Dominio
 
         public string Nome { get; set; }
 
-        public Permissao[] Permissoes { get; set; }
+        public List<Permissao> Permissoes { get; set; }
 
         public Usuario() { }
 
