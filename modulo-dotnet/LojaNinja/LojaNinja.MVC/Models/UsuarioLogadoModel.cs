@@ -1,10 +1,10 @@
-﻿using LojaNinja.Dominio;
+﻿using LojaNinjaEF.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace LojaNinja.MVC.Models
+namespace LojaNinjaEF.MVC.Models
 {
     public class UsuarioLogadoModel
     {

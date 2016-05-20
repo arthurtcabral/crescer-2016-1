@@ -1,0 +1,14 @@
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\LojaNinja.RepositorioEF.dll.config
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\LojaNinja.RepositorioEF.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\LojaNinja.RepositorioEF.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\EntityFramework.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\EntityFramework.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\obj\Debug\LojaNinja.RepositorioEF.csprojResolveAssemblyReference.cache
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\obj\Debug\LojaNinja.RepositorioEF.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\obj\Debug\LojaNinja.RepositorioEF.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\LojaNinja.Dominio.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\bin\Debug\LojaNinja.Dominio.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\obj\Debug\LojaNinjaEF.RepositorioEF.Migrations.Initial.resources
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-dotnet\LojaNinja\LojaNinja.RepositorioEF\obj\Debug\LojaNinja.RepositorioEF.csproj.GenerateResource.Cache

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace LojaNinja.Dominio
+namespace LojaNinjaEF.Dominio
 {
     public class Pedido
     {

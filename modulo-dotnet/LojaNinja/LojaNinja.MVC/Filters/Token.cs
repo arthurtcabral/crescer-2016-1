@@ -1,5 +1,5 @@
-﻿using LojaNinja.MVC.Models;
-using LojaNinja.Services;
+﻿using LojaNinjaEF.MVC.Models;
+using LojaNinjaEF.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace LojaNinja.Filters
+namespace LojaNinjaEF.Filters
 {
     public class Token : AuthorizeAttribute
     {
