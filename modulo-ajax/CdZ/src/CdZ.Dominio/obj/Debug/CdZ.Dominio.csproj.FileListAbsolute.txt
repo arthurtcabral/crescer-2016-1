@@ -1,0 +1,5 @@
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Dominio\bin\Debug\CdZ.Dominio.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Dominio\bin\Debug\CdZ.Dominio.pdb
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Dominio\obj\Debug\CdZ.Dominio.csprojResolveAssemblyReference.cache
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Dominio\obj\Debug\CdZ.Dominio.dll
+C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Dominio\obj\Debug\CdZ.Dominio.pdb
