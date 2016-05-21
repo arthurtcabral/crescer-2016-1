@@ -124,7 +124,6 @@ var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
                 Imagens: cavaleiro.imagens
             }
         });
-
         return e.preventDefault();
     });
 
@@ -150,8 +149,8 @@ function converterFormParaCavaleiro($form) {
         tipoSanguineo: formData.get('tipoSanguineo'),
         imagens: novasImagens,
         dataNascimento: (data || new Date()).toISOString(),
-        alturaCm: parseFloat(formData.get('alturaMetros')) * 100,
-        pesoLb: parseFloat(formData.get('pesoKg')) * 2.20462262,
+        alturaCm: parseDouble(formData.get('alturaMetros')) * 100,
+        pesoLb: parseDouble(formData.get('pesoKg')) * 2.20462262,
         signo: formData.get('signo'),
         localNascimento: formData.get('localNascimento'),
         localTreinamento: formData.get('localTreinamento'),
