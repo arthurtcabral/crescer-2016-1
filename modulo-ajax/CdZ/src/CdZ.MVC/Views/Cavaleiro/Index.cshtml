@@ -1,4 +1,8 @@
-﻿@using CdZ.MVC.Models.Cavaleiro;
+﻿@model CdZ.MVC.Models.Cavaleiro.CavaleiroViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
 <style>
     .erro {
@@ -11,13 +15,7 @@
 <ul id="cavaleiros"></ul>
 <div id="feedback"></div>
 
-
-<script>
-        var urlCavaleiroGet = '@Url.Action("Get")';
-        var urlCavaleiroPost = '@Url.Action("Post")';
-</script>
-
-@using (Html.BeginForm("Post", "Cavaleiro", FormMethod.Post, new { id = "frmNovoCavaleiro" }))
+@using (Html.BeginForm("Post", "Cavaleiro", FormMethod.Post))
 {
     <!-- nome -->
     <label for="txtNomeCavaleiro">Nome</label>
@@ -26,17 +24,17 @@
     <label for="slTipoSanguineo">Tipo Sanguíneo</label>
     <select id="slTipoSanguineo" name="tipoSanguineo">
         <option selected>Selecione</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="AB">AB</option>
-        <option value="O">O</option>
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">AB</option>
+        <option value="4">O</option>
     </select>
     <!-- dataNascimento -->
     <label for="txtDtNascimento">Data de nascimento</label>
     <input id="txtDtNascimento" type="text" name="dataNascimento" placeholder="Ex: 4/11/2016">
     <!-- altura em metros -->
     <label for="nbAlturaMetros">Altura (metros)</label>
-    <input id="nbAlturaMetros" type="number" name="alturaMetros" placeholder="Ex: 1.76" min="0" step="0.01"> <!-- step: https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input -->
+    <input id="nbAlturaMetros" type="number" name="alturaMetros" placeholder="Ex: 1.76" min="0" step="0.01">
     <!-- peso em kilos -->
     <label for="nbPesoKilos">Peso (kilos)</label>
     <input id="nbPesoKilos" type="number" name="pesoKg" placeholder="Ex: 73.5" min="0" step="0.01">
@@ -44,18 +42,18 @@
     <label for="slSigno">Signo</label>
     <select id="slSigno" name="signo">
         <option selected>Selecione</option>
-        <option value="Áries">Áries</option>
-        <option value="Touro">Touro</option>
-        <option value="Gêmeos">Gêmeos</option>
-        <option value="Câncer">Câncer</option>
-        <option value="Leão">Leão</option>
-        <option value="Virgem">Virgem</option>
-        <option value="Libra">Libra</option>
-        <option value="Escorpião">Escorpião</option>
-        <option value="Sagitário">Sagitário</option>
-        <option value="Capricórnio">Capricórnio</option>
-        <option value="Aquário">Aquário</option>
-        <option value="Peixes">Peixes</option>
+        <option value="1">Áries</option>
+        <option value="2">Touro</option>
+        <option value="3">Gêmeos</option>
+        <option value="4">Câncer</option>
+        <option value="5">Leão</option>
+        <option value="6">Virgem</option>
+        <option value="7">Libra</option>
+        <option value="8">Escorpião</option>
+        <option value="9">Sagitário</option>
+        <option value="10">Capricórnio</option>
+        <option value="11">Aquário</option>
+        <option value="12">Peixes</option>
     </select>
     <!-- localNascimento -->
     <label for="txtLocalNascimento">Local de nascimento</label>
@@ -69,10 +67,15 @@
     <!-- Adicionar imagem -->
     <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
     <ul id="novasImagens"></ul>
-    <input type="submit" id="btnCriar"/>
+    <input type="submit" id="btnCriar" />
 }
     <div id="detalhes-cavaleiro"></div>
     <ul id="cavaleiros"></ul>
+
+<script>
+        var urlCavaleiroGet = '@Url.Action("Get")';
+        var urlCavaleiroPost = '@Url.Action("Post")';
+</script>
 
     @section scripts {
         <script src="~/Scripts/Views/Cavaleiro/Index.js"></script>

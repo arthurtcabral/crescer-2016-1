@@ -101,36 +101,35 @@ function editarCavaleiroNoServidor() {
         });
 };
 
+$(function () {
+
 var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
     $frmNovoCavaleiro.submit(function (e) {
         var cavaleiro = converterFormParaCavaleiro($frmNovoCavaleiro);
         $.ajax({
             url: urlCavaleiroPost,
             type: 'POST',
-            data: {
-                Nome: cavaleiro.nome,
-                AlturaCm: cavaleiro.alturaCm,
-                pesoLb: cavaleiro.pesoLb,
-                DataNascimento: cavaleiro.dataNascimento,
-                Signo: cavaleiro.signo,
-                TipoSanguineo: cavaleiro.tipoSanguineo,
-                LocalNascimento: {
-                    Texto: cavaleiro.localNascimento
-                },
-                LocalTreinamento: {
-                    Texto: cavaleiro.localTreinamento
-                },
-                Golpes: cavaleiro.golpes,
-                Imagens: cavaleiro.imagens
-            }
+            data: cavaleiro
         });
+        $frmNovoCavaleiro[0].reset();
         return e.preventDefault();
     });
 
+    var $novasImagens = $('#novasImagens');
+
+    $('#btnAdicionarImg').click(function () {
+        var $novoLi = gerarElementoLiComInputs();
+        $novasImagens.append($novoLi);
+    });
+
+    $('#btnAdicionarGolpe').click(function () {
+        $('#novosGolpes').append(gerarElementoLiComInputTexto());
+    });
+
+});
+
 function converterFormParaCavaleiro($form) {
     var formData = new FormData($form[0]);
-    var data = $('#txtDtNascimento').datepicker('getDate');
-
     var novasImagens = [];
     $('#novasImagens li').each(function () {
         novasImagens.push({
@@ -138,36 +137,24 @@ function converterFormParaCavaleiro($form) {
             isThumb: $(this).find('input[name=isThumb]').is(':checked')
         });
     });
-
     var novosGolpes = [];
     $('#novosGolpes li').each(function (i) {
         novosGolpes.push($(this).find('input[name=golpe]').val());
     });
 
     return {
-        nome: formData.get('nome'),
-        tipoSanguineo: formData.get('tipoSanguineo'),
-        imagens: novasImagens,
-        dataNascimento: (data || new Date()).toISOString(),
-        alturaCm: parseDouble(formData.get('alturaMetros')) * 100,
-        pesoLb: parseDouble(formData.get('pesoKg')) * 2.20462262,
-        signo: formData.get('signo'),
-        localNascimento: formData.get('localNascimento'),
-        localTreinamento: formData.get('localTreinamento'),
-        golpes: novosGolpes
+        Nome: formData.get('nome').val(),
+        TipoSanguineo: parseInt(formData.get('tipoSanguineo').val()),
+        Imagens: novasImagens,
+        DataNascimento: (data || new Date()).toISOString(),
+        AlturaCm: parseDouble(formData.get('alturaMetros').val()) * 100,
+        PesoLb: parseDouble(formData.get('pesoKg').val()) * 2.20462262,
+        Signo: parseInt(formData.get('signo').val()),
+        LocalNascimento: { Texto: formData.get('localNascimento').val() },
+        LocalTreinamento: { Texto: formData.get('localTreinamento').val() },
+        Golpes: novosGolpes
     };
 };
-
-var $novasImagens = $('#novasImagens');
-
-$('#btnAdicionarImg').click(function() {
-    var $novoLi = gerarElementoLiComInputs();
-    $novasImagens.append($novoLi);
-});
-
-$('#btnAdicionarGolpe').click(function() {
-    $('#novosGolpes').append(gerarElementoLiComInputTexto());
-});
 
 function gerarElementoLiComInputs() {
     var $novoTxt = $('<input>').attr('name', 'urlImagem').attr('type', 'text').attr('placeholder', 'Ex: bit.ly/shiryu.png');
