@@ -14,9 +14,13 @@ function carregarDadosNaPagina() {
                 .append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
+                .click(editarCavaleiroNoServidor)
+                .text('Editar')
+         ).append(
+        $('<button>')
+                .attr('data-cavaleiro-id', cava.Id)
                 .click(excluirCavaleiroNoServidor)
-                .text('Excluir')
-        ));
+                .text('Excluir')));
                 idAux = cava.Id;
             });
         },
@@ -50,12 +54,16 @@ setInterval(function () {
                 $cavaleiros.append($('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome).append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
+                .click(editarCavaleiroNoServidor)
+                .text('Editar')
+         ).append(
+        $('<button>')
+                .attr('data-cavaleiro-id', cava.Id)
                 .click(excluirCavaleiroNoServidor)
-                .text('Excluir')
-        ));
+                .text('Excluir')));
                 idAux = cava.Id;
             }
-      });
+        });
     }
     );
 }, 5000);
@@ -63,7 +71,7 @@ setInterval(function () {
 function excluirCavaleiroNoServidor() {
     var cavaleiroId = parseInt($(this).attr('data-cavaleiro-id'));
     $.ajax({
-        url: '/Cavaleiro/Delete' /*+  $.param({ id: cavaleiroId }),*/,
+        url: '/Cavaleiro/Delete',
         type: 'DELETE',
         data: { id: cavaleiroId }
     });
@@ -73,10 +81,8 @@ carregarDadosNaPagina();
 
 function editarCavaleiroNoServidor() {
     var cavaleiroId = parseInt($(this).attr('data-cavaleiro-id'));
-
     $.get('/Cavaleiro/GetById', { id: cavaleiroId })
         .done(function (detalhe) {
-            // TODO: Implementar atualização a partir de um formulário ou campos na tela, e não hard-coded
             cavaleiroHardCoded = detalhe.data;
             cavaleiroHardCoded.Nome = 'Novo nome após update ' + new Date().getTime();
             cavaleiroHardCoded.AlturaCm = 205;
@@ -103,8 +109,9 @@ function editarCavaleiroNoServidor() {
 
 $(function () {
 
-var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
+    var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
     $frmNovoCavaleiro.submit(function (e) {
+        debugger;
         var cavaleiro = converterFormParaCavaleiro($frmNovoCavaleiro);
         $.ajax({
             url: urlCavaleiroPost,
@@ -173,35 +180,35 @@ function gerarElementoLiComInputTexto() {
     return $('<li>').append($novoTxt);
 };
 
-//function registrarEventoDoBotao() {
-//    $('#btnCriar').click(function () {
+function registrarEventoDoBotao() {
+    $('#btnCriar').click(function () {
 
-//        $.ajax({
-//            url: urlCavaleiroPost,
-//            type: 'POST',
-//            data: {
-//                Nome: 'Xiru ' + new Date().getTime(),
-//                AlturaCm: 187,
-//                Signo: 7,
-//                TipoSanguineo: 1,
-//                DataNascimento: new Date(),
-//                Golpes: ['Cólera do Dragão', 'Cólera dos 100 dragões'],
-//                LocalNascimento: {
-//                    Texto: 'Beijing'
-//                },
-//                LocalTreinamento: {
-//                    Texto: '5 picos de rosan'
-//                },
-//                Imagens: [{
-//                    Url: 'http://images.uncyc.org/pt/3/37/Shiryumestrepokemon.jpg',
-//                    IsThumb: true
-//                }, {
-//                    Url: 'http://images.uncyc.org/pt/thumb/5/52/Shyryugyarados.jpg/160px-Shyryugyarados.jpg',
-//                    IsThumb: false
-//                }]
-//            }
-//        });
+        $.ajax({
+            url: urlCavaleiroPost,
+            type: 'POST',
+            data: {
+                Nome: 'Xiru ' + new Date().getTime(),
+                AlturaCm: 187,
+                Signo: 7,
+                TipoSanguineo: 1,
+                DataNascimento: new Date(),
+                Golpes: ['Cólera do Dragão', 'Cólera dos 100 dragões'],
+                LocalNascimento: {
+                    Texto: 'Beijing'
+                },
+                LocalTreinamento: {
+                    Texto: '5 picos de rosan'
+                },
+                Imagens: [{
+                    Url: 'http://images.uncyc.org/pt/3/37/Shiryumestrepokemon.jpg',
+                    IsThumb: true
+                }, {
+                    Url: 'http://images.uncyc.org/pt/thumb/5/52/Shyryugyarados.jpg/160px-Shyryugyarados.jpg',
+                    IsThumb: false
+                }]
+            }
+        });
 
-//    });
-//};
-//registrarEventoDoBotao();
+    });
+};
+registrarEventoDoBotao();
