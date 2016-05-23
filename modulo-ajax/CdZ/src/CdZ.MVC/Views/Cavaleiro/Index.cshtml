@@ -68,15 +68,15 @@
     <button id="btnAdicionarImg" type="button">Adicionar imagem...</button>
     <ul id="novasImagens"></ul>
     <input type="submit" id="btnCriar" />
-}
-    <div id="detalhes-cavaleiro"></div>
-    <ul id="cavaleiros"></ul>
+</form>
+<div id="detalhes-cavaleiro"></div>
+<ul id="cavaleiros"></ul>
 
 <script>
-        var urlCavaleiroGet = '@Url.Action("Get")';
-        var urlCavaleiroPost = '@Url.Action("Post")';
+    var urlCavaleiroGet = '@Url.Action("Get")';
+    var urlCavaleiroPost = '@Url.Action("Post")';
 </script>
 
-    @section scripts {
-        <script src="~/Scripts/Views/Cavaleiro/Index.js"></script>
-    }
+@section scripts {
+    <script src="~/Scripts/Views/Cavaleiro/Index.js"></script>
+}
