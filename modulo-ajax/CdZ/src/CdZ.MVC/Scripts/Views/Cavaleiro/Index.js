@@ -10,7 +10,7 @@ function carregarDadosNaPagina() {
             var $cavaleiros = $('#cavaleiros');
             res.data.forEach(function (cava) {
                 $cavaleiros.append(
-                    $('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome)
+                    $('<li>').attr('data-id-cavaleiro', cava.Id).append('<img src=' + cava.Imagens[0].Url + '/>')
                 .append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
@@ -44,7 +44,6 @@ function carregarDadosNaPagina() {
 };
 
 setInterval(function () {
-    var aux = 0;
     var contador = 0;
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
@@ -53,7 +52,7 @@ setInterval(function () {
         res.data.forEach(function (cava) {
             if (cava.Id > idAux) {
                 contador++;
-                $cavaleiros.append($('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome).append(
+                $cavaleiros.append($('<li>').attr('data-id-cavaleiro', cava.Id).append('<img src = ' + cava.Imagens.Url + '>').append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
                 .click(editarCavaleiroNoServidor)
@@ -67,6 +66,7 @@ setInterval(function () {
             }
         });
         notificar(contador);
+        contador = 0;
     }
     );
 }, 5000);
