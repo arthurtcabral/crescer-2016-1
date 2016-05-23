@@ -14,5 +14,10 @@ namespace Ajax_Aula1_Boolean.Controllers
             return View("DonzelaDeFerro");
         }
 
+        public ActionResult ConsultaEcletica()
+        {
+            return View("ConsultaEcletica");
+        }
+
     }
 }

@@ -12,3 +12,17 @@ C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.csproj.GenerateResource.Cache
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.dll
 C:\Users\Arthur\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\CdZ.Repositorio.EF.dll.config
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\CdZ.Repositorio.EF.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\CdZ.Repositorio.EF.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\CdZ.Dominio.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\EntityFramework.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\CdZ.Dominio.pdb
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\EntityFramework.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.csprojResolveAssemblyReference.cache
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.Migrations.Inicial.resources
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.csproj.GenerateResource.Cache
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.dll
+C:\Users\arthur.cabral\Documents\crescer-2016-1\modulo-ajax\CdZ\src\CdZ.Repositorio.EF\obj\Debug\CdZ.Repositorio.EF.pdb

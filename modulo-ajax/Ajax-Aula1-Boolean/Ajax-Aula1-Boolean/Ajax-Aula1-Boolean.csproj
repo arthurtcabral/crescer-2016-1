@@ -121,9 +121,10 @@
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
     <None Include="scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="scripts\Custom\Exercicio1.js" />
+    <Content Include="scripts\Custom\Exercicio2.js" />
     <Content Include="scripts\jquery-2.2.3.js" />
     <Content Include="scripts\jquery-2.2.3.min.js" />
-    <Content Include="scripts\Custom\MyScripts.js" />
     <None Include="scripts\jquery.validate-vsdoc.js" />
     <Content Include="scripts\jquery.validate.js" />
     <Content Include="scripts\jquery.validate.min.js" />
@@ -148,6 +149,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="scripts\jquery-2.2.3.min.map" />
+    <Content Include="Views\Ajax\ConsultaEcletica.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

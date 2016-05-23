@@ -6,8 +6,8 @@ namespace CdZ.Dominio
     {
         int Adicionar(Cavaleiro cavaleiro);
         Cavaleiro Buscar(int id);
-        IEnumerable<Cavaleiro> Todos();
         void Excluir(int id);
         void Atualizar(Cavaleiro cavaleiro);
+        IEnumerable<Cavaleiro> Paginacao(int qtdCavaleiros, int pagina);
     }
 }

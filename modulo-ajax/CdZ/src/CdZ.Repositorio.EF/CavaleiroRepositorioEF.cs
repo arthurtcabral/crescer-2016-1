@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System;
 
 namespace CdZ.Repositorio.EF
 {
@@ -28,10 +29,6 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                /*
-                 * Estamos utilizando Include para fazer o "Eager Load"
-                 * dos relacionamentos, e poder deletá-los em cascata.
-                */
                 return db.Cavaleiro
                     .Include(_ => _.LocalNascimento)
                     .Include(_ => _.LocalTreinamento)
@@ -41,12 +38,18 @@ namespace CdZ.Repositorio.EF
             }
         }
 
-        public IEnumerable<Cavaleiro> Todos()
+        public IEnumerable<Cavaleiro> Paginacao(int qtdCavaleiros, int pagina)
         {
             using (var db = new ContextoDeDados())
             {
-                //TODO: paginar
-                return db.Cavaleiro.ToList();
+                return db.Cavaleiro
+                    .Include(​_ => _​.Imagens)
+                    .Include(​_ => _​.Golpes)
+                    .Include(​_ => _​.LocalNascimento)
+                    .Include(​_ => _​.LocalTreinamento)
+                    .OrderBy(​_ => _​.Nome)
+                    .Skip(pagina * qtdCavaleiros)  //Pagina 1, 5 cavaleiros: 1 * 5 = 5. Pular 5 cavaleiros na tabela e...
+                    .Take(qtdCavaleiros).ToList(); //Pegar os próximos 5.
             }
         }
 

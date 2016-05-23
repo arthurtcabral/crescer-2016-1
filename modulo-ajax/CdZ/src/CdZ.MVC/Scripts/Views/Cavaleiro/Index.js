@@ -9,8 +9,9 @@ function carregarDadosNaPagina() {
             console.log(res.data);
             var $cavaleiros = $('#cavaleiros');
             res.data.forEach(function (cava) {
+                console.log(cava);
                 $cavaleiros.append(
-                    $('<li>').attr('data-id-cavaleiro', cava.Id).append('<img src=' + cava.Imagens[0].Url + '/>')
+                    $('<li>').attr('data-cavaleiro-id', cava.Id).append('<img>').attr('src', cava.Imagens[0].Url))
                 .append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
@@ -20,7 +21,7 @@ function carregarDadosNaPagina() {
         $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
                 .click(excluirCavaleiroNoServidor)
-                .text('Excluir')));
+                .text('Excluir'));
                 idAux = cava.Id;
             });
         },
