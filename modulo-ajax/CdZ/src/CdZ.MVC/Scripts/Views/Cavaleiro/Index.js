@@ -45,12 +45,14 @@ function carregarDadosNaPagina() {
 
 setInterval(function () {
     var aux = 0;
+    var contador = 0;
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
     function onSuccess(res) {
         var $cavaleiros = $('#cavaleiros');
         res.data.forEach(function (cava) {
             if (cava.Id > idAux) {
+                contador++;
                 $cavaleiros.append($('<li>').attr('data-id-cavaleiro', cava.Id).append(cava.Nome).append(
             $('<button>')
                 .attr('data-cavaleiro-id', cava.Id)
@@ -64,9 +66,28 @@ setInterval(function () {
                 idAux = cava.Id;
             }
         });
+        notificar(contador);
     }
     );
 }, 5000);
+
+function notificar(cavaleirosAdicionados) {
+    if (cavaleirosAdicionados !== 0) {
+        Notification.requestPermission()
+            .then(function (result) {
+    if (result === 'granted') {
+        var frase = "";
+        if (cavaleirosAdicionados === 1) {
+            frase = "1 novo cavaleiro foi adicionado." 
+        } else {
+            frase = cavaleirosAdicionados + " novos cavaleiros foram adicionados.";
+        }
+        var options = { body: frase, icon: 'https://cdn0.iconfinder.com/data/icons/the-middle-ages/500/Knight_knight_helmet-512.png' }
+                    new Notification('', options);
+       }
+     })
+    }
+};
 
 function excluirCavaleiroNoServidor() {
     var cavaleiroId = parseInt($(this).attr('data-cavaleiro-id'));
@@ -74,7 +95,7 @@ function excluirCavaleiroNoServidor() {
         url: '/Cavaleiro/Delete',
         type: 'DELETE',
         data: { id: cavaleiroId }
-    });
+    })
 };
 
 carregarDadosNaPagina();
