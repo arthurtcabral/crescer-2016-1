@@ -10,7 +10,7 @@ namespace CdZ.Dominio
         /*
          * Precisamos deste construtor vazio por causa do Entity Framework.
          */
-        private Local() { }
+        public Local() { }
 
         /// <summary>
         /// Usado na criação.
