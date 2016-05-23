@@ -1,8 +1,9 @@
 ﻿using CdZ.Dominio;
+using CdZ.MVC.Extensions;
 using System;
-using System.Linq;
 using System.Collections.Generic;
-using Dominio = CdZ.Dominio;
+using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace CdZ.MVC.Models.Cavaleiro
 {
