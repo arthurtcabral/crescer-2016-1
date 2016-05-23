@@ -132,12 +132,16 @@ $(function () {
 
     var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
     $frmNovoCavaleiro.submit(function (e) {
-        debugger;
         var cavaleiro = converterFormParaCavaleiro($frmNovoCavaleiro);
         $.ajax({
             url: urlCavaleiroPost,
             type: 'POST',
             data: cavaleiro
+        }).done(function (res) {
+            $.get('/Cavaleiro/GetById', { id: res.id })
+                .done(function (detalhe) {
+                    cavaleiro = detalhe.data;
+                });
         });
         $frmNovoCavaleiro[0].reset();
         return e.preventDefault();
@@ -167,21 +171,25 @@ function converterFormParaCavaleiro($form) {
     });
     var novosGolpes = [];
     $('#novosGolpes li').each(function (i) {
-        novosGolpes.push($(this).find('input[name=golpe]').val());
+        novosGolpes.push({ Nome: $(this).find('input[name=golpe]').val() });
     });
 
-    return {
-        Nome: formData.get('nome').val(),
-        TipoSanguineo: parseInt(formData.get('tipoSanguineo').val()),
+    
+    var dataNascAux = $('#txtDtNascimento').val().split('/');
+    var a = {
+        Nome: $('#txtNomeCavaleiro').val(),
+        TipoSanguineo: parseInt($('#slTipoSanguineo').val()),
         Imagens: novasImagens,
-        DataNascimento: (data || new Date()).toISOString(),
-        AlturaCm: parseDouble(formData.get('alturaMetros').val()) * 100,
-        PesoLb: parseDouble(formData.get('pesoKg').val()) * 2.20462262,
-        Signo: parseInt(formData.get('signo').val()),
-        LocalNascimento: { Texto: formData.get('localNascimento').val() },
-        LocalTreinamento: { Texto: formData.get('localTreinamento').val() },
+        DataNascimento: new Date(Date.UTC(dataNascAux[2], dataNascAux[1], dataNascAux[0])).toISOString(),
+        AlturaCm: parseFloat($('#nbAlturaMetros').val()) * 100,
+        PesoLb: parseFloat($('#nbPesoKilos').val()) * 2.20462262,
+        Signo: parseInt($('#slSigno').val()),
+        LocalNascimento: { Texto: $('#txtLocalNascimento').val() },
+        LocalTreinamento: { Texto: $('#txtLocalTreinamento').val() },
         Golpes: novosGolpes
     };
+    console.log(a);
+    return a;
 };
 
 function gerarElementoLiComInputs() {
