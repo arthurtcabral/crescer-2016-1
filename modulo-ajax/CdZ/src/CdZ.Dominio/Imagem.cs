@@ -11,7 +11,7 @@ namespace CdZ.Dominio
         /*
          * Precisamos deste construtor vazio por causa do Entity Framework.
          */
-        private Imagem() { }
+        public Imagem() { }
 
         /// <summary>
         /// Usado na criação.
