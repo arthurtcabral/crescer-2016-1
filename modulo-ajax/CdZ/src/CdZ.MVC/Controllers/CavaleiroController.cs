@@ -39,7 +39,6 @@ namespace CdZ.MVC.Controllers
         [HttpPost]
         public JsonResult Post(CavaleiroViewModel cavaleiro)
         {
-            //System.Threading.Thread.Sleep(3000);
             var novoId = _cavaleiros.Adicionar(cavaleiro.ToModel());
             Response.StatusCode = (int)HttpStatusCode.Created;
             return Json(new { id = novoId });
