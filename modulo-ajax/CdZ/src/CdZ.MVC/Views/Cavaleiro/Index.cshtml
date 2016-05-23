@@ -15,8 +15,7 @@
 <ul id="cavaleiros"></ul>
 <div id="feedback"></div>
 
-@using (Html.BeginForm("Post", "Cavaleiro", FormMethod.Post))
-{
+<form id="frmNovoCavaleiro">
     <!-- nome -->
     <label for="txtNomeCavaleiro">Nome</label>
     <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu">
