@@ -51,3 +51,14 @@ AND CURRENT_TIMESTAMP
 AND prod.IDProduto = :pIDProduto;
 
 --8
+
+SELECT TO_CHAR(pe.DataPedido, 'mm/yyyy') Dat,
+COUNT(DISTINCT pi.IDProduto) Produtos,
+SUM(pe.ValorPedido) Valor_Pedidos,
+MIN(pe.ValorPedido) Menor_Valor_Pedido,
+MAX(pe.ValorPedido) Maior_Valor_Pedido,
+ROUND(AVG(pe.ValorPedido), 2) Media_Valores,
+COUNT(DISTINCT pe.IDPedido) Total_Pedidos
+FROM Pedido pe
+INNER JOIN PedidoItem pi ON pi.IDPedido = pe.IDPedido
+GROUP BY TO_CHAR(pe.DataPedido, 'mm/yyyy');
