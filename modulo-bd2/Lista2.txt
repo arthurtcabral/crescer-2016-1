@@ -1,0 +1,42 @@
+DECLARE
+vNomeCliente VARCHAR2(150);
+vNomeCidade VARCHAR2(150);
+vPrimeiraCompra DATE;
+vUltimaCompra DATE;
+vSomaValores NUMBER;
+
+BEGIN
+
+SELECT cli.Nome, ci.Nome, MIN(pe.DataPedido), MAX(pe.DataPedido), SUM(pe.ValorPedido)
+INTO vNomeCliente, vNomeCidade, vPrimeiraCompra, vUltimaCompra, vSomaValores
+FROM CLIENTE cli
+INNER JOIN CIDADE ci
+ON cli.IDCIDADE = ci.IDCIDADE
+INNER JOIN Pedido pe
+ON cli.IDCliente = pe.IDCLIENTE
+WHERE cli.IDCLIENTE = &pIDCLIENTE
+GROUP BY cli.Nome,  ci.Nome;
+
+
+DBMS_OUTPUT.PUT_LINE('Cliente: ' || vNomeCliente);
+DBMS_OUTPUT.PUT_LINE('Cidade: ' || vNomeCidade);
+DBMS_OUTPUT.PUT_LINE('Data da primeira compra: ' || vPrimeiraCompra);
+DBMS_OUTPUT.PUT_LINE('Data da última compra: ' || vUltimaCompra);
+DBMS_OUTPUT.PUT_LINE('Valor total: ' || vSomaValores);
+
+END;
+
+DECLARE
+vExiste INTEGER;
+
+BEGIN
+
+SELECT IDCidade
+INTO vExiste
+FROM CIDADE
+WHERE NOME = &pNOME AND UF = &pUF;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+  DBMS_OUTPUT.PUT_LINE('Não há essa cidade!');
+
+END;
