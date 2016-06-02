@@ -4,11 +4,11 @@ CREATE PROCEDURE UPDATE_PEDIDO (pIDPEDIDO in Number) AS
   BEGIN
   
   UPDATE PEDIDO pe
-  SET (pe.VALORPEDIDO) = (SELECT (pi.QUANTIDADE * pi.PRECOUNITARIO)
+  SET (pe.VALORPEDIDO) = (SELECT SUM(pi.QUANTIDADE * pi.PRECOUNITARIO)
                           FROM PedidoItem pi
                           INNER JOIN Pedido ped
                           ON pi.IDPedido = pIDPEDIDO
-                          WHERE ROWNUM = 1)
+                          GROUP BY (pi.IDPedido))
   WHERE pe.IDPedido = pIDPEDIDO;
   
   END;
@@ -19,8 +19,6 @@ CREATE PROCEDURE UPDATE_PEDIDO (pIDPEDIDO in Number) AS
 BEGIN
  UPDATE_PEDIDO(vIDPEDIDO);
 END;
-
-
 
 --2
 
@@ -73,6 +71,6 @@ DECLARE
 vQUANTIDADE NUMBER;
   
 BEGIN
- vQUANTIDADE := QUANTIDADE_PRODUTOS_VENDIDOS(5120, '03/2013');
+ vQUANTIDADE := QUANTIDADE_PRODUTOS_VENDIDOS(5120, '/03/2013');
  dbms_output.put_line(vQUANTIDADE);
 END;
