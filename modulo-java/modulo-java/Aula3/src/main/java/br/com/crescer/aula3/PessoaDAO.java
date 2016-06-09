@@ -93,10 +93,14 @@ public class PessoaDAO implements IPessoa {
     }
     
     public void runExternalSql(String arquivo) throws IOException{
-        String instrucoes = MeuSQLUtils.readSql(arquivo);
+        List<String> instrucoes = MeuSQLUtils.readSql(arquivo);
         try (Connection conn = ConnectionUtils.getConnection();
-                PreparedStatement statement = conn.prepareStatement(instrucoes)) {
-                statement.executeQuery();
+                Statement statement = conn.createStatement()) {
+                for(String instrucao : instrucoes){
+                    System.out.println(instrucao);
+                    statement.addBatch(instrucao);
+                }
+                statement.executeBatch();
         } catch (SQLException ex) {
             Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

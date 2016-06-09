@@ -2,15 +2,16 @@
 package br.com.crescer.aula3;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MeuSQLUtils {
 
-    public static String readSql(String arquivo) throws IOException {
-        String instrucoes = "";
+    public static List<String> readSql(String arquivo) throws IOException {
+        List<String> instrucoes = new ArrayList<String>();
          if (eSql(arquivo)) {
              BufferedReader bf = null;
             try {
@@ -22,7 +23,8 @@ public class MeuSQLUtils {
             while (true) {
                 String readLine = bf.readLine();
                 if (readLine != null && !readLine.isEmpty()) {
-                    instrucoes = instrucoes + readLine;
+                    readLine.split(";");
+                    instrucoes.add(readLine);
                 }else{
                     break;
                 }
