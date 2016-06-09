@@ -5,6 +5,7 @@
  */
 package br.com.crescer.temaaula2;
 
+import br.com.crescer.file.MeuFileUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

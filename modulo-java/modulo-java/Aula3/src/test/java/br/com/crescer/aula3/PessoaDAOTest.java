@@ -53,16 +53,16 @@ public class PessoaDAOTest {
 //        assertEquals(pessoas.get(0).getNome(), "TESTEATUALIZADO");
 //    }
     
-    @Test
-    public void buscarTodos() {
-        Pessoa pessoa = new Pessoa();
-        PessoaDAO instance = new PessoaDAO();
-        List<Pessoa> pessoas = new ArrayList<Pessoa>();
-        pessoas = instance.listAll();
-        assertEquals(pessoas.get(0).getNome(), "ARTHUR TC");
-        assertEquals(pessoas.get(1).getNome(), "TESTEATUALIZADO");
-        assertEquals(pessoas.get(2).getNome(), "TESTE");
-        assertEquals(pessoas.get(3).getNome(), "ARTHUR");
-    }
-    
+//    @Test
+//    public void buscarTodos() {
+//        Pessoa pessoa = new Pessoa();
+//        PessoaDAO instance = new PessoaDAO();
+//        List<Pessoa> pessoas = new ArrayList<Pessoa>();
+//        pessoas = instance.listAll();
+//        assertEquals(pessoas.get(0).getNome(), "ARTHUR TC");
+//        assertEquals(pessoas.get(1).getNome(), "TESTEATUALIZADO");
+//        assertEquals(pessoas.get(2).getNome(), "TESTE");
+//        assertEquals(pessoas.get(3).getNome(), "ARTHUR");
+//    }
+        
 }
