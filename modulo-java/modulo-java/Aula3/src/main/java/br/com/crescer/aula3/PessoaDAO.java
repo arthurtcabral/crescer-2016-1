@@ -1,9 +1,11 @@
 package br.com.crescer.aula3;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -88,6 +90,17 @@ public class PessoaDAO implements IPessoa {
             Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return pessoas;
+    }
+    
+    public void runExternalSql(String arquivo) throws IOException{
+        String instrucoes = MeuSQLUtils.readSql(arquivo);
+        try (Connection conn = ConnectionUtils.getConnection();
+                PreparedStatement statement = conn.prepareStatement(instrucoes)) {
+                statement.executeQuery();
+        } catch (SQLException ex) {
+            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
 }
