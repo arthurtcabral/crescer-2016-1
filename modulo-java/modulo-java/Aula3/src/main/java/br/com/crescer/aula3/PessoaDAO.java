@@ -97,7 +97,6 @@ public class PessoaDAO implements IPessoa {
         try (Connection conn = ConnectionUtils.getConnection();
                 Statement statement = conn.createStatement()) {
                 for(String instrucao : instrucoes){
-                    System.out.println(instrucao);
                     statement.addBatch(instrucao);
                 }
                 statement.executeBatch();
