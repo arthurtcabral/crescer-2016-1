@@ -3,6 +3,7 @@ package br.com.crescer.aula4.entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -39,12 +40,12 @@ public class Pedido implements Serializable {
     @Basic(optional = false)
     @Temporal(TemporalType.DATE)
     @Column(name = "DATAPEDIDO")
-    private Calendar dataPedido;
+    private Date dataPedido;
     
     @Basic(optional = false)
     @Temporal(TemporalType.DATE)
     @Column(name = "DATAENTREGA")
-    private Calendar dataEntrega;
+    private Date dataEntrega;
     
     @Basic(optional = false)
     @Column(name = "VALORPEDIDO")
@@ -70,19 +71,19 @@ public class Pedido implements Serializable {
         this.idPedido = idPedido;
     }
 
-    public Calendar getDataPedido() {
+    public Date getDataPedido() {
         return dataPedido;
     }
 
-    public void setDataPedido(Calendar dataPedido) {
+    public void setDataPedido(Date dataPedido) {
         this.dataPedido = dataPedido;
     }
 
-    public Calendar getDataEntrega() {
+    public Date getDataEntrega() {
         return dataEntrega;
     }
 
-    public void setDataEntrega(Calendar dataEntrega) {
+    public void setDataEntrega(Date dataEntrega) {
         this.dataEntrega = dataEntrega;
     }
 
