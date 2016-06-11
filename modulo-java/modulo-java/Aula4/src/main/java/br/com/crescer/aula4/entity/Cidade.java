@@ -3,6 +3,7 @@ package br.com.crescer.aula4.entity;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,7 +38,7 @@ public class Cidade implements Serializable {
     @Column(name = "UF")
     private String uf;
 
-    @OneToMany(mappedBy = "cidade")
+    @OneToMany(mappedBy = "cidade", cascade = CascadeType.ALL)
     private List<Cliente> clientes;
 
     public Long getIdCidade() {

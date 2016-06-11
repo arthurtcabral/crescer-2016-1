@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -58,7 +59,7 @@ public class Pedido implements Serializable {
     @JoinColumn(name = "IDCLIENTE")
     private Cliente cliente;
     
-    @OneToMany(mappedBy = "pedido")
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<PedidoItem> pedidoItens;
 
     public Long getIdPedido() {

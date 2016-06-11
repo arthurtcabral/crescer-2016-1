@@ -1,11 +1,10 @@
 package br.com.crescer.aula4.run;
 
-import br.com.crescer.aula4.entity.Pessoa;
-import java.util.List;
+import br.com.crescer.aula4.entity.Cidade;
+import br.com.crescer.aula4.hibernate.DAO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 
 public class AppRun {
 
@@ -13,10 +12,18 @@ public class AppRun {
     static final EntityManager em = emf.createEntityManager();
 
     public static void main(String[] args) {
-
-        em.isOpen();
-        em.close();
-
+        
+        DAO dao = new DAO();
+        
+        Cidade cidade = new Cidade();
+        cidade.setIdCidade(2L);
+        cidade.setNome("São Leopoldo");
+        cidade.setUf("SC");
+        
+        dao.delete(cidade);
+        
+        System.exit(0);
+        
         
 //        Query query = em.createNamedQuery("Pessoa.findAll");
 //        List<Pessoa> pessoas = query.getResultList();

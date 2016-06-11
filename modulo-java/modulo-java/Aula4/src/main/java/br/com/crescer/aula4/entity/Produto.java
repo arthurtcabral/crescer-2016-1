@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,10 +54,10 @@ public class Produto implements Serializable {
     @Column(name = "SITUACAO")
     private char situacao;
     
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<ProdutoMaterial> produtoMateriais;
 
-    @OneToMany(mappedBy = "produto")
+    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL)
     private List<PedidoItem> pedidoItens;
     
     public Long getIdProduto() {
