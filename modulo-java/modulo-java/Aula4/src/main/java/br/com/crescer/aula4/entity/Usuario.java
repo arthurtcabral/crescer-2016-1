@@ -33,7 +33,6 @@ public class Usuario implements Serializable {
     @Column(name = "NOME_USUARIO")
     private String nome;
 
-    
     @OneToMany(mappedBy = "usuario")
     private List<Publicacao> publicacoes;
     
