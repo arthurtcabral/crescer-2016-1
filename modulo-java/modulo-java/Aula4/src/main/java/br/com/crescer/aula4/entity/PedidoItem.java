@@ -36,7 +36,7 @@ public class PedidoItem implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "PRECOUNITARIO")
-    private double precoUnitario;
+    private Double precoUnitario;
     
     @Basic(optional = false)
     @Column(name = "SITUACAO")
@@ -68,11 +68,11 @@ public class PedidoItem implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public double getPrecoUnitario() {
+    public Double getPrecoUnitario() {
         return precoUnitario;
     }
 
-    public void setPrecoUnitario(double precoUnitario) {
+    public void setPrecoUnitario(Double precoUnitario) {
         this.precoUnitario = precoUnitario;
     }
 

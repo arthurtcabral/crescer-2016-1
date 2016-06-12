@@ -46,10 +46,10 @@ public class Produto implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "PRECOCUSTO")
-    private double precoCusto;
+    private Double precoCusto;
     
     @Column(name = "PRECOVENDA")
-    private double precoVenda;
+    private Double precoVenda;
     
     @Basic(optional = false)
     @Column(name = "SITUACAO")
@@ -85,19 +85,19 @@ public class Produto implements Serializable {
         this.dataCadastro = dataCadastro;
     }
 
-    public double getPrecoCusto() {
+    public Double getPrecoCusto() {
         return precoCusto;
     }
 
-    public void setPrecoCusto(double precoCusto) {
+    public void setPrecoCusto(Double precoCusto) {
         this.precoCusto = precoCusto;
     }
 
-    public double getPrecoVenda() {
+    public Double getPrecoVenda() {
         return precoVenda;
     }
 
-    public void setPrecoVenda(double precoVenda) {
+    public void setPrecoVenda(Double precoVenda) {
         this.precoVenda = precoVenda;
     }
 

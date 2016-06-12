@@ -37,11 +37,11 @@ public class Material implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "PESOLIQUIDO")
-    private double pesoLiquido;
+    private Double pesoLiquido;
     
     @Basic(optional = false)
     @Column(name = "PRECOCUSTO")
-    private double precoCusto;
+    private Double precoCusto;
     
     @OneToMany(mappedBy = "material", cascade = CascadeType.ALL)
     private List<ProdutoMaterial> produtoMateriais;
@@ -62,19 +62,19 @@ public class Material implements Serializable {
         this.descricao = descricao;
     }
 
-    public double getPesoLiquido() {
+    public Double getPesoLiquido() {
         return pesoLiquido;
     }
 
-    public void setPesoLiquido(double pesoLiquido) {
+    public void setPesoLiquido(Double pesoLiquido) {
         this.pesoLiquido = pesoLiquido;
     }
 
-    public double getPrecoCusto() {
+    public Double getPrecoCusto() {
         return precoCusto;
     }
 
-    public void setPrecoCusto(double precoCusto) {
+    public void setPrecoCusto(Double precoCusto) {
         this.precoCusto = precoCusto;
     }
 

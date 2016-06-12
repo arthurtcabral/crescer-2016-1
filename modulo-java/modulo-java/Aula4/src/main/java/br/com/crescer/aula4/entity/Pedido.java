@@ -49,7 +49,7 @@ public class Pedido implements Serializable {
     
     @Basic(optional = false)
     @Column(name = "VALORPEDIDO")
-    private double valorPedido;
+    private Double valorPedido;
     
     @Basic(optional = false)
     @Column(name = "SITUACAO")
@@ -87,11 +87,11 @@ public class Pedido implements Serializable {
         this.dataEntrega = dataEntrega;
     }
 
-    public double getValorPedido() {
+    public Double getValorPedido() {
         return valorPedido;
     }
 
-    public void setValorPedido(double valorPedido) {
+    public void setValorPedido(Double valorPedido) {
         this.valorPedido = valorPedido;
     }
 
