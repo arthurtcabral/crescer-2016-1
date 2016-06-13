@@ -7,8 +7,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>Aula3</module>
-        <module>Aula4</module>
-    </modules>
+    <module>Aula5</module>
+  </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
