@@ -11,18 +11,36 @@
               integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
               crossorigin="anonymous">
     </head>
+    <style>
+        #michael{
+            height: 200px;
+            width: 200px;
+            background-image: url('http://rs217.pbsrc.com/albums/cc93/disneyguy100/MOONWALK.gif~c200');
+        }
+        #michael:hover{
+            height: 180px;
+            width: 120px;
+            background-image: url('https://media.giphy.com/media/TtrcH1Ja351mw/giphy.gif');
+        }
+    </style>
     <body>
-    <marquee><img src="http://rs217.pbsrc.com/albums/cc93/disneyguy100/MOONWALK.gif~c200"></img></marquee>
+    <marquee><div id="michael"></div></marquee>
     <div class="container">
 
         <form action="pessoa">
             <div class="form-group">
                 <label>Nome</label>
-                <input type="text" name="pessoa.nome"> 
-                </input>
-                <submit class="btn btn-success">
+                <input type="text" name="pessoa.nome">
+                <label>Idade</label>
+                <input type="number" name="pessoa.idade">
+                <label>Sexo</label>
+                <input type="radio" name="pessoa.sexo" value="MASCULINO"> Masculino
+                <input type="radio" name="pessoa.sexo" value="FEMININO"> Feminino
+                <input type="radio" name="pessoa.sexo" value="OUTRO"> Outro </input>
+                <br>
+                <button type="submit" class="btn btn-success">
                     Enviar
-                </submit>
+                    </submit>
             </div>
         </form>
 
