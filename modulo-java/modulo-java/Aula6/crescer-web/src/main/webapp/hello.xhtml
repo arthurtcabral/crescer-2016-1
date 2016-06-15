@@ -11,8 +11,9 @@
             <h:panelGrid id="grid"> <!--Gera tabela-->
                 <h:outputText id="out" value="#{hello.helloWorld}"/>
                 <h:inputText id="in" required="true" value="#{hello.helloWorld}"/>
-                <!--<f:ajax event="keypress" execute="@this" render="out"/>-->
-                <h:commandButton action="#{hello.processa}" value="processa"/>
+                <h:commandButton action="#{hello.processa}" value="processa">
+                    <f:ajax event="keypress" execute="@this" render="out"/>
+                </h:commandButton>
             </h:panelGrid>
         </h:form>
     </h:body>
