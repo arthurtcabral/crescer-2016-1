@@ -1,0 +1,12 @@
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand img {
+    height: 40px;
+    margin-top: -10px; 
+}
+
+body{
+    background-image: url(http://www.ead.fundacaoulysses.org.br/img/background1600.jpg);
+}
