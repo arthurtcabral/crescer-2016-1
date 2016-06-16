@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+
+        <ui:composition template="./../../template/searchTemplate.xhtml">
+
+            <ui:define name="search.header">
+                <h:outputText value="#{bundle['page.cidade.search']}"/>
+            </ui:define>
+
+            <ui:define name="search.filters">
+                <div class="form-group">
+                    <h:outputLabel for="nome" value="#{bundle['page.cidade.name']}"/>
+                    <h:inputText  id="nome" label="#{bundle['page.cidade.name']}" value="#{cidadeController.entity.nome}" styleClass="form-control"/>
+                </div>
+                <div class="form-group">
+                    <div class="btn-group btn-group-sm">
+                        <h:commandButton action="#{cidadeController.find}" value="#{bundle['page.search.find']}" styleClass="btn btn-default">
+                            <f:ajax render="@form" execute="@form"/>
+                        </h:commandButton>
+                        <h:commandLink action="novocity" styleClass="btn btn-success">
+                            <h:outputText value="#{bundle['page.search.new']}" />
+                        </h:commandLink>
+                    </div>
+                </div>
+            </ui:define>
+
+            <ui:define name="search.results">
+                <ui:param name="cidades" value="#{cidadeController.list}"/>
+                <h:outputText value="#{bundle['page.search.results.empty']}" rendered="#{empty cidades}" />
+                <h:dataTable value="#{cidades}" var="p" styleClass="table table-hover table-striped" rendered="#{not empty cidades}">
+<!--                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle['page.cidade.id']}"/>
+                        </f:facet>
+                        <h:outputText value="#{p.id}"/>
+                    </h:column>-->
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle['page.cidade.name']}"/>
+                        </f:facet>
+                        <h:outputText value="#{p.nome}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle['page.cidade.uf']}"/>
+                        </f:facet>
+                        <h:outputText value="#{p.uf}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Ação"/>
+                        </f:facet>
+                        <h:commandButton action="#{cidadeController.delete}" value="X" styleClass="btn btn-danger">
+                            <f:ajax render="@form" execute="@form"/>
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
