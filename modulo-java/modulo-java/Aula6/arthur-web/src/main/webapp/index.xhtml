@@ -5,21 +5,18 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
-        <title>INDEX</title>
+        <title>#{bundle.title}</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="estilo.css" />
     </h:head>
     <h:body>
-        <ui:param name="p" value="#{pessoa.pessoa}"/>
-        <h:form> 
-            <h:outputLabel value="Nome:"/>
-            <h:inputText styleClass="form-control" value="#{p.nome}"/>
-            <h:outputLabel value="Cidade:"/>
-            <h:inputText styleClass="form-control" value="#{p.cidade}"/>
-            <h:commandButton value="enviar" styleClass="btn btn-success">
-                <f:ajax execute="@form" render="@form"/>
-            </h:commandButton>
-            <h:outputText value="#{p}"/>
-        </h:form>
+        <ui:composition template="template.xhtml">
+            <ui:param name="p" value="#{pessoa.pessoa}"/>
+            <div class="container">
+                <ui:define name="content">
+                </ui:define>
+            </div>
+        </ui:composition>
     </h:body>
 </html>
