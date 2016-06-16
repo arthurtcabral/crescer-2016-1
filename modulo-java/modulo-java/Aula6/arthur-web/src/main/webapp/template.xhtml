@@ -6,7 +6,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <h:head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <link href="resouces/css/default.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/estilo.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>#{bundle.title}</title>
     </h:head>
@@ -22,6 +22,24 @@
                 </div>
             </nav>
             <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h:outputLabel value="#{bundle.nome}"/>
+                        <h:inputText styleClass="form-control" value="#{p.nome}"/>
+                    </div>
+                    <div class="col-md-6">
+                        <h:outputLabel value="#{bundle.cidade}"/>
+                        <h:inputText styleClass="form-control" value="#{p.cidade}"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h:commandButton value="Enviar" styleClass="btn btn-success">
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:commandButton>
+                    </div>
+                </div>
+                <h:outputText value="#{p}"/>
                 <ui:insert name="content"/>
             </div>
         </h:form>
