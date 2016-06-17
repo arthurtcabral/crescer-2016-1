@@ -55,6 +55,14 @@
     </navigation-rule>
     
     <navigation-rule>
+        <from-view-id>/pages/cidade/consultar_cidade.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>editarcity</from-outcome>
+            <to-view-id>/pages/pessoa/editar_cidade.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
         <from-view-id></from-view-id>
         <navigation-case>
             <from-outcome>logout</from-outcome>

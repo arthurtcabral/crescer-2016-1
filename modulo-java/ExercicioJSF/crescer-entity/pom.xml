@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>br.com.crescer</groupId>
-        <artifactId>aula6</artifactId>
-        <version>1.0.0.0</version>
+        <artifactId>modulo-java</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>crescer-entity</artifactId>
     <packaging>jar</packaging>

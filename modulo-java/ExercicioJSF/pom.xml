@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>br.com.crescer</groupId>
-        <artifactId>modulo-08-java</artifactId>
+        <artifactId>ExercicioJSF</artifactId>
         <version>1.0.0.0</version>
     </parent>
     <artifactId>aula6</artifactId>
@@ -19,5 +19,5 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-
+    <name>aula6</name>
 </project>

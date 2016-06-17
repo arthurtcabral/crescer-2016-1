@@ -7,10 +7,15 @@
     <packaging>pom</packaging>
     <modules>
         <module>Aula3</module>
-    <module>Aula5</module>
+        <module>Aula5</module>
         <module>Aula6</module>
+        <module>../ExercicioJSF/crescer-entity</module>
+        <module>../ExercicioJSF/crescer-web</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <property name="connection.url">
+            jdbc:oracle://localhost:3306/CRESCER16
+        </property>
     </properties>
 </project>

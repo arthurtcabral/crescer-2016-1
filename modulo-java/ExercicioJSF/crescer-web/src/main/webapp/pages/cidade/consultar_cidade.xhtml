@@ -33,12 +33,12 @@
                 <ui:param name="cidades" value="#{cidadeController.list}"/>
                 <h:outputText value="#{bundle['page.search.results.empty']}" rendered="#{empty cidades}" />
                 <h:dataTable value="#{cidades}" var="p" styleClass="table table-hover table-striped" rendered="#{not empty cidades}">
-<!--                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="#{bundle['page.cidade.id']}"/>
-                        </f:facet>
-                        <h:outputText value="#{p.id}"/>
-                    </h:column>-->
+                    <!--                    <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="#{bundle['page.cidade.id']}"/>
+                                            </f:facet>
+                                            <h:outputText value="#{p.id}"/>
+                                        </h:column>-->
                     <h:column>
                         <f:facet name="header">
                             <h:outputText value="#{bundle['page.cidade.name']}"/>
@@ -53,7 +53,13 @@
                     </h:column>
                     <h:column>
                         <f:facet name="header">
-                            <h:outputText value="Ação"/>
+                            <h:outputText value="Editar"/>
+                        </f:facet>
+                        <h:commandButton action="editarcity" value="E" styleClass="btn btn-warning"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Excluir"/>
                         </f:facet>
                         <h:commandButton action="#{cidadeController.delete}" value="X" styleClass="btn btn-danger">
                             <f:ajax render="@form" execute="@form"/>
