@@ -1,6 +1,6 @@
 package br.com.crescer.services;
 
-import br.com.crescer.controllers.Pessoa;
+import br.com.crescer.pojo.Pessoa;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,4 +1,4 @@
-package br.com.crescer.controllers;
+package br.com.crescer.pojo;
 
 import java.util.Date;
 
