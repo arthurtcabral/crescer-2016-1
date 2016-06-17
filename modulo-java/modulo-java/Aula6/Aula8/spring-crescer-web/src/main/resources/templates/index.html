@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Exemplo Spring</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <style>
+            body{
+                background-color: darkblue;
+                color: lightgray;
+                font-family: "consolas";
+            }
+        </style>
+    </head>
+    <body> 
+        <h3 th:text="'Hello World! ' + ${name}"/> <!-- Thymeleaf permite concatenar strings como no exemplo ao lado -->
+    </body>
+</html> 
