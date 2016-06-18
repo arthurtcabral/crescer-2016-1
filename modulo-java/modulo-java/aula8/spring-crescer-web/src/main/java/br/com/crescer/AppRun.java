@@ -3,6 +3,9 @@ package br.com.crescer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author Carlos H. Nonnemacher
+ */
 @SpringBootApplication
 public class AppRun {
 

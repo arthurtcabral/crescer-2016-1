@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/MyStyle.css}"/>
+        <title th:text="#{title.pessoa}"></title>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 th:text="#{pessoa.form}" class="page-header"></h1>
+
+            <form action="#" th:object="${pessoa}" method="post">
+
+                <div class="form-group">
+                    <label for="nome" th:text="#{pessoa.nome}"></label>
+                    <input id="txt" class="form-control" type="text" th:field="*{nome}" />
+                </div>
+
+                <div class="form-group">
+                    <input id="go" class="btn btn-default" type="submit" th:value="#{form.submit}" /> 
+                    <input class="btn btn-default" type="reset" th:value="#{form.reset}" />
+                </div>
+            </form>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th th:text="#{pessoa.id}"/>
+                        <th th:text="#{pessoa.nome}"/>
+                        <th th:text="Edit"/>
+                        <th th:text="Delete"/>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="p : ${pessoas}">
+                        <td th:text="${p.id}">ID</td>
+                        <td th:text="${p.nome}">NOME</td>
+                        <td><a id="editar">E</a></td>
+                        <td><a id="excluir" onClick="cliqueExcluir(event); return false;">X</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script th:src="@{/js/MyScript.js}" type="text/javascript"></script>
+</body>
+
+</html>
