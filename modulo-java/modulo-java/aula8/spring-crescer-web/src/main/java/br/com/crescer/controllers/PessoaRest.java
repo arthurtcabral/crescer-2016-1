@@ -4,6 +4,8 @@ import br.com.crescer.services.PessoaService;
 import br.com.crescer.entity.Pessoa;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,8 +22,8 @@ public class PessoaRest {
     PessoaService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public Iterable<Pessoa> list() {
-        return service.findAll();
+    public Page<Pessoa> list(Pageable pgbl) {
+        return service.findAll(pgbl);
     }
 
     @RequestMapping(value = "/save_or_update", method = RequestMethod.POST)
