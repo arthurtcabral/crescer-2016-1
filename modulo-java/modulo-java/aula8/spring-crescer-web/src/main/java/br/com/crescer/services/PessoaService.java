@@ -7,12 +7,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-/**
- * @author Carlos H. Nonnemacher
- */
 @Service
 public class PessoaService {
 
@@ -26,6 +24,10 @@ public class PessoaService {
         return Stream.of(p).collect(Collectors.toList());
     }
 
+    public Page<Pessoa> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
     public Iterable<Pessoa> findAll() {
         return repository.findAll();
     }
@@ -37,9 +39,9 @@ public class PessoaService {
     public void delete(Long id) {
         repository.delete(id);
     }
-    
-    public Pessoa findById(Long id){
+
+    public Pessoa findById(Long id) {
         return repository.findOne(id);
     }
-    
+
 }
