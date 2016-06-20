@@ -1,4 +1,4 @@
-package br.com.crescer;
+package br.com.crescer.security;
 
 import br.com.crescer.security.CrescerUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
