@@ -9,6 +9,11 @@
         <title th:text="#{title.pessoa}"></title>
     </head>
     <body>
+
+        <div th:replace="fragments :: navbar">
+            <!-- pega do templates/fragments.html o frament:navbar -->
+        </div>
+
         <div class="container">
 
             <h1 th:text="#{pessoa.form}" class="page-header"></h1>
@@ -22,7 +27,7 @@
 
                 <div class="form-group">
                     <input id="go" class="btn btn-default" type="submit" th:value="#{form.submit}" /> 
-                    <input class="btn btn-default" type="reset" th:value="#{form.reset}" />
+                    <input class="btn btn-default" type="button" th:value="'OR 1 = 1 --'" />
                 </div>
             </form>
 
@@ -45,8 +50,13 @@
                 </tbody>
             </table>
         </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script th:src="@{/js/MyScript.js}" type="text/javascript"></script>
-</body>
+        
+        <div th:replace="fragments :: paginator(${pessoas}, '/pessoa')">
+
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <script th:src="@{/js/MyScript.js}" type="text/javascript"></script>
+    </body>
 
 </html>
