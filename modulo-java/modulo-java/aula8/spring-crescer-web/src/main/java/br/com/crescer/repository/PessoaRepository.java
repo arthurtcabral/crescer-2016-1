@@ -1,12 +1,11 @@
 package br.com.crescer.repository;
 
 import br.com.crescer.entity.Pessoa;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
  * @author Carlos H. Nonnemacher
  */
-public interface PessoaRepository extends CrudRepository<Pessoa, Long> {
+public interface PessoaRepository extends PagingAndSortingRepository<Pessoa, Long> {
 
 }
- 
